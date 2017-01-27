@@ -12,11 +12,7 @@ import model.Player;
  * @author kristenkeough
  */
 public class TrailOfZombies {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    public static void teamTest() {
         Player playerOne = new Player();
         
         playerOne.setName("Fred Flintstone");
@@ -24,8 +20,27 @@ public class TrailOfZombies {
         playerOne.setBestTime(7.00);
         
         String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);
+        System.out.println(playerInfo);   
+    }
+    
+    
+    
+    public static void kristenTest(){
         
+    }
+    
+    
+    
+    public static void bryceTest(){
+        
+    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        teamTest();
+        kristenTest();
+        bryceTest();
     }
     
 }
