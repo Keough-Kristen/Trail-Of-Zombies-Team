@@ -102,7 +102,7 @@ public class TrailOfZombies {
         Game gameOne = new Game();
         
         gameOne.setTotalTime(53);
-        gameOne.setPeople(0);
+        gameOne.setNoPeople(0);
         
         BackPack backPackOne = new BackPack();
         

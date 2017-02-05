@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.trailOfZombies1.model;
+package model;
 
 import java.io.Serializable;
 /**
@@ -14,7 +14,7 @@ public class Game implements Serializable {
     
     //class instance variables
     private double totalTime;
-    private double nopeople;
+    private int noPeople;
 
     public Game() {
     }
@@ -29,19 +29,19 @@ public class Game implements Serializable {
         this.totalTime = totalTime;
     }
 
-    public double getNopeople() {
-        return nopeople;
+    public int getNoPeople() {
+        return noPeople;
     }
 
-    public void setNopeople(double nopeople) {
-        this.nopeople = nopeople;
+    public void setNoPeople(int noPeople) {
+        this.noPeople = noPeople;
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 37 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.nopeople) ^ (Double.doubleToLongBits(this.nopeople) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.noPeople) ^ (Double.doubleToLongBits(this.noPeople) >>> 32));
         return hash;
     }
 
@@ -60,12 +60,12 @@ public class Game implements Serializable {
         if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
             return false;
         }
-        return Double.doubleToLongBits(this.nopeople) == Double.doubleToLongBits(other.nopeople);
+        return int.intToLongBits(this.noPeople) == int.intToLongBits(other.noPeople);
     }
 
     @Override
     public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", nopeople=" + nopeople + '}';
+        return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
     }
     
     
