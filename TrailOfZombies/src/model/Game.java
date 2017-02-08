@@ -60,7 +60,7 @@ public class Game implements Serializable {
         if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
             return false;
         }
-        return int.intToLongBits(this.noPeople) == int.intToLongBits(other.noPeople);
+        return this.noPeople == other.noPeople;
     }
 
     @Override

@@ -123,7 +123,7 @@ public class TrailOfZombies {
         mapOne.setColumnCount(25);
         mapOne.setCurrentRow(5);
         mapOne.setCurrentColumn(10);
-        mapOne.setCurrentScene("Library");
+       // mapOne.setCurrentScene("Library");
         
         ZombieCrusher zombieCrusherOne = new ZombieCrusher();
         

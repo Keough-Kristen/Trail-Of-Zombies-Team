@@ -23,7 +23,7 @@ public class InventoryControlTest {
     @Test
     public void testCalcVolumeOfCrate() {
         System.out.println("calcVolumeOfCrate");
-             
+               
         /********
          * Test Case 1
          ********/
@@ -42,12 +42,12 @@ public class InventoryControlTest {
          * Test Case 2
          ********/
         System.out.println("\tTest Case #2");
-        double height = -1.0;
-        double width = 36.0;
-        double depth = 24.0;
-        InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcVolumeOfCrate(height, width, depth);
+        height = -1.0;
+        width = 36.0;
+        depth = 24.0;
+        instance = new InventoryControl();
+        expResult = -1.0;
+        result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -56,12 +56,12 @@ public class InventoryControlTest {
          * Test Case 3
          ********/
         System.out.println("\tTest Case #3");
-        double height = 24.0;
-        double width = -1.0;
-        double depth = 24.0;
-        InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcVolumeOfCrate(height, width, depth);
+        height = 24.0;
+        width = -1.0;
+        depth = 24.0;
+        instance = new InventoryControl();
+        expResult = -1.0;
+        result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -70,12 +70,12 @@ public class InventoryControlTest {
          * Test Case 4
          ********/
         System.out.println("\tTest Case #4");
-        double height = 24.0;
-        double width = 36.0;
-        double depth = -1.0;
-        InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcVolumeOfCrate(height, width, depth);
+        height = 24.0;
+        width = 36.0;
+        depth = -1.0;
+         instance = new InventoryControl();
+        expResult = -1.0;
+        result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -84,12 +84,12 @@ public class InventoryControlTest {
          * Test Case 5
          ********/
         System.out.println("\tTest Case #5");
-        double height = 24.0;
-        double width = 36.0;
-        double depth = 49.0;
-        InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcVolumeOfCrate(height, width, depth);
+        height = 24.0;
+        width = 36.0;
+        depth = 49.0;
+        instance = new InventoryControl();
+        expResult = -1.0;
+        result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -98,12 +98,12 @@ public class InventoryControlTest {
          * Test Case 6
          ********/
         System.out.println("\tTest Case #6");
-        double height = 0;
-        double width = 36.0;
-        double depth = 24.0;
-        InventoryControl instance = new InventoryControl();
-        double expResult = 0;
-        double result = instance.calcVolumeOfCrate(height, width, depth);
+        height = 0;
+        width = 36.0;
+        depth = 24.0;
+        instance = new InventoryControl();
+        expResult = 0;
+        result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -112,12 +112,12 @@ public class InventoryControlTest {
          * Test Case 7
          ********/
         System.out.println("\tTest Case #7");
-        double height = 24.0;
-        double width = 0;
-        double depth = 24.0;
-        InventoryControl instance = new InventoryControl();
-        double expResult = 0;
-        double result = instance.calcVolumeOfCrate(height, width, depth);
+        height = 24.0;
+        width = 0;
+        depth = 24.0;
+        instance = new InventoryControl();
+        expResult = 0;
+        result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -126,12 +126,12 @@ public class InventoryControlTest {
          * Test Case 8
          ********/
         System.out.println("\tTest Case #8");
-        double height = 24.0;
-        double width = 36.0;
-        double depth = 0;
-        InventoryControl instance = new InventoryControl();
-        double expResult = 0;
-        double result = instance.calcVolumeOfCrate(height, width, depth);
+        height = 24.0;
+        width = 36.0;
+        depth = 0;
+        instance = new InventoryControl();
+        expResult = 0;
+        result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -140,12 +140,12 @@ public class InventoryControlTest {
          * Test Case 9
          ********/
         System.out.println("\tTest Case #9");
-        double height = 24.0;
-        double width = 36.0;
-        double depth = 47.0;
-        InventoryControl instance = new InventoryControl();
-        double expResult = 23.5;
-        double result = instance.calcVolumeOfCrate(height, width, depth);
+        height = 24.0;
+        width = 36.0;
+        depth = 47.0;
+        instance = new InventoryControl();
+        expResult = 23.5;
+        result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
