@@ -41,6 +41,37 @@ public class InventoryControl {
         
         return footprint;
     }
+    
+ /**
+ *
+ * author bryceandrews
+ * 
+ */
+    
+        public double calcWoodForCrates(double crates, double pallets){
+    
+            if (crates < 0 || crates > (pallets / 2)){  //crates out of range
+           
+                return -1;
+            }
+            
+            if (pallets < 0){  //pallets is negative
+            
+                return -1;
+            }
+            
+            double woodPerPallet = 13;
+            
+            double woodPerCrate = 26;
+            
+            double palletsNeeded = (crates * woodPerCrate) - (pallets * woodPerPallet);
+                    
+            return palletsNeeded;
+                    
+        }
+
+
+
 }
 
 

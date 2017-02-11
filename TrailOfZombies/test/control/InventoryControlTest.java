@@ -286,6 +286,137 @@ public class InventoryControlTest {
         // TODO review the generated test code and remove the default call to fail.
         // fail("The test case is a prototype.");
     }
+    
+         /**
+     * Test of calcWoodForCrates method, of class InventoryControl.
+     */
+    @Test //Bryce Andrews Test
+    
+    public void testCalcWoodForCrates() {
+        System.out.println("calcWoodForCrates");
+               
+        /********
+         * Test Case 1
+         ********/
+        System.out.println("\tTest Case #1");
+        double crates = 7.0;
+        double pallets = 14.0;
+        
+        double expResult = 0.0;
+        
+        InventoryControl instance = new InventoryControl();
+        
+        double result = instance.calcWoodForCrates(crates, pallets);
+        
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+      //  fail("The test case is a prototype.");
+        
+        /********
+         * Test Case 2
+         ********/
+        System.out.println("\tTest Case #2");
+        crates = -1.0;
+        pallets = 14.0;
+        
+        expResult = -1.0;
+        
+        instance = new InventoryControl();
+        
+        result = instance.calcWoodForCrates(crates, pallets);
+        
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+                /********
+         * Test Case 3
+         ********/
+        System.out.println("\tTest Case #3");
+        crates = 7.0;
+        pallets = -1.0;
+
+        expResult = -1.0;
+        
+        instance = new InventoryControl();
+
+        result = instance.calcWoodForCrates(crates, pallets);
+
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+                /********
+         * Test Case 4
+         ********/
+        System.out.println("\tTest Case #4");
+        crates = 8.0;
+        pallets = 14.0;
+
+
+        expResult = -1.0;
+        
+        instance = new InventoryControl();
+
+        result = instance.calcWoodForCrates(crates, pallets);
+
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+                /********
+         * Test Case 5
+         ********/
+        System.out.println("\tTest Case #5");
+        crates = 0.0;
+        pallets = 14.0;
+
+        expResult = -182.0;
+        
+        instance = new InventoryControl();
+
+        result = instance.calcWoodForCrates(crates, pallets);
+
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+                /********
+         * Test Case 6
+         ********/
+        System.out.println("\tTest Case #6");
+        crates = 7.0;
+        pallets = 0.0;
+
+        expResult = -1.0;
+        
+        instance = new InventoryControl();
+
+        result = instance.calcWoodForCrates(crates, pallets);
+
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+                /********
+         * Test Case 7
+         ********/
+        System.out.println("\tTest Case #7");
+        crates = 10.0;
+        pallets = 20.0;
+
+        expResult = 0.0;
+        
+        instance = new InventoryControl();
+
+        result = instance.calcWoodForCrates(crates, pallets);
+
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+//>>>>>>> 69c6f1e Bryce individual assignment 6
+    }
+
 }
     
     
