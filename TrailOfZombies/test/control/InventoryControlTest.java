@@ -416,8 +416,97 @@ public class InventoryControlTest {
         //fail("The test case is a prototype.");
 //>>>>>>> 69c6f1e Bryce individual assignment 6
     }
-
+//Marco Morley Individual assignment
+     /**
+     * Test of calcGalNeeded method, of class InventoryControl.
+     */
+    @Test
+    public void calcGalNeeded() {
+        System.out.println("calcGalNeeded");
+               
+        /********
+         * Test Case 1
+         ********/
+        System.out.println("\tTest Case #1");
+        double miles = 300.0;
+        double mpg = 14.2;
+        double gallons = 21.0;
+        InventoryControl instance = new InventoryControl();
+        double expResult = 49.0;
+        double result = instance.calcGalNeeded(miles, mpg, gallons);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+      //  fail("The test case is a prototype.");
+        
+        /********
+         * Test Case 2
+         ********/
+        System.out.println("\tTest Case #2");
+        miles = -1.0;
+        mpg = 14.2;
+        gallons = 21.0;
+        instance = new InventoryControl();
+        expResult = -1.0;
+        result = instance.calcGalNeeded(miles, mpg, gallons);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        /********
+         * Test Case 3
+         ********/
+        System.out.println("\tTest Case #3");
+        miles = 300.0;
+        mpg = -1.0;
+        gallons = 14.2;
+        instance = new InventoryControl();
+        expResult = -1.0;
+        result = instance.calcGalNeeded(miles, mpg, gallons);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        /********
+         * Test Case 4
+         ********/
+        System.out.println("\tTest Case #4");
+        miles = 300.0;
+        mpg = -1.0;
+        gallons = 21.0;
+         instance = new InventoryControl();
+        expResult = -1.0;
+        result = instance.calcGalNeeded(miles, mpg, gallons);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        /********
+         * Test Case 5
+         ********/
+        System.out.println("\tTest Case #5");
+        miles = 300.0;
+        mpg = 50.0;
+        gallons = 21.0;
+        instance = new InventoryControl();
+        expResult = -1.0;
+        result = instance.calcGalNeeded(miles, mpg, gallons);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+             
+        /********
+         * Test Case 6
+         ********/
+        System.out.println("\tTest Case #6");
+        miles = 300.0;
+        mpg = 18.0;
+        gallons = 21.0;
+        instance = new InventoryControl();
+        expResult = 49.0;
+        result = instance.calcGalNeeded(miles, mpg, gallons);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 }
-    
-    
 

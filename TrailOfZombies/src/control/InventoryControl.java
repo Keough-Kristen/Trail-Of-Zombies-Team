@@ -70,8 +70,31 @@ public class InventoryControl {
                     
         }
 
-
-
+/**
+ *
+ * @author MarcoMorley
+ */
+//public class InventoryControl {
+    public double calcGalNeeded(double miles, double mpg, double gallons){
+    
+    if (miles<0) {    //miles can't be less than zero
+            return -1;
+    }
+    if (gallons<0){    //gallons can't be less than zero
+            return -1;
+    }
+    if (mpg<0 || mpg>49) {    //MPG is too high
+            return -1;
+    }
+    double tmiles = 1000;
+    mpg = miles / gallons;
+    miles = gallons * mpg;
+    double NeededGal = (tmiles - miles) / mpg;
+    
+    return NeededGal;
+    }
 }
+
+
 
 
