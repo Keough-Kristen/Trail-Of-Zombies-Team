@@ -5,10 +5,27 @@
  */
 package control;
 
+import model.Player;
+import trailofzombies.TrailOfZombies;
+
 /**
  *
  * @author kristenkeough
  */
 public class GameControl {
-    
+
+    public static Player createPlayer(String name) {
+        
+        if (name == null) {
+            return null;
+        }
+        
+         Player player = new Player();
+         player.setName(name);
+         
+         TrailOfZombies.setPlayer(player);
+
+         return player;
 }
+}
+

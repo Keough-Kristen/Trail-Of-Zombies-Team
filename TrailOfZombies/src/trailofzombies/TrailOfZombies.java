@@ -17,21 +17,40 @@ import model.ResourceScene;
 import model.HavenInterface;
 import model.Map;
 import model.ZombieCrusher;
+import view.StartProgramView;
 
 /**
  *
  * @author kristenkeough
  */
 public class TrailOfZombies {
-    public static void teamTest() {
-        Player playerOne = new Player();
+    
+    private static Game currentGame = null;
+    private static Player player = null;
+    
+    public static void main(String[] args) {
         
-        playerOne.setName("Fred Flintstone");
-        playerOne.setHighestScore(500);
-        playerOne.setBestTime(7.00);
+        //create StartProgramViewOrig and display the start program view
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
         
-        String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);   
+     
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        TrailOfZombies.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        TrailOfZombies.player = player;
     }
     
     
@@ -153,10 +172,10 @@ public class TrailOfZombies {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        teamTest();
-        kristenTest();
-        bryceTest();
-    }
+    //public static void main(String[] args) {
+       
+      //  kristenTest();
+      //  bryceTest();
+   // }
     
 }
