@@ -18,6 +18,7 @@ import model.HavenInterface;
 import model.Map;
 import model.ZombieCrusher;
 import view.StartProgramView;
+import view.MainMenuView;
 
 /**
  *
@@ -34,6 +35,9 @@ public class TrailOfZombies {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
         
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
+
      
     }
 
