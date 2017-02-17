@@ -35,8 +35,6 @@ public class TrailOfZombies {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
         
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
 
      
     }

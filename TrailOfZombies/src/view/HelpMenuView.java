@@ -2,7 +2,7 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+*/
 package view;
 
 import control.GameControl;
@@ -13,26 +13,26 @@ import trailofzombies.TrailOfZombies;
  *
  * @author kristenkeough
  */
-public class MainMenuView {
+public class HelpMenuView {
 
     //private String menu;
     private String promptMessage;
   
     
-    public MainMenuView() {
+    public HelpMenuView() {
         this.promptMessage = "\n"
                     + "\n---------------------"
-                    + "\n| Main Menu         |"
+                    + "\n| Help Menu         |"
                     + "\n---------------------"
-                    + "\nN - Start new game"
-                    + "\nG - Get and start saved game"
-                    + "\nH - Get help on how to play the game"
-                    + "\nS - Save game"
+                    + "\nG - What is the goal of the game?"
+                    + "\nE - Eastimating the amount of resources?"
+                    + "\nH - Harvesting resources"
+                    + "\nD - Delivering resources to warehouse"
                     + "\nQ - Quit"
                     + "\n---------------------";
     }
     
-    public void displayMainMenuView() {
+    public void displayHelpMenuView() {
         
         boolean done = false;
         do{
@@ -77,17 +77,20 @@ public class MainMenuView {
         choice = choice.toUpperCase();
     
             switch (choice){
-                case "N":
-                    this.startNewGame();
-                    break;
                 case "G":
-                    this.startExistingGame();
+                    this.displayGoal();
+                    break;
+                case "M":
+                    this.displayHowToMove();
+                    break;
+                case "E":
+                    this.displayEstimateResources();
                     break;
                 case "H":
-                    this.displayHelpMenu();
+                    this.displayHarvesting();
                     break;
-                case "S":
-                    this.saveGame();
+                case "D":
+                    this.displayDelivery();
                     break;
                 default:
                     System.out.println("\n***Invalid selection *** Try again.");
@@ -97,23 +100,32 @@ public class MainMenuView {
             return false;
     }
 
-    private void startNewGame() {
-        GameControl.createNewGame(TrailOfZombies.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-                }
 
-    private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***"); //To change body of generated methods, choose Tools | Templates.
+    private void displayGoal() {
+        System.out.println("*** displayGoal function called ***");
     }
 
-    private void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+    private void displayHowToMove() {
+        System.out.println("*** displayHowToMove function called ***");
     }
 
-    private void saveGame() {
-         System.out.println("*** saveGame function called ***");
+    private void displayEstimateResources() {
+        System.out.println("*** displayEstimateResources function called ***");
     }
+
+    private void displayHarvesting() {
+        System.out.println("*** displayHarvesting function called ***");
+    }
+
+    private void displayDelivery() {
+        System.out.println("*** displayDelivery function called ***");
+    }
+
+    void displayHelpMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
+   
 }
+
