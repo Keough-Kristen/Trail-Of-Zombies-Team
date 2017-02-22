@@ -13,25 +13,25 @@ import trailofzombies.TrailOfZombies;
  *
  * @author kristenkeough
  */
-public class ExploreLocationMenuView {
+public class AirportMenuView {
 
     //private String menu;
     private String promptMessage;
   
     
-    public ExploreLocationMenuView() {
+    public AirportMenuView() {
         this.promptMessage = "\n"
                     + "\n---------------------"
-                    + "\n| Welcome to___________.|"
+                    + "\n| Welcome to Arco Regional Airport.|"
                     + "\n---------------------"
                     + "\nY - Would you like to gather the resources available at this location? "
-                    + "\nN - Return to Location Menu"
+                    + "\nX - Return to location menu"
                     + "\nH - Display Help Menu"
                     + "\nQ - Quit"
                     + "\n---------------------";
     }
     
-    public void displayExploreLocationMenuView() {
+    public void displayAirportMenuView() {
         
         boolean done = false;
         do{
@@ -79,7 +79,7 @@ public class ExploreLocationMenuView {
                 case "Y":
                     this.gatherResources();
                     break;
-                case "N":
+                case "X":
                     this.returnToLocationMenu();
                     break;
                 case "H":
@@ -104,9 +104,9 @@ public class ExploreLocationMenuView {
     }
 
     private void returnToLocationMenu() {
-        System.out.println("*** returnToLocationMenu function called ***");
+        LocationMenuView locationMenu = new LocationMenuView();
+        locationMenu.displayLocationMenuView();
     }
-
 
    
 }

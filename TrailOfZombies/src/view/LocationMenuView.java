@@ -43,7 +43,7 @@ public class LocationMenuView {
                     + "\nC5 - Pet Town"
                     + "\nD5 - Community Library"
                     + "\nE5 - Arco High School"
-                    + "\nX - Exit"
+                    + "\nX - Return to Game Menu"
                     + "\n---------------------";
     }
     
@@ -93,7 +93,7 @@ public class LocationMenuView {
     
             switch (choice){
                 case "A1":
-                    this.arcoRegionalAirport();
+                    this.airportMenuView();
                     break;
                 case "B1":
                     this.jerrysJunkyardAndSalvage();
@@ -177,9 +177,13 @@ public class LocationMenuView {
             return false;
     }
 
-    private void arcoRegionalAirport() {
-System.out.println("*** arcoRegionalAirport function called ***");    }
-
+    private void airportMenuView() {
+         AirportMenuView airportMenu = new AirportMenuView();
+        airportMenu.displayAirportMenuView();
+           }
+   
+    
+    
     private void jerrysJunkyardAndSalvage() {
 System.out.println("*** jerrysJunkyardAndSalvage function called ***");    }
 
