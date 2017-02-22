@@ -32,7 +32,7 @@ public class GameMenuView {
                     + "\n---------------------";
     }
     
-    public void displayGamwMenuView() {
+    public void displayGameMenuView() {
         
         boolean done = false;
         do{
@@ -101,30 +101,29 @@ public class GameMenuView {
     }
 
     private void displayLocationMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LocationMenuView locationMenu = new LocationMenuView();
+        locationMenu.displayLocationMenuView();
     }
 
     private void displayResources() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** displayResources function called ***");
     }
 
     private void displayGoToHaven() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** displayGoToHaven function called ***");
     }
 
     private void displayHarvest() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** displayHarvest function called ***");
     }
 
     private void displayExit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** displayExit function called ***");
     }
 
     void displayMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** display function called ***");
     }
 
-    void displayGameMenuView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 }

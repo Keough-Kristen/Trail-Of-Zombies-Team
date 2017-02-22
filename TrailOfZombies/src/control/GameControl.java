@@ -7,6 +7,7 @@ package control;
 
 import model.Player;
 import trailofzombies.TrailOfZombies;
+import view.GameMenuView;
 
 /**
  *
@@ -29,7 +30,8 @@ public class GameControl {
 }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+       GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayGameMenuView();
     }
 }
 

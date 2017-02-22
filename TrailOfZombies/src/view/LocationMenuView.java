@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class LocationMenuView {
       //private String menu;
-    private final String promptMessage;
+    private String promptMessage;
   
     
     public LocationMenuView() {
@@ -255,5 +255,11 @@ System.out.println("*** arcoHighSchool function called ***");    }
     private void gameMenuView() {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayGameMenuView();    }
+
+    void displayLocationMenuView() {
+        System.out.println("*** displayLocationMenuView function called ***");
+    }
+
+    
 
 }
