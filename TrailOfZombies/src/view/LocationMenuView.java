@@ -47,7 +47,7 @@ public class LocationMenuView {
                     + "\n---------------------";
     }
     
-    public void displayMainMenuView() {
+    public void displayLocationMenuView() {
         
         boolean done = false;//Figure out why we have this here
         do{
@@ -256,10 +256,7 @@ System.out.println("*** arcoHighSchool function called ***");    }
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayGameMenuView();    }
 
-    void displayLocationMenuView() {
-        System.out.println("*** displayLocationMenuView function called ***");
     }
 
     
 
-}

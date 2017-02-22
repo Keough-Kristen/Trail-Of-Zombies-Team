@@ -101,7 +101,7 @@ public class MainMenuView {
         GameControl.createNewGame(TrailOfZombies.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.displayGameMenuView();
                 }
 
     private void startExistingGame() {
