@@ -29,6 +29,7 @@ public class GameMenuView {
                     + "\nK - Welcome to the Haven"
                     + "\nH - Harvest Menu"
                     + "\nV - Get Crate Volume"
+                    + "\nG - How many gallons do you need?"
                     + "\nE - Exit"
                     + "\n---------------------";
     }
@@ -91,7 +92,10 @@ public class GameMenuView {
                     break;
                 case "V":
                     this.displayVolume();
-                    break;                   
+                    break;    
+                case "G":
+                    this.displayGallons();
+                    break;     
                 default:
                     System.out.println("\n***Invalid selection *** Try again.");
                     break;
@@ -124,6 +128,11 @@ public class GameMenuView {
     private void displayVolume() {
         CrateVolumeView crateVolume = new CrateVolumeView();
         crateVolume.displayVolumeView();
+        }
+
+    private void displayGallons() {
+     GalNeededView  galNeeded = new GalNeededView();
+        galNeeded.displayGalView();
         }
 
    
