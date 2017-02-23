@@ -30,6 +30,7 @@ public class GameMenuView {
                     + "\nH - Harvest Menu"
                     + "\nV - Get Crate Volume"
                     + "\nG - How many gallons do you need?"
+                    + "\nF - Get Tire Footprint"
                     + "\nE - Exit"
                     + "\n---------------------";
     }
@@ -95,7 +96,10 @@ public class GameMenuView {
                     break;    
                 case "G":
                     this.displayGallons();
-                    break;     
+                    break;  
+                case "F":
+                    this.displayFootprint();
+                    break; 
                 default:
                     System.out.println("\n***Invalid selection *** Try again.");
                     break;
@@ -130,10 +134,17 @@ public class GameMenuView {
         crateVolume.displayVolumeView();
         }
 
+
     private void displayGallons() {
      GalNeededView  galNeeded = new GalNeededView();
         galNeeded.displayGalView();
         }
 
-   
+
+    private void displayFootprint() {
+        TireFootprintView tireFootprint = new TireFootprintView();
+        tireFootprint.displayFootprintView();
+    }
+
+  
 }

@@ -19,9 +19,9 @@ public class GalNeededView {
      
 
     public GalNeededView() {
-        this.promptGetMilesMessage = "How many miles do you want to travel?):";
-        this.promptGetMpgMessage = "What is your vehicle miles per gallon?):";
-        this.promptGetGallonsMessage = "How many gallons do you need?):";
+        this.promptGetMilesMessage = "How many miles do you want to travel?(Enter -1 to cancel)";
+        this.promptGetMpgMessage = "How many miles per gallon do you think you can get?(Enter -1 to cancel)";
+        this.promptGetGallonsMessage = "How many gallons have you collected?(Enter -1 to cancel)";
     }
      public void displayGalView() {
         int  miles = 0;
@@ -66,7 +66,7 @@ public class GalNeededView {
             }
                
                 else {
-                    System.out.println("You need " + gal + " cubic feet.");
+                    System.out.println("Based on your inputs you will need " + gal + " gallons to go your distance .");
                 done = true;
                 }
             }

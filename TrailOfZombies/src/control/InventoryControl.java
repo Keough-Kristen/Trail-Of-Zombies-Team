@@ -33,7 +33,7 @@ public class InventoryControl {
                 return -1;
     }
         if (height<0 || height>30) { //width is out of range
-                return -1;
+                return -2;
     }
         double radius = height / 2;
         double volume = (2 * Math.PI * radius);
