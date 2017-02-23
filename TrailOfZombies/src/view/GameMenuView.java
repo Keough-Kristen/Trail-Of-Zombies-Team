@@ -29,6 +29,7 @@ public class GameMenuView {
                     + "\nK - Welcome to the Haven"
                     + "\nH - Harvest Menu"
                     + "\nV - Get Crate Volume"
+                    + "\nF - Get Tire Footprint"
                     + "\nE - Exit"
                     + "\n---------------------";
     }
@@ -91,7 +92,10 @@ public class GameMenuView {
                     break;
                 case "V":
                     this.displayVolume();
-                    break;                   
+                    break;
+                case "F":
+                    this.displayFootprint();
+                    break; 
                 default:
                     System.out.println("\n***Invalid selection *** Try again.");
                     break;
@@ -126,5 +130,9 @@ public class GameMenuView {
         crateVolume.displayVolumeView();
         }
 
+    private void displayFootprint() {
+        TireFootprintView tireFootprint = new TireFootprintView();
+        tireFootprint.displayFootprintView();
+    }
    
 }
