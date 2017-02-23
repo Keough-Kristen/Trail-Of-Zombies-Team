@@ -28,6 +28,7 @@ public class GameMenuView {
                     + "\nR - Eastimating the amount of resources?"
                     + "\nK - Welcome to the Haven"
                     + "\nH - Harvest Menu"
+                    + "\nV - Get Crate Volume"
                     + "\nE - Exit"
                     + "\n---------------------";
     }
@@ -38,7 +39,7 @@ public class GameMenuView {
         do{
             
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
+            if (menuOption.toUpperCase().equals("E"))
                 return;
             
             done = this.doAction(menuOption);
@@ -59,7 +60,6 @@ public class GameMenuView {
             
             value = keyboard.nextLine();
             value = value.trim();
-            
             if (value.length() < 1){
                 System.out.println("\nInvalid value: value can not be blank");
                 continue;
@@ -89,9 +89,9 @@ public class GameMenuView {
                 case "H":
                     this.displayHarvest();
                     break;
-                case "E":
-                    this.displayExit();
-                    break;
+                case "V":
+                    this.displayVolume();
+                    break;                   
                 default:
                     System.out.println("\n***Invalid selection *** Try again.");
                     break;
@@ -117,13 +117,14 @@ public class GameMenuView {
         System.out.println("*** displayHarvest function called ***");
     }
 
-    private void displayExit() {
-        System.out.println("*** displayExit function called ***");
-    }
-
     void displayMenu() {
         System.out.println("*** display function called ***");
     }
+
+    private void displayVolume() {
+        CrateVolumeView crateVolume = new CrateVolumeView();
+        crateVolume.displayVolumeView();
+        }
 
    
 }

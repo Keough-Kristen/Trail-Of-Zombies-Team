@@ -168,7 +168,7 @@ public class LocationMenuView {
                     this.arcoHighSchool();
                     break;
                 case "X":
-                    this.gameMenuView();
+                    return true;
                 default:
                     System.out.println("\n***Invalid selection *** Try again.");
                     break;
@@ -256,10 +256,7 @@ System.out.println("*** communityLibrary function called ***");    }
     private void arcoHighSchool() {
 System.out.println("*** arcoHighSchool function called ***");    }
 
-    private void gameMenuView() {
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();    }
-
+   
     }
 
     

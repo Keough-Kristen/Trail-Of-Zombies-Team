@@ -16,10 +16,10 @@ public class InventoryControl {
 		return -1;
     }
 	if (width<0) {//widht is negative?
-		return -1;
+		return -2;
     }
 	if (depth<0 || depth>48) { //depth is out of range
-		return -1;
+		return -3;
     }
 	double volume = (height * width * depth)/1728;
 
