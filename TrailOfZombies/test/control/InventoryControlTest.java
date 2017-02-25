@@ -57,10 +57,10 @@ public class InventoryControlTest {
          ********/
         System.out.println("\tTest Case #3");
         height = 24.0;
-        width = -1.0;
+        width = -2.0;
         depth = 24.0;
         instance = new InventoryControl();
-        expResult = -1.0;
+        expResult = -2.0;
         result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
@@ -72,9 +72,9 @@ public class InventoryControlTest {
         System.out.println("\tTest Case #4");
         height = 24.0;
         width = 36.0;
-        depth = -1.0;
+        depth = -3.0;
          instance = new InventoryControl();
-        expResult = -1.0;
+        expResult = -3.0;
         result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
@@ -88,7 +88,7 @@ public class InventoryControlTest {
         width = 36.0;
         depth = 49.0;
         instance = new InventoryControl();
-        expResult = -1.0;
+        expResult = -3.0;
         result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
@@ -188,7 +188,7 @@ public class InventoryControlTest {
         height = -1.0;
         width = 8.0;
         
-        expResult = -1.0; // expected output returned value
+        expResult = -2.0; // expected output returned value
         
         //create instance of InventoryControl class
         instance = new InventoryControl();
@@ -208,7 +208,7 @@ public class InventoryControlTest {
         System.out.println("\tTest Case #3");
         //input values for test case 1
         height = 30.0;
-        width = -1.0;
+        width = -2.0;
         
         expResult = -1.0; // expected output returned value
         
@@ -231,7 +231,7 @@ public class InventoryControlTest {
         height = 31.0;
         width = 8.0;
         
-        expResult = -1.0; // expected output returned value
+        expResult = -2.0; // expected output returned value
         
         //create instance of InventoryControl class
         instance = new InventoryControl();
