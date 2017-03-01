@@ -13,14 +13,10 @@ import trailofzombies.TrailOfZombies;
  *
  * @author kristenkeough
  */
-public class GameMenuView {
-
-    //private String menu;
-    private String promptMessage;
-  
+public class GameMenuView extends View {
     
     public GameMenuView() {
-        this.promptMessage = "\n"
+         super("\n"
                     + "\n---------------------"
                     + "\n| Game Menu         |"
                     + "\n---------------------"
@@ -32,53 +28,15 @@ public class GameMenuView {
                     + "\nG - How many gallons do you need?"
                     + "\nF - Get Tire Footprint"
                     + "\nE - Exit"
-                    + "\n---------------------";
+                    + "\n---------------------");
     }
-    
-    public void displayGameMenuView() {
-        
-        boolean done = false;
-        do{
-            
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("E"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        
-    
-    }  
-
-    private String getMenuOption() {
-        
-       Scanner keyboard = new Scanner(System.in);
-       String value ="";
-       boolean valid = false; //initialize to not valid
-       
-       while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            if (value.length() < 1){
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break;
-       }
-      
-    return value;
-    
-    }
-    
-    public boolean doAction(String choice) {
+ 
+    @Override
+    public boolean doAction(String value) {
            
-        choice = choice.toUpperCase();
+        value = value.toUpperCase();
     
-            switch (choice){
+            switch (value){
                 case "L":
                     this.displayLocationMenu();
                     break;
@@ -110,7 +68,7 @@ public class GameMenuView {
 
     private void displayLocationMenu() {
         LocationMenuView locationMenu = new LocationMenuView();
-        locationMenu.displayLocationMenuView();
+        locationMenu.display();
     }
 
     private void displayResources() {

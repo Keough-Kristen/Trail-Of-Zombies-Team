@@ -6,14 +6,10 @@
 package view;
 import java.util.Scanner;
 
+public class LocationMenuView extends View{
 
-public class LocationMenuView {
-      //private String menu;
-    private String promptMessage;
-  
-    
-    public LocationMenuView() {
-        this.promptMessage = "\n"
+public LocationMenuView() {
+        super("\n"
                     + "\n---------------------"
                     + "\n| Location Menu         |"
                     + "\n|Select a location from the following.|"
@@ -44,54 +40,14 @@ public class LocationMenuView {
                     + "\nD5 - Community Library"
                     + "\nE5 - Arco High School"
                     + "\nX - Return to Game Menu"
-                    + "\n---------------------";
+                    + "\n---------------------");
     }
-    
-    public void displayLocationMenuView() {
-        
-        boolean done = false;//Figure out why we have this here
-        do{
-            
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        
-    
-    }  
-
-    private String getMenuOption() {
-        
-       Scanner keyboard = new Scanner(System.in);
-       String value ="";
-       boolean valid = false; //initialize to not valid
-       
-       while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1){
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break;
-       }
-      
-    return value;
-    
-    }
-    
-    public boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String value) {
            
-        choice = choice.toUpperCase();
+        value = value.toUpperCase();
     
-            switch (choice){
+            switch (value){
                 case "A1":
                     this.airportMenuView();
                     break;
@@ -179,7 +135,7 @@ public class LocationMenuView {
 
     private void airportMenuView() {
          AirportMenuView airportMenu = new AirportMenuView();
-        airportMenu.displayAirportMenuView();
+        airportMenu.display();
            }
    
     

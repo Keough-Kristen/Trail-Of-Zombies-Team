@@ -31,7 +31,7 @@ public class GameControl {
 
     public static void createNewGame(Player player) {
        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
     }
 }
 

@@ -14,13 +14,10 @@ import model.Player;
  *
  * @author kristenkeough
  */
-public class StartProgramView {
+public class StartProgramView extends View {
     
-    private String promptMessage;
-    
-    public StartProgramView() {
-        
-        this.promptMessage = "\nPlease enter your name: ";
+   public StartProgramView() {
+        super("\nPlease enter your name: ");
         //display the banner when view is created
         this.displayBanner();
         
@@ -59,51 +56,11 @@ public class StartProgramView {
                +"\n* The game is over once you have gathered enough supplies and*"
                +"\n* built your zombie killing transportation to make your way to*"
                +"\n* the haven. The game begins when the flesh-eaters enter the *"
-               +"\n* city and start eating people.*"
-
-
-       );
+               +"\n* city and start eating people.*");
     }
 
-    public void displayStartProgramView() {
-        
-        boolean done = false; //set flad to not done
-        do {
-            //prompt for and get players name
-            String playersName = this.getPlayersName();
-            if (playersName.toUpperCase().equals("Q")) // user wants to quit
-                return; //exit the game
-            
-            //do the requested action and display the next view
-            done = this.doAction(playersName);
-            
-        } while (!done);
-    }
-
-    private String getPlayersName() {
-        
-       Scanner keyboard = new Scanner(System.in);
-       String value ="";
-       boolean valid = false; //initialize to not valid
-       
-       while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1){
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break;
-       }
-      
-    return value;
-}
-
-    private boolean doAction(String playersName) {
+@Override 
+    public boolean doAction(String playersName) {
         
         if (playersName.length() < 2){
        System.out.println("\nInvalid players name: "
@@ -130,6 +87,6 @@ this.displayNextView(player);
                          );
         MainMenuView mainMenuView = new MainMenuView();
                 
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
 }
 }

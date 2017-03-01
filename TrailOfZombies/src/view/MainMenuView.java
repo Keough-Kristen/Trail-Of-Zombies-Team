@@ -13,14 +13,10 @@ import trailofzombies.TrailOfZombies;
  *
  * @author kristenkeough
  */
-public class MainMenuView {
+public class MainMenuView extends View {
 
-    //private String menu;
-    private String promptMessage;
-  
-    
-    public MainMenuView() {
-        this.promptMessage = "\n"
+     public MainMenuView () {
+         super("\n"
                     + "\n---------------------"
                     + "\n| Main Menu         |"
                     + "\n---------------------"
@@ -29,54 +25,14 @@ public class MainMenuView {
                     + "\nH - Get help on how to play the game"
                     + "\nS - Save game"
                     + "\nQ - Quit"
-                    + "\n---------------------";
+                    + "\n---------------------");
     }
-    
-    public void displayMainMenuView() {
-        
-        boolean done = false;
-        do{
-            
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        
-    
-    }  
-
-    private String getMenuOption() {
-        
-       Scanner keyboard = new Scanner(System.in);
-       String value ="";
-       boolean valid = false; //initialize to not valid
-       
-       while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1){
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break;
-       }
-      
-    return value;
-    
-    }
-    
-    public boolean doAction(String choice) {
+     @Override
+      public boolean doAction(String value) {
            
-        choice = choice.toUpperCase();
+        value = value.toUpperCase();
     
-            switch (choice){
+            switch (value){
                 case "N":
                     this.startNewGame();
                     break;
@@ -101,7 +57,7 @@ public class MainMenuView {
         GameControl.createNewGame(TrailOfZombies.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
                 }
 
     private void startExistingGame() {
@@ -110,7 +66,7 @@ public class MainMenuView {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
 
     private void saveGame() {

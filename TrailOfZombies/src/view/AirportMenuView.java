@@ -13,14 +13,10 @@ import trailofzombies.TrailOfZombies;
  *
  * @author kristenkeough
  */
-public class AirportMenuView {
+public class AirportMenuView extends View {
 
-    //private String menu;
-    private String promptMessage;
-  
-    
     public AirportMenuView() {
-        this.promptMessage = "\n"
+        super("\n"
                     + "\n---------------------"
                     + "\n| Welcome to Arco Regional Airport.|"
                     + "\n---------------------"
@@ -28,54 +24,14 @@ public class AirportMenuView {
                     + "\nX - Return to location menu"
                     + "\nH - Display Help Menu"
                     + "\nQ - Quit"
-                    + "\n---------------------";
+                    + "\n---------------------");
     }
-    
-    public void displayAirportMenuView() {
-        
-        boolean done = false;
-        do{
-            
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        
-    
-    }  
-
-    private String getMenuOption() {
-        
-       Scanner keyboard = new Scanner(System.in);
-       String value ="";
-       boolean valid = false; //initialize to not valid
-       
-       while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1){
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break;
-       }
-      
-    return value;
-    
-    }
-    
-    public boolean doAction(String choice) {
+   @Override 
+    public boolean doAction(String value) {
            
-        choice = choice.toUpperCase();
+        value = value.toUpperCase();
     
-            switch (choice){
+            switch (value){
                 case "Y":
                     this.gatherResources();
                     break;
@@ -96,7 +52,7 @@ public class AirportMenuView {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
 
     private void gatherResources() {
@@ -105,7 +61,7 @@ public class AirportMenuView {
 
     private void returnToLocationMenu() {
         LocationMenuView locationMenu = new LocationMenuView();
-        locationMenu.displayLocationMenuView();
+        locationMenu.display();
     }
 
    
