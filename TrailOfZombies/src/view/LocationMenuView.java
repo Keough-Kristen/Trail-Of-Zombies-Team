@@ -198,28 +198,36 @@ DonnasDinerMenuView donnasdinerMenu = new DonnasDinerMenuView();
            }
 
     private void downtownDrug() {
-System.out.println("*** downtownDrug function called ***");    }
+DowntownDrugMenuView downtownDrugMenu = new DowntownDrugMenuView();
+        downtownDrugMenu.display();    }
 
     private void museumOfArco() {
-System.out.println("*** museumOfArco function called ***");    }
+MuseumOfArcoMenuView museumOfArcoMenu = new MuseumOfArcoMenuView();
+        museumOfArcoMenu.display();    }
 
     private void bigJimsPigFarm() {
-System.out.println("*** bigJimsPigFarm function called ***");    }
+BigJimsPigFarmMenuView bigJimsPigFarmMenu = new BigJimsPigFarmMenuView();
+        bigJimsPigFarmMenu.display(); }
 
     private void oxxoGas() {
-System.out.println("*** oxxoGas function called ***");    }
+OxxoGasMenuView oxxoGasMenu = new OxxoGasMenuView();
+        oxxoGasMenu.display();   }
 
     private void shopNSave() {
-System.out.println("*** shopNSave function called ***");    }
+ShopNSaveMenuView shopNSaveMenu = new ShopNSaveMenuView();
+        shopNSaveMenu.display();   }
 
     private void petTown() {
-System.out.println("*** petTown function called ***");    }
+PetTownMenuView petTownMenu = new PetTownMenuView();
+        petTownMenu.display();    }
 
     private void communityLibrary() {
-System.out.println("*** communityLibrary function called ***");    }
+CommunityLibraryMenuView communityLibraryMenu = new CommunityLibraryMenuView();
+        communityLibraryMenu.display();     }
 
     private void arcoHighSchool() {
-System.out.println("*** arcoHighSchool function called ***");    }
+ArcoHighSchoolMenuView arcoHighSchoolMenu = new ArcoHighSchoolMenuView();
+        arcoHighSchoolMenu.display();   }
 
     private void AutoRepair() {
         AutoRepairMenuView autorepairMenu = new AutoRepairMenuView();
