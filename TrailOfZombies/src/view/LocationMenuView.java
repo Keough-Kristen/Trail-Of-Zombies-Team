@@ -79,7 +79,7 @@ public LocationMenuView() {
                     this.garysGunStore();
                     break;
                 case "A3":
-                    this.ricksAutoRepair();
+                    this.AutoRepair();
                     break;
                 case "B3":
                     this.arcoCityPoliceStation();
@@ -165,28 +165,37 @@ System.out.println("*** district5FireStation function called ***");    }
 System.out.println("*** bigMountainMotorSports function called ***");    }
 
     private void garysGunStore() {
-System.out.println("*** garysGunStore function called ***");    }
-
-    private void ricksAutoRepair() {
-System.out.println("*** ricksAutoRepair function called ***");    }
+  GarysGunStoreMenuView garysgunstoreMenu = new GarysGunStoreMenuView();
+        garysgunstoreMenu.display();
+           }
 
     private void arcoCityPoliceStation() {
-System.out.println("*** arcoCityPoliceStation function called ***");    }
-
+ArcoCityPoliceMenuView arcocitypoliceMenu = new ArcoCityPoliceMenuView();
+        arcocitypoliceMenu.display();
+           }
     private void waterTower() {
-System.out.println("*** waterTower function called ***");    }
+WaterTowerMenuView watertowerMenu = new WaterTowerMenuView();
+        watertowerMenu.display();
+           }
 
     private void fidelityFiduciaryBank() {
-System.out.println("*** fidelityFiduciaryBank function called ***");    }
+BankMenuView bankMenu = new BankMenuView();
+        bankMenu.display();
+           }
 
     private void newHopeChurch() {
-System.out.println("*** newHopeChurch function called ***");    }
-
+ChurchMenuView churchMenu = new ChurchMenuView();
+        churchMenu.display();
+           }
     private void virginiaMovieTheater() {
-System.out.println("*** virginiaMovieTheater function called ***");    }
+MovieTheaterMenuView movietheaterMenu = new MovieTheaterMenuView();
+        movietheaterMenu.display();
+           }
 
     private void donnasDiner() {
-System.out.println("*** donnasDiner function called ***");    }
+DonnasDinerMenuView donnasdinerMenu = new DonnasDinerMenuView();
+        donnasdinerMenu.display();
+           }
 
     private void downtownDrug() {
 System.out.println("*** downtownDrug function called ***");    }
@@ -212,8 +221,14 @@ System.out.println("*** communityLibrary function called ***");    }
     private void arcoHighSchool() {
 System.out.println("*** arcoHighSchool function called ***");    }
 
-   
-    }
+    private void AutoRepair() {
+        AutoRepairMenuView autorepairMenu = new AutoRepairMenuView();
+        autorepairMenu.display();
+           }
 
+       }
+
+   
+    
     
 
