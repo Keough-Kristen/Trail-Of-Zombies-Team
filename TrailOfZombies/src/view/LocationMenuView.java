@@ -141,28 +141,36 @@ public LocationMenuView() {
     
     
     private void jerrysJunkyardAndSalvage() {
-System.out.println("*** jerrysJunkyardAndSalvage function called ***");    }
+JunkyardMenuView junkyardMenu = new JunkyardMenuView();
+        junkyardMenu.display();    }
 
     private void buildItHomeImprovement() {
-System.out.println("*** buildItHomeImprovement function called ***");    }
+HomeImprovementMenuView homeimprovementMenu = new HomeImprovementMenuView();
+        homeimprovementMenu.display();    }
 
     private void tractorsBigAndSmall() {
-System.out.println("*** tractorsBigAndSmall function called ***");    }
+TractorsBigAndSmallMenuView tractorsbigandsmallMenu = new TractorsBigAndSmallMenuView();
+        tractorsbigandsmallMenu.display();    }
 
     private void joesTire() {
-System.out.println("*** joesTire function called ***");    }
+JoesTireMenuView joestireMenu = new JoesTireMenuView();
+        joestireMenu.display();    }
 
     private void bobTheButcher() {
-System.out.println("*** bobTheButcher function called ***");    }
+BobTheButcherMenuView bobthebutcherMenu = new BobTheButcherMenuView();
+        bobthebutcherMenu.display();    }
 
     private void halsHardware() {
-System.out.println("*** halsHardware function called ***");    }
+HalsHardwareMenuView halshardwareMenu = new HalsHardwareMenuView();
+        halshardwareMenu.display();    }
 
     private void district5FireStation() {
-System.out.println("*** district5FireStation function called ***");    }
+FireStationMenuView firestationMenu = new FireStationMenuView();
+        firestationMenu.display();    }
 
     private void bigMountainMotorSports() {
-System.out.println("*** bigMountainMotorSports function called ***");    }
+MotorSportsMenuView motorsportsMenu = new MotorSportsMenuView();
+        motorsportsMenu.display();    }
 
     private void garysGunStore() {
   GarysGunStoreMenuView garysgunstoreMenu = new GarysGunStoreMenuView();
