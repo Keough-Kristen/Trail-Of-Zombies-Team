@@ -12,67 +12,41 @@ import java.util.Objects;
  *
  * @author kristenkeough
  */
-public class Character implements Serializable{
+public enum Character implements Serializable{
      
-    //class instance variables
-    private String name;
-    private String description;
-
-    public Character() {
-    }
+    John("He is willing to give food"),
+    Eric("He will give you fuel for you vehicle"),
+    Zeek("Is a gun runner that hates zombies"),
+    Marilyn("She is a cunning thief when it comes to food"),
+    Dan("Gotta watch him.  He is always wanting your fuel"),
+    AnneOakley("All she wants is your weapon"),
+    Mike("Knows his drugs from pharmacy school but without them he can't help you"),
+    Vicki("She will NURSE you back to health"),
+    DocHoliday("Claims he is a doctor but we will never know"),
+    OldLadyZombie("Not fast but still deadly"),
+    CopZombie("Can't use a gun but still bites"),
+    BikerZombie("Forgot how to ride but will take 5 whenever he gets a chance"),
+    MidgetZombie("Can't see him coming");
     
+   
+    private final String description;
+    private final Point coordinates;
+
+    
+    Character (String description) {
+    this.description = description;
+    coordinates = new Point(1,1);
+}
     
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 47 * hash + Objects.hashCode(this.name);
-        hash = 47 * hash + Objects.hashCode(this.description);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Character other = (Character) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Character{" + "name=" + name + ", description=" + description + '}';
-    }
-    
-    
-    
+    public Point getCoordinates() {
+        return coordinates;
 }
+
+    }

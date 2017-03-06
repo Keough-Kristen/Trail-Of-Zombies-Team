@@ -58,10 +58,7 @@ public class TrailOfZombies {
     
     
     public static void kristenTest(){
-        Character characterOne = new Character();
         
-        characterOne.setName("Zombie");
-        characterOne.setDescription("Flesh eating person");
         
         Location locationOne = new Location();
         
@@ -97,8 +94,7 @@ public class TrailOfZombies {
         havenInterfaceOne.setWeaponStatus("Complete");
    
  
-        String characterInfo = characterOne.toString();
-        System.out.println(characterInfo);
+      
     
         String locationInfo = locationOne.toString();
         System.out.println(locationInfo);

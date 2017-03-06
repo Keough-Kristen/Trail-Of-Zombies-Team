@@ -15,7 +15,16 @@ public class Game implements Serializable {
     //class instance variables
     private double totalTime;
     private int noPeople;
-
+    
+    private ZombieCrusher zombiecrusher;
+    private BackPack backpack;
+    private Player player;
+    
+    
+    
+    private Items[] items;
+     private Character[] character;
+     
     public Game() {
     }
     
@@ -37,6 +46,49 @@ public class Game implements Serializable {
         this.noPeople = noPeople;
     }
 
+    public ZombieCrusher getZombiecrusher() {
+        return zombiecrusher;
+    }
+
+    public void setZombiecrusher(ZombieCrusher zombiecrusher) {
+        this.zombiecrusher = zombiecrusher;
+    }
+
+    public BackPack getBackpack() {
+        return backpack;
+    }
+
+    public void setBackpack(BackPack backpack) {
+        this.backpack = backpack;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
+
+    public Items[] getItems() {
+        return items;
+    }
+
+    public void setItems(Items[] items) {
+        this.items = items;
+    }
+
+    public Character[] getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character[] character) {
+        this.character = character;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 3;

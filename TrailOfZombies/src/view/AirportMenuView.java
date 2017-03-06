@@ -36,7 +36,7 @@ public class AirportMenuView extends View {
                     this.gatherResources();
                     break;
                 case "X":
-                    this.returnToLocationMenu();
+                    this.returnToMainMenu();
                     break;
                 case "H":
                     this.displayHelpMenu();
@@ -59,9 +59,9 @@ public class AirportMenuView extends View {
         System.out.println("*** gatherResources function called ***");
     }
 
-    private void returnToLocationMenu() {
-        LocationMenuView locationMenu = new LocationMenuView();
-        locationMenu.display();
+    private void returnToMainMenu() {
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
     }
 
    
