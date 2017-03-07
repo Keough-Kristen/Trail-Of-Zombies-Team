@@ -27,6 +27,7 @@ public class GameMenuView extends View {
                     + "\nV - Get Crate Volume"
                     + "\nG - How many gallons do you need?"
                     + "\nF - Get Tire Footprint"
+                    + "\nN - Start New Game"
                     + "\nE - Exit"
                     + "\n---------------------");
     }
@@ -57,6 +58,9 @@ public class GameMenuView extends View {
                     break;  
                 case "F":
                     this.displayFootprint();
+                    break; 
+                case "N":
+                    this.startNewGame();
                     break; 
                 default:
                     System.out.println("\n***Invalid selection *** Try again.");
@@ -103,6 +107,13 @@ public class GameMenuView extends View {
         TireFootprintView tireFootprint = new TireFootprintView();
         tireFootprint.displayFootprintView();
     }
+
+    private void startNewGame() {
+         GameControl.createNewGame(TrailOfZombies.getPlayer());
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+                }
 
   
 }

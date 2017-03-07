@@ -5,10 +5,32 @@
  */
 package control;
 
+import model.Map;
+import model.Scene;
+
 /**
  *
  * @author kristenkeough
  */
 public class MapControl {
+
+    public static Map createMap() {
+        
+        Map map = new Map (20, 20);
+        
+        Scene[] scenes = createScenes();
+        
+        GameControl.assignScenesToLocations(map, scenes);
+        
+        return map;
+    }
+
+    static void moveCharacterToStartingLocation(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static Scene[] createScenes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

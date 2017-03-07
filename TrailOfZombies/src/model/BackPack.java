@@ -19,6 +19,10 @@ public class BackPack implements Serializable {
     private double slots;
 
     public BackPack() {
+        this.maxWeight = 0;
+        this.amountLoaded = 0;
+        this.loadedWeight = 0;
+        this.slots = 0;
     }
     
     

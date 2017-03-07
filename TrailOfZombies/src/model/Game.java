@@ -19,11 +19,12 @@ public class Game implements Serializable {
     private ZombieCrusher zombiecrusher;
     private BackPack backpack;
     private Player player;
+    private Map map;
     
     
     
-    private Items[] items;
-     private Character[] character;
+    private InventoryItem[] items;
+    private Character[] character;
      
     public Game() {
     }
@@ -69,13 +70,22 @@ public class Game implements Serializable {
     public void setPlayer(Player player) {
         this.player = player;
     }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
     
 
-    public Items[] getItems() {
+    public InventoryItem[] getItems() {
         return items;
     }
 
-    public void setItems(Items[] items) {
+    public void setItems(InventoryItem[] items) {
         this.items = items;
     }
 
@@ -118,6 +128,14 @@ public class Game implements Serializable {
     @Override
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
+    }
+
+    public void setZombieCrusher(ZombieCrusher zombieCrusher) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setBackPack(BackPack backPack) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

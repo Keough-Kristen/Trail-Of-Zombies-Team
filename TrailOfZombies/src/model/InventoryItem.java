@@ -11,16 +11,19 @@ import java.util.Objects;
  *
  * @author brycelaptop
  */
-public class Items implements Serializable {
+public class InventoryItem implements Serializable {
     
     //class instance variables
     private String inventoryType;
     private double quantityInStock;
     private double requiredAmount;
-
-    public Items() {
-    }
     
+    private Location[] location;
+
+    public void setDescription(String pistol) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 
     public String getInventoryType() {
@@ -47,6 +50,16 @@ public class Items implements Serializable {
         this.requiredAmount = requiredAmount;
     }
 
+    public Location[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[] location) {
+        this.location = location;
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -67,7 +80,7 @@ public class Items implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Items other = (Items) obj;
+        final InventoryItem other = (InventoryItem) obj;
         if (Double.doubleToLongBits(this.quantityInStock) != Double.doubleToLongBits(other.quantityInStock)) {
             return false;
         }

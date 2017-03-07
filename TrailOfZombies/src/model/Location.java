@@ -8,6 +8,8 @@ package model;
 import java.io.Serializable;
 import java.util.Objects;
 import control.MapControl;
+
+
 /**
  *
  * @author kristenkeough
@@ -17,9 +19,12 @@ public class Location implements Serializable {
     private String name;
     private int row;
     private int column;
-    private int visited;
+    private boolean visited;
     private int remaining;
-
+    
+    private Scene scene;
+    private Character[] character;
+    
     public Location() {
     }
     
@@ -49,11 +54,11 @@ public class Location implements Serializable {
         this.column = column;
     }
 
-    public int getVisited() {
+    public boolean getVisited() {
         return visited;
     }
 
-    public void setVisited(int visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
     }
 
@@ -65,13 +70,22 @@ public class Location implements Serializable {
         this.remaining = remaining;
     }
 
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 5;
         hash = 23 * hash + Objects.hashCode(this.name);
         hash = 23 * hash + this.row;
         hash = 23 * hash + this.column;
-        hash = 23 * hash + this.visited;
         hash = 23 * hash + this.remaining;
         return hash;
     }

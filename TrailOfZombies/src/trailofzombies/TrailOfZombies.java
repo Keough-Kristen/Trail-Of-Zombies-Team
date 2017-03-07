@@ -6,7 +6,7 @@
 package trailofzombies;
 
 import model.BackPack;
-import model.Items;
+import model.InventoryItem;
 import model.Game;
 import model.Player;
 import model.Character;
@@ -65,7 +65,7 @@ public class TrailOfZombies {
         locationOne.setName("Library");
         locationOne.setRow(1);
         locationOne.setColumn(1);
-        locationOne.setVisited(1);
+        locationOne.setVisited(false);
         locationOne.setRemaining(24);
         
         Scene sceneOne = new Scene();
@@ -128,11 +128,11 @@ public class TrailOfZombies {
         backPackOne.setLoadedWeight(15);
         backPackOne.setSlots(8);
         
-        Items itemsOne = new Items();
+        InventoryItem items = new InventoryItem();
         
-        itemsOne.setInventoryType("Food");
-        itemsOne.setQuantityInStock(2);
-        itemsOne.setRequiredAmount(10);
+        items.setInventoryType("Food");
+        items.setQuantityInStock(2);
+        items.setRequiredAmount(10);
         
         Map mapOne = new Map();
         
@@ -145,11 +145,11 @@ public class TrailOfZombies {
         ZombieCrusher zombieCrusherOne = new ZombieCrusher();
         
         zombieCrusherOne.setDescription("Van");
-        zombieCrusherOne.setWheels("Spiked");
-        zombieCrusherOne.setTires("All Terrain");
-        zombieCrusherOne.setArmor("3/4 Steel Plate");
-        zombieCrusherOne.setWeapons("50 Cal");
-        zombieCrusherOne.setFuel("Full");
+        zombieCrusherOne.setWheels(4);
+        zombieCrusherOne.setTires(4);
+        zombieCrusherOne.setArmor(6);
+        zombieCrusherOne.setWeapons(1);
+        zombieCrusherOne.setFuel(70);
         
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
@@ -157,7 +157,7 @@ public class TrailOfZombies {
         String backPackInfo = backPackOne.toString();
         System.out.println(backPackInfo);
         
-        String itemsInfo = itemsOne.toString();
+        String itemsInfo = items.toString();
         System.out.println(itemsInfo);
         
         String mapInfo = mapOne.toString();

@@ -15,13 +15,20 @@ public class ZombieCrusher implements Serializable {
     
     //class instance variables
     private String description;
-    private String wheels;
-    private String tires;
-    private String armor;
-    private String weapons;
-    private String fuel;
+    private double wheels;
+    private double tires;
+    private double armor;
+    private double weapons;
+    private double fuel;
 
     public ZombieCrusher() {
+        this.description = "\nThis is our melee vehicle. If you have faith"
+                           + "\nyou will obliterate the path of the wicked.";
+        this.wheels = 0;
+        this.tires = 0;
+        this.armor = 0;
+        this.weapons = 0;
+        this.fuel = 0;   
     }
     
     
@@ -34,43 +41,43 @@ public class ZombieCrusher implements Serializable {
         this.description = description;
     }
 
-    public String getWheels() {
+    public double getWheels() {
         return wheels;
     }
 
-    public void setWheels(String wheels) {
+    public void setWheels(double wheels) {
         this.wheels = wheels;
     }
 
-    public String getTires() {
+    public Double getTires() {
         return tires;
     }
 
-    public void setTires(String tires) {
+    public void setTires(double tires) {
         this.tires = tires;
     }
 
-    public String getArmor() {
+    public Double getArmor() {
         return armor;
     }
 
-    public void setArmor(String armor) {
+    public void setArmor(double armor) {
         this.armor = armor;
     }
 
-    public String getWeapons() {
+    public Double getWeapons() {
         return weapons;
     }
 
-    public void setWeapons(String weapons) {
+    public void setWeapons(double weapons) {
         this.weapons = weapons;
     }
 
-    public String getFuel() {
+    public Double getFuel() {
         return fuel;
     }
 
-    public void setFuel(String fuel) {
+    public void setFuel(double fuel) {
         this.fuel = fuel;
     }
 
@@ -120,7 +127,6 @@ public class ZombieCrusher implements Serializable {
     public String toString() {
         return "ZombieCrusher{" + "description=" + description + ", wheels=" + wheels + ", tires=" + tires + ", armor=" + armor + ", weapons=" + weapons + ", fuel=" + fuel + '}';
     }
-    
     
     
 }
