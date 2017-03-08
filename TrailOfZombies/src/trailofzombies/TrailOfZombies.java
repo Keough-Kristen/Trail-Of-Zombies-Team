@@ -128,11 +128,11 @@ public class TrailOfZombies {
         backPackOne.setLoadedWeight(15);
         backPackOne.setSlots(8);
         
-        InventoryItem items = new InventoryItem();
+        InventoryItem inventoryItemOne = new InventoryItem();
         
-        items.setInventoryType("Food");
-        items.setQuantityInStock(2);
-        items.setRequiredAmount(10);
+        inventoryItemOne.setInventoryType("Food");
+        inventoryItemOne.setQuantityInStock(2);
+        inventoryItemOne.setRequiredAmount(10);
         
         Map mapOne = new Map();
         
@@ -157,8 +157,8 @@ public class TrailOfZombies {
         String backPackInfo = backPackOne.toString();
         System.out.println(backPackInfo);
         
-        String itemsInfo = items.toString();
-        System.out.println(itemsInfo);
+        String inventoryItemInfo = inventoryItemOne.toString();
+        System.out.println(inventoryItemInfo);
         
         String mapInfo = mapOne.toString();
         System.out.println(mapInfo);

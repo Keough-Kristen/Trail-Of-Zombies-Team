@@ -23,13 +23,30 @@ public class Game implements Serializable {
     
     
     
-    private InventoryItem[] items;
+    private InventoryItem[] inventory;
     private Character[] character;
      
     public Game() {
     }
     
-    
+    public enum Item {
+        water,
+        chicken,
+        fruits,
+        vegetables,
+        meats,
+        swords,
+        pistol,
+        staff,
+        ar15,
+        knife,
+        crossbow,
+        pallet,
+        winch,
+        fuel,
+        tires,
+        medicine;
+    }
 
     public double getTotalTime() {
         return totalTime;
@@ -82,11 +99,11 @@ public class Game implements Serializable {
     
 
     public InventoryItem[] getItems() {
-        return items;
+        return inventory;
     }
 
-    public void setItems(InventoryItem[] items) {
-        this.items = items;
+    public void setItems(InventoryItem[] inventory) {
+        this.inventory = inventory;
     }
 
     public Character[] getCharacter() {
@@ -138,6 +155,6 @@ public class Game implements Serializable {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    
+     
     
 }
