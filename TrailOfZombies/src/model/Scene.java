@@ -15,9 +15,9 @@ import java.util.Objects;
 public class Scene implements Serializable{
     //class instance variables
     private String description;
-    private double travelTime;
-    private String gridLocation;
     private String symbol;
+    private Item item;
+    private Character character;
 
     public Scene() {
     }
@@ -32,21 +32,6 @@ public class Scene implements Serializable{
         this.description = description;
     }
 
-    public double getTravelTime() {
-        return travelTime;
-    }
-
-    public void setTravelTime(double travelTime) {
-        this.travelTime = travelTime;
-    }
-
-    public String getgridLocation() {
-        return gridLocation;
-    }
-
-    public void setgridLocation(String gridLocation) {
-        this.gridLocation = gridLocation;
-    }
 
     public String getSymbol() {
         return symbol;
@@ -56,47 +41,21 @@ public class Scene implements Serializable{
         this.symbol = symbol;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.description);
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
-        hash = 67 * hash + Objects.hashCode(this.gridLocation);
-        hash = 67 * hash + Objects.hashCode(this.symbol);
-        return hash;
+    public Item getItem() {
+        return item;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Scene other = (Scene) obj;
-        if (Double.doubleToLongBits(this.travelTime) != Double.doubleToLongBits(other.travelTime)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.gridLocation, other.gridLocation)) {
-            return false;
-        }
-        if (!Objects.equals(this.symbol, other.symbol)) {
-            return false;
-        }
-        return true;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
-    @Override
-    public String toString() {
-        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", gridLocation=" + gridLocation + ", symbol=" + symbol + '}';
+    public Character getCharacter() {
+        return character;
     }
-    
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+  
     
 }

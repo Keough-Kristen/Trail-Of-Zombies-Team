@@ -71,8 +71,6 @@ public class TrailOfZombies {
         Scene sceneOne = new Scene();
         
         sceneOne.setDescription("Beginging of game and trying to get to first location");
-        sceneOne.setTravelTime(30.0);
-        sceneOne.setgridLocation("Start");
         sceneOne.setSymbol("Start Symbol");
         
         VehicleStorageScene vehicleStorageSceneOne = new VehicleStorageScene();
