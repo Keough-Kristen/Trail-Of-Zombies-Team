@@ -23,7 +23,7 @@ public enum Character implements Serializable{
         "", "Marilyn"),
     Dan("Gotta watch him.  He is always wanting your fuel", "", 0, 0, -5,
         "", "Dan"),
-    AnneOakley("All she wants is your weapon", "", 0, 0, 0, "knife",
+    AnneOakley("All she wants is your weapon", "", 0, 0, 0, "ar15",
         "Anne Oakley"),
     Mike("Knows his drugs from pharmacy school but without them he can't help you",
         "", 0, +1, 0, "", "Mike"),
