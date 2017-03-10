@@ -47,17 +47,34 @@ public class GameControl {
         InventoryItem[] itemsList = GameControl.createInventoryList();
         game.setItems(itemsList);
         
-        ZombieCrusher zombieCrusher = new ZombieCrusher();
+       /* ZombieCrusher zombieCrusher = new ZombieCrusher();
         game.setZombieCrusher(zombieCrusher);
-        
+       */
+       
         Map map = MapControl.createMap();
         game.setMap(map);
         
+        /*
         BackPack backPack = new BackPack();
         game.setBackPack(backPack);
+        */
         
-        MapControl.moveCharacterToStartingLocation(map);
     }
+        
+    public static void movePlayerToStartingLocation(Map map) {
+     // If starting location is not supposed to be 0,0 then use the correct values here.
+     movePlayer(map, 0, 0);
+    }
+
+        public static void movePlayer(Map map, int row, int column) {
+            map.setCurrentLocation(map.getLocations()[row][column]);
+            map.getCurrentLocation().setVisited(true);
+            map.setCurrentRow(row);
+            map.setCurrentColumn(column);
+
+    }
+        
+    
 
     static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
@@ -101,9 +118,9 @@ public class GameControl {
         inventory[Item.water.ordinal()] = water;
         
         InventoryItem bacon = new InventoryItem();
-        water.setDescription("Bacon");
-        water.setQuantityInStock(0);
-        water.setRequiredAmount(0);
+        bacon.setDescription("Bacon");
+        bacon.setQuantityInStock(0);
+        bacon.setRequiredAmount(0);
         inventory[Item.bacon.ordinal()] = bacon;
         
         InventoryItem chicken = new InventoryItem();
@@ -215,7 +232,7 @@ public class GameControl {
     }  
 
     
-    private static Scene[] createScenes() {
+    public static Scene[] createScenes() {
         
         Scene[] scenes = new Scene[SceneType.values().length];
         

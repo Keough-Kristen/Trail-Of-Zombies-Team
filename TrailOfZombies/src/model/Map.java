@@ -19,6 +19,7 @@ public class Map implements Serializable {
     private int currentRow;
     private int currentColumn;
     private Scene currentScene;
+    private Location currentLocation;
     private Location[][] locations;
 
     public Map() {
@@ -87,6 +88,7 @@ public class Map implements Serializable {
         this.currentScene = currentScene;
     }
 
+
     public Location[][] getLocations() {
         return locations;
     }
@@ -95,6 +97,15 @@ public class Map implements Serializable {
         this.locations = locations;
     }
 
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -140,6 +151,8 @@ public class Map implements Serializable {
     public String toString() {
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", currentScene=" + currentScene + '}';
     }
+
+    
     
     
     

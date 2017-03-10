@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+
 /**
  *
  * @author brycelaptop
@@ -28,6 +29,14 @@ public class Game implements Serializable {
      
     public Game() {
     }
+
+    public InventoryItem[] getInventory() {
+         InventoryItem[] inventory = new InventoryItem[Item.values().length];
+        
+        return inventory;
+    }
+
+  
     
     public enum Item {
         water,
@@ -148,11 +157,11 @@ public class Game implements Serializable {
     }
 
     public void setZombieCrusher(ZombieCrusher zombieCrusher) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      System.out.println("*** setZombieCrusher function called *** ");
     }
 
     public void setBackPack(BackPack backPack) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      System.out.println("*** setBackPack function called *** ");
     }
     
      

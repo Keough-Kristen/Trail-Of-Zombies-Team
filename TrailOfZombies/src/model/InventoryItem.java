@@ -17,15 +17,16 @@ public class InventoryItem implements Serializable {
     private String inventoryType;
     private double quantityInStock;
     private double requiredAmount;
-    
-    private Location[] location;
+    private String description;
 
-    public void setDescription(String pistol) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getDescription() {
+        return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
     
-
     public String getInventoryType() {
         return inventoryType;
     }
@@ -50,14 +51,6 @@ public class InventoryItem implements Serializable {
         this.requiredAmount = requiredAmount;
     }
 
-    public Location[] getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location[] location) {
-        this.location = location;
-    }
-    
     
 
     @Override
@@ -94,6 +87,8 @@ public class InventoryItem implements Serializable {
     public String toString() {
         return "Items{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
     }
+
+
     
     
     

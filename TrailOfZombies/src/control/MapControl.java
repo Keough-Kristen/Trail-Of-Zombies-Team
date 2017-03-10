@@ -7,6 +7,7 @@ package control;
 
 import model.Map;
 import model.Scene;
+import model.SceneType;
 
 /**
  *
@@ -16,21 +17,17 @@ public class MapControl {
 
     public static Map createMap() {
         
-        Map map = new Map (20, 20);
+        Map map = new Map (5, 5);
         
-        Scene[] scenes = createScenes();
+        Scene[] scenes = GameControl.createScenes();
         
         GameControl.assignScenesToLocations(map, scenes);
+        
+        GameControl.movePlayerToStartingLocation(map);
         
         return map;
     }
 
-    static void moveCharacterToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private static Scene[] createScenes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     
 }
