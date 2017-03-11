@@ -479,5 +479,29 @@ public class GameControl {
  
         return scenes;
     }
+    
+   /* public ArrayList<Item> addBackpackItems() {
+        
+        ArrayList<Item> inventory = new ArrayList<>();
+        
+        Item water = new Item("Water", 200);
+        inventory.add(water);
+        /*
+        inventory.add(new Item("Bacon", 50));
+        inventory.add(new Item("Chicken", 10));
+        inventory.add(new Item("Fruits", 25));
+        inventory.add(new Item("Vegetables", 20));
+        inventory.add(new Item("Meats", 50));
+        inventory.add(new Item("Swords", 1));
+        inventory.add(new Item("Pistol",1));
+        inventory.add(new Item("Staff", 1));
+        inventory.add(new Item("AR15", 1));
+        inventory.add(new Item("Knife", 1));
+        inventory.add(new Item("Crossbow", 1));
+        inventory.add(new Item("Pallet", 4));
+        */
+        
+    
 }
+
 

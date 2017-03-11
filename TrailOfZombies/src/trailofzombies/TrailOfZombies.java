@@ -121,10 +121,6 @@ public class TrailOfZombies {
         
         BackPack backPackOne = new BackPack();
         
-        backPackOne.setMaxWeight(30);
-        backPackOne.setAmountLoaded(4);
-        backPackOne.setLoadedWeight(15);
-        backPackOne.setSlots(8);
         
         InventoryItem inventoryItemOne = new InventoryItem();
         
