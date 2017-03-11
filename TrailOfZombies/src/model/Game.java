@@ -36,27 +36,6 @@ public class Game implements Serializable {
         return inventory;
     }
 
-  
-    
-    public enum Item {
-        water,
-        chicken,
-        fruits,
-        vegetables,
-        meats,
-        swords,
-        pistol,
-        staff,
-        ar15,
-        knife,
-        crossbow,
-        pallet,
-        winch,
-        fuel,
-        tires,
-        medicine;
-    }
-
     public double getTotalTime() {
         return totalTime;
     }

@@ -13,7 +13,6 @@ import java.util.Objects;
  * @author kristenkeough
  */
 public enum Character implements Serializable{
-     //TODO: Finish initializing all properties.
   
     John("He is willing to give food", "water", 5, 0, 0, "", "John"),
     Eric("He will give you fuel for you vehicle", "", 0, 0, 3, "", "Eric"),

@@ -239,267 +239,249 @@ public class GameControl {
         Scene scene = new Scene();
         scene.setDescription("Arco Regional Airport");
         scene.setSymbol("RA");
-        Item item = Item.fuel;
-        item = Item.pallet;
-        item = Item.vegetables;
+        scene.getItems().add(Item.fuel);
+        scene.getItems().add(Item.pallet);
+        scene.getItems().add(Item.vegetables);
+        //scene.getItems().remove(Item.vegetables);
         //scene.setCharacter(model.Character.MidgetZombie);
         scenes[SceneType.ArcoRegionalAirport.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Jerry's Junkyard and Salvage");
         scene.setSymbol("JJ");
-        item = Item.bumpers;
-        item = Item.pallet;
-        item = Item.fuel;
-        item = Item.tires;
-        
+        scene.getItems().add(Item.bumpers);
+        scene.getItems().add(Item.pallet);
+        scene.getItems().add(Item.fuel);
+        scene.getItems().add(Item.tires);
         scene.setCharacter(model.Character.MidgetZombie);
         scenes[SceneType.JerrysJunkyardandSalvage.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Build It Home Improvement");
         scene.setSymbol("HI");
-        item = Item.pallet;
-        item = Item.knife;
-        item = Item.water;
-        item = Item.fuel;
+        scene.getItems().add(Item.knife);
+        scene.getItems().add(Item.pallet);
+        scene.getItems().add(Item.fuel);
+        scene.getItems().add(Item.water);
         //scene.setCharacter(model.Character.MidgetZombie);
         scenes[SceneType.BuildItHomeImprovement.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Tractors Big and Small");
         scene.setSymbol("TS");
-        item = Item.winch;
-        item = Item.fuel;
-        item = Item.pallet;
+        scene.getItems().add(Item.winch);
+        scene.getItems().add(Item.pallet);
+        scene.getItems().add(Item.fuel);
         //scene.setCharacter(model.Character.MidgetZombie);
         scenes[SceneType.TractorsBigandSmall.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Joe's Tire");
         scene.setSymbol("JT");
-        item = Item.tires;
-        item = Item.pallet;
-        item = Item.fuel;
+        scene.getItems().add(Item.pallet);
+        scene.getItems().add(Item.fuel);
+        scene.getItems().add(Item.tires);
         //scene.setCharacter(model.Character.MidgetZombie);
         scenes[SceneType.JoesTire.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Bob the Butcher");
         scene.setSymbol("BB");
-        item = Item.bacon;
-        item = Item.pallet;
-        item = Item.water;
+        scene.getItems().add(Item.bacon);
+        scene.getItems().add(Item.pallet);
+        scene.getItems().add(Item.water);
         //scene.setCharacter(model.Character.MidgetZombie);
         scenes[SceneType.BobtheButcher.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Hal's Hardware");
         scene.setSymbol("HH");
-        item = Item.knife;
-        item = Item.pistol;
-        item = Item.water;
+        scene.getItems().add(Item.knife);
+        scene.getItems().add(Item.pistol);
+        scene.getItems().add(Item.water);
         //scene.setCharacter(model.Character.MidgetZombie);
         scenes[SceneType.HalsHardware.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("District 5 FireStation");
         scene.setSymbol("FS");
-        item = Item.vegetables;
-        item = Item.fruits;
-        item = Item.water;
-        item = Item.knife;
-        item = Item.pallet;
+        scene.getItems().add(Item.vegetables);
+        scene.getItems().add(Item.fruits);
+        scene.getItems().add(Item.water);
+        scene.getItems().add(Item.knife);
+        scene.getItems().add(Item.pallet);
         scene.setCharacter(model.Character.John);
         scenes[SceneType.District5FireStation.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Big Mountain Motor Sports");
         scene.setSymbol("MS");
-        item = Item.fuel;
-        item = Item.tires;
-        item = Item.pallet;
+        scene.getItems().add(Item.pallet);
+        scene.getItems().add(Item.fuel);
+        scene.getItems().add(Item.tires);
         //scene.setCharacter(model.Character.MidgetZombie);
         scenes[SceneType.BigMountainMotorSports.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Gary's Gun Store");
         scene.setSymbol("GG");
-        item = Item.ar15;
-        item = Item.pistol;
-        item = Item.knife;
-        item = Item.pallet;
+        scene.getItems().add(Item.ar15);
+        scene.getItems().add(Item.pistol);
+        scene.getItems().add(Item.knife);
+        scene.getItems().add(Item.pallet);
         //scene.setCharacter(model.Character.MidgetZombie);
         scenes[SceneType.GarysGunStore.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Rick's Auto Repair");
         scene.setSymbol("RA");
-        item = Item.pallet;
-        item = Item.tires;
-        item = Item.fuel;
-        item = Item.water;
+        scene.getItems().add(Item.water);
+        scene.getItems().add(Item.pallet);
+        scene.getItems().add(Item.fuel);
+        scene.getItems().add(Item.tires);
         scene.setCharacter(model.Character.Eric);
         scenes[SceneType.RicksAutoRepair.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Arco City Police Station");
         scene.setSymbol("PS");
-        item = Item.pistol;
-        item = Item.ar15;
-        item = Item.water;
-        item = Item.swords;
+        scene.getItems().add(Item.pistol);
+        scene.getItems().add(Item.ar15);
+        scene.getItems().add(Item.water);
+        scene.getItems().add(Item.swords);
         scene.setCharacter(model.Character.CopZombie);
         scenes[SceneType.ArcoCityPoliceStation.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Water Tower");
         scene.setSymbol("WT");
-        item = Item.water;
+        scene.getItems().add(Item.water);
         //scene.setCharacter(model.Character.MidgetZombie);
         scenes[SceneType.WaterTower.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Fidelity Fiduciary Bank");
         scene.setSymbol("FD");
-        item = Item.water;
+        scene.getItems().add(Item.water);
         scene.setCharacter(model.Character.Zeek);
         scenes[SceneType.FidelityFiduciaryBank.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("New Hope Church");
         scene.setSymbol("NH");
-        item = Item.fruits;
-        item = Item.vegetables;
-        item = Item.water;
-        item = Item.pistol;
+        scene.getItems().add(Item.pistol);
+        scene.getItems().add(Item.vegetables);
+        scene.getItems().add(Item.water);
+        scene.getItems().add(Item.fruits);
         scene.setCharacter(model.Character.Marilyn);
         scenes[SceneType.NewHopeChurch.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Virginia Movie Theater");
         scene.setSymbol("MT");
-        item = Item.swords;
-        item = Item.water;
-        item = Item.knife;
+        scene.getItems().add(Item.knife);
+        scene.getItems().add(Item.water);
+        scene.getItems().add(Item.swords);
         scene.setCharacter(model.Character.Dan);
         scenes[SceneType.VirginiaMovieTheater.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Donna's Diner");
         scene.setSymbol("DD");
-        item = Item.chicken;
-        item = Item.meats;
-        item = Item.bacon;
-        item = Item.water;
-        item = Item.vegetables;
-        item = Item.fruits;
-        item = Item.knife;
-        item = Item.ar15;
+        scene.getItems().add(Item.chicken);
+        scene.getItems().add(Item.meats);
+        scene.getItems().add(Item.bacon);
+        scene.getItems().add(Item.water);
+        scene.getItems().add(Item.vegetables);
+        scene.getItems().add(Item.fruits);
+        scene.getItems().add(Item.knife);
+        scene.getItems().add(Item.ar15);
         //scene.setCharacter(model.Character.MidgetZombie);
         scenes[SceneType.DonnasDiner.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Downtown Drug");
         scene.setSymbol("DT");
-        item = Item.medicine;
-        item = Item.water;
-        item = Item.staff;
+        scene.getItems().add(Item.medicine);
+        scene.getItems().add(Item.water);
+        scene.getItems().add(Item.staff);
         scene.setCharacter(model.Character.Mike);
         scenes[SceneType.DowntownDrug.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Museum of Arco");
         scene.setSymbol("MA");
-        item = Item.crossbow;
-        item = Item.staff;
-        item = Item.water;
+        scene.getItems().add(Item.crossbow);
+        scene.getItems().add(Item.staff);
+        scene.getItems().add(Item.water);
         scene.setCharacter(model.Character.AnneOakley);
         scenes[SceneType.MuseumofArco.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Big Jim's Pig Farm");
         scene.setSymbol("PF");
-        item = Item.bacon;
-        item = Item.water;
-        item = Item.vegetables;
+        scene.getItems().add(Item.bacon);
+        scene.getItems().add(Item.water);
+        scene.getItems().add(Item.vegetables);
         //scene.setCharacter(model.Character.Mike);
         scenes[SceneType.BigJimsPigFarm.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("OXXO Gas Station");
         scene.setSymbol("GS");
-        item = Item.fuel;
-        item = Item.water;
-        item = Item.pistol;
-        item = Item.medicine;
+        scene.getItems().add(Item.fuel);
+        scene.getItems().add(Item.pistol);
+        scene.getItems().add(Item.water);
+        scene.getItems().add(Item.medicine);
         scene.setCharacter(model.Character.BikerZombie);
         scenes[SceneType.OXXOGasStation.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Shop n Save");
         scene.setSymbol("SS");
-        item = Item.water;
-        item = Item.meats;
-        item = Item.chicken;
-        item = Item.bacon;
-        item = Item.vegetables;
-        item = Item.fruits;
-        item = Item.knife;
-        item = Item.staff;
-        item = Item.medicine;
-        item = Item.pallet;
+        scene.getItems().add(Item.water);
+        scene.getItems().add(Item.meats);
+        scene.getItems().add(Item.chicken);
+        scene.getItems().add(Item.bacon);
+        scene.getItems().add(Item.vegetables);
+        scene.getItems().add(Item.fruits);
+        scene.getItems().add(Item.knife);
+        scene.getItems().add(Item.staff);
+        scene.getItems().add(Item.medicine);
+        scene.getItems().add(Item.pallet);
         //scene.setCharacter(model.Character.MidgetZombie);
         scenes[SceneType.ShopnSave.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Pet Town");
         scene.setSymbol("PT");
-        item = Item.pallet;
-        item = Item.medicine;
+        scene.getItems().add(Item.medicine);
+        scene.getItems().add(Item.pallet);
         scene.setCharacter(model.Character.Vicki);
         scenes[SceneType.PetTown.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Community Library");
         scene.setSymbol("CL");
-        item = Item.pallet;
+        scene.getItems().add(Item.pallet);
         scene.setCharacter(model.Character.DocHoliday);
         scenes[SceneType.CommunityLibrary.ordinal()] = scene;
         
         scene = new Scene();
         scene.setDescription("Arco High School");
         scene.setSymbol("HS");
-        item = Item.staff;
-        item = Item.vegetables;
-        item = Item.fruits;
-        item = Item.meats;
+        scene.getItems().add(Item.staff);
+        scene.getItems().add(Item.vegetables);
+        scene.getItems().add(Item.fruits);
+        scene.getItems().add(Item.meats);
+        
         scene.setCharacter(model.Character.OldLadyZombie);
         scenes[SceneType.ArcoHighSchool.ordinal()] = scene;
  
         return scenes;
     }
     
-   /* public ArrayList<Item> addBackpackItems() {
-        
-        ArrayList<Item> inventory = new ArrayList<>();
-        
-        Item water = new Item("Water", 200);
-        inventory.add(water);
-        /*
-        inventory.add(new Item("Bacon", 50));
-        inventory.add(new Item("Chicken", 10));
-        inventory.add(new Item("Fruits", 25));
-        inventory.add(new Item("Vegetables", 20));
-        inventory.add(new Item("Meats", 50));
-        inventory.add(new Item("Swords", 1));
-        inventory.add(new Item("Pistol",1));
-        inventory.add(new Item("Staff", 1));
-        inventory.add(new Item("AR15", 1));
-        inventory.add(new Item("Knife", 1));
-        inventory.add(new Item("Crossbow", 1));
-        inventory.add(new Item("Pallet", 4));
-        */
+  
         
     
 }

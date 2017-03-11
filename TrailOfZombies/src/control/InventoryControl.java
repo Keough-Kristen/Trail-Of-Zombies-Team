@@ -5,6 +5,8 @@
  */
 package control;
 
+import model.Item;
+
 /**
  *
  * @author kristenkeough
@@ -92,6 +94,17 @@ public class InventoryControl {
    return NeededGal;
    }
    
+   
+   
+   /*public void stockpiledItems(ArrayList<Item> inventoryItems) {
+    for (int i = 0; i < inventoryItems.size()); i++ {                                            
+        Item item = inventoryItems.get(i);                                                    
+        System.out.println("\n\tItem: " + item.getName()          
+                         + "\n\tquantity: " + item.getQuantityInStock()); 
+    }
+}
+
+*/
   
 }
 

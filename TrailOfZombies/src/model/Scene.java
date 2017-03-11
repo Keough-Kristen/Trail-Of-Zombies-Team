@@ -6,7 +6,7 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Objects;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,10 +16,12 @@ public class Scene implements Serializable{
     //class instance variables
     private String description;
     private String symbol;
-    private Item item;
+    private ArrayList<Item> items;
     private Character character;
 
     public Scene() {
+        items = new ArrayList<>();
+        
     }
     
     
@@ -41,14 +43,6 @@ public class Scene implements Serializable{
         this.symbol = symbol;
     }
 
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
     public Character getCharacter() {
         return character;
     }
@@ -56,6 +50,15 @@ public class Scene implements Serializable{
     public void setCharacter(Character character) {
         this.character = character;
     }
-  
+    
+  //TODO ToString.....
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
     
 }

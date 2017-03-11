@@ -9,6 +9,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,14 +19,21 @@ public class Player implements Serializable{
     
     //class instance variables
     private String name;
-    private double highestScore;
-    private double bestTime;
+    private int currentHealthPoints;
+    
 
     public Player() {
     }
-    
-    
 
+    public int getCurrentHealthPoints() {
+        return currentHealthPoints;
+    }
+
+    public void setCurrentHealthPoints(int currentHealthPoints) {
+        this.currentHealthPoints = currentHealthPoints;
+    }
+
+ 
     public String getName() {
         return name;
     }
@@ -34,28 +42,16 @@ public class Player implements Serializable{
         this.name = name;
     }
 
-    public double getHighestScore() {
-        return highestScore;
-    }
 
-    public void setHighestScore(double highestScore) {
-        this.highestScore = highestScore;
-    }
-
-    public double getBestTime() {
-        return bestTime;
-    }
-
-    public void setBestTime(double bestTime) {
-        this.bestTime = bestTime;
-    }
-
+    
+    
+    
+    
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 67 * hash + Objects.hashCode(this.name);
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.highestScore) ^ (Double.doubleToLongBits(this.highestScore) >>> 32));
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
+      
         return hash;
     }
 
@@ -71,22 +67,76 @@ public class Player implements Serializable{
             return false;
         }
         final Player other = (Player) obj;
-        if (Double.doubleToLongBits(this.highestScore) != Double.doubleToLongBits(other.highestScore)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
-            return false;
-        }
+     
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Player{" + "name=" + name + ", highestScore=" + highestScore + ", bestTime=" + bestTime + '}';
-    }
-    
+    //TODO String Overide
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
 }
