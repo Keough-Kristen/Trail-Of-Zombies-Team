@@ -237,7 +237,7 @@ public class GameControl {
         scene.getItems().add(Item.pallet);
         scene.getItems().add(Item.vegetables);
         //scene.getItems().remove(Item.vegetables);
-        //scene.setCharacter(model.Character.MidgetZombie);
+        //scene.setCharacter(null);
         scenes[SceneType.ArcoRegionalAirport.ordinal()] = scene;
 
         scene = new Scene();
@@ -259,7 +259,7 @@ public class GameControl {
         scene.getItems().add(Item.pallet);
         scene.getItems().add(Item.fuel);
         scene.getItems().add(Item.water);
-        //scene.setCharacter(model.Character.MidgetZombie);
+        //scene.setCharacter(null);
         scenes[SceneType.BuildItHomeImprovement.ordinal()] = scene;
 
         scene = new Scene();
@@ -269,7 +269,7 @@ public class GameControl {
         scene.getItems().add(Item.winch);
         scene.getItems().add(Item.pallet);
         scene.getItems().add(Item.fuel);
-        //scene.setCharacter(model.Character.MidgetZombie);
+        //scene.setCharacter(null);
         scenes[SceneType.TractorsBigandSmall.ordinal()] = scene;
 
         scene = new Scene();
@@ -279,7 +279,7 @@ public class GameControl {
         scene.getItems().add(Item.pallet);
         scene.getItems().add(Item.fuel);
         scene.getItems().add(Item.tires);
-        //scene.setCharacter(model.Character.MidgetZombie);
+        //scene.setCharacter(null);
         scenes[SceneType.JoesTire.ordinal()] = scene;
 
         scene = new Scene();
@@ -289,7 +289,7 @@ public class GameControl {
         scene.getItems().add(Item.bacon);
         scene.getItems().add(Item.pallet);
         scene.getItems().add(Item.water);
-        //scene.setCharacter(model.Character.MidgetZombie);
+        //scene.setCharacter(null);
         scenes[SceneType.BobtheButcher.ordinal()] = scene;
 
         scene = new Scene();
@@ -299,7 +299,7 @@ public class GameControl {
         scene.getItems().add(Item.knife);
         scene.getItems().add(Item.pistol);
         scene.getItems().add(Item.water);
-        //scene.setCharacter(model.Character.MidgetZombie);
+        //scene.setCharacter(null);
         scenes[SceneType.HalsHardware.ordinal()] = scene;
 
         scene = new Scene();
@@ -321,7 +321,7 @@ public class GameControl {
         scene.getItems().add(Item.pallet);
         scene.getItems().add(Item.fuel);
         scene.getItems().add(Item.tires);
-        //scene.setCharacter(model.Character.MidgetZombie);
+        //scene.setCharacter(null);
         scenes[SceneType.BigMountainMotorSports.ordinal()] = scene;
 
         scene = new Scene();
@@ -332,7 +332,7 @@ public class GameControl {
         scene.getItems().add(Item.pistol);
         scene.getItems().add(Item.knife);
         scene.getItems().add(Item.pallet);
-        //scene.setCharacter(model.Character.MidgetZombie);
+        //scene.setCharacter(null);
         scenes[SceneType.GarysGunStore.ordinal()] = scene;
 
         scene = new Scene();
@@ -362,7 +362,7 @@ public class GameControl {
         scene.setName("Water Tower");
         scene.setSymbol("WT");
         scene.getItems().add(Item.water);
-        //scene.setCharacter(model.Character.MidgetZombie);
+        //scene.setCharacter(null);
         scenes[SceneType.WaterTower.ordinal()] = scene;
 
         scene = new Scene();
@@ -406,7 +406,7 @@ public class GameControl {
         scene.getItems().add(Item.fruits);
         scene.getItems().add(Item.knife);
         scene.getItems().add(Item.ar15);
-        //scene.setCharacter(model.Character.MidgetZombie);
+        //scene.setCharacter(null);
         scenes[SceneType.DonnasDiner.ordinal()] = scene;
 
         scene = new Scene();
@@ -436,7 +436,7 @@ public class GameControl {
         scene.getItems().add(Item.bacon);
         scene.getItems().add(Item.water);
         scene.getItems().add(Item.vegetables);
-        //scene.setCharacter(model.Character.Mike);
+        //scene.setCharacter(null);
         scenes[SceneType.BigJimsPigFarm.ordinal()] = scene;
 
         scene = new Scene();
@@ -464,7 +464,7 @@ public class GameControl {
         scene.getItems().add(Item.staff);
         scene.getItems().add(Item.medicine);
         scene.getItems().add(Item.pallet);
-        //scene.setCharacter(model.Character.MidgetZombie);
+        //scene.setCharacter(null);
         scenes[SceneType.ShopnSave.ordinal()] = scene;
 
         scene = new Scene();

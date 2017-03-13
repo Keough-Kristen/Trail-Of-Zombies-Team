@@ -194,9 +194,10 @@ public class GameMenuView extends View {
     private void displayTravelToNewLocation() {
          TravelToNewLocationView newLocation = new TravelToNewLocationView();
          newLocation.display();
-          // SceneView sceneView = new SceneView();       
-           //sceneView.display();
-           this.displayMap();
+         this.displayMap();
+         SceneView sceneView = new SceneView();       
+         sceneView.display();
+         
     }
 
   

@@ -63,6 +63,8 @@ public class Scene implements Serializable{
     
   //TODO ToString.....
 
+    
+
     public ArrayList<Item> getItems() {
         return items;
     }
@@ -71,4 +73,8 @@ public class Scene implements Serializable{
         this.items = items;
     }
     
+    @Override
+    public String toString() {
+        return "Scene{" + "description=" + description + ", name=" + name + ", symbol=" + symbol + ", items=" + items + ", character=" + character + '}';
+    }
 }
