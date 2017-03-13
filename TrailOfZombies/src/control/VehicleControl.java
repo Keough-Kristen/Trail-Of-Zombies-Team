@@ -5,10 +5,28 @@
  */
 package control;
 
+import java.util.ArrayList;
+import model.Item;
+
 /**
  *
  * @author kristenkeough
  */
 public class VehicleControl {
     
+ public void removeArrayListItems(ArrayList<Item> inventory, Item item) {
+//inventory.remove(); // remove a specific index
+        int pistolIndex = 6;
+        inventory.remove(pistolIndex);
+        inventory.remove(item);
+        inventory.clear(); //remove all items from the ArrayList
+    }
+
+ public boolean moveItemFromWarehouseToZombieCrusher(ArrayList<Item> warehouseItem, ArrayList<Item> zombieCrusherItem, Item item) {
+  
+       return GameControl.moveItem(warehouseItem, zombieCrusherItem, item);
+    }
 }
+ 
+     
+ 

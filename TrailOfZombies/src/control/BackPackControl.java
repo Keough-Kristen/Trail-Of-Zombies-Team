@@ -7,7 +7,8 @@ package control;
 
 import java.util.ArrayList;
 import model.Item;
-
+import control.GameControl;
+        
 /**
  *
  * @author kristenkeough
@@ -22,13 +23,11 @@ public class BackPackControl {
         inventory.clear(); //remove all items from the ArrayList
     }
 
-    public boolean moveItemFromSceneToBackPack(ArrayList<Item> sceneItems, ArrayList<Item> backPackItems, Item item) {
-        if (sceneItems.contains(item)) {
-            backPackItems.add(item);
-            sceneItems.remove(item);
-
-            return true;
-        }
-        return false;
+    public boolean moveItemFromSceneToBackPack(ArrayList<Item> sceneItem, ArrayList<Item> backPackItem, Item item) {
+       return GameControl.moveItem(sceneItem, backPackItem, item);
+    }
+    public boolean moveItemFromBackPackToWarehouse(ArrayList<Item> backPackItem, ArrayList<Item> warehouseItem, Item item) {
+       return GameControl.moveItem(backPackItem, warehouseItem, item);
     }
 }
+
