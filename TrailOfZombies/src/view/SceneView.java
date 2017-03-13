@@ -5,22 +5,35 @@
 */
 package view;
 
+import control.GameControl;
+import java.util.Scanner;
+import model.Scene;
+import trailofzombies.TrailOfZombies;
+
 /**
  *
  * @author kristenkeough
  */
-public class TractorsBigAndSmallMenuView extends View {
-
-    public TractorsBigAndSmallMenuView() {
-        super("\n"
-                    + "\n---------------------"
-                    + "\n| Welcome to Arco Regional Airport.|"
-                    + "\n---------------------"
+public class SceneView extends View {
+        
+        private Scene currentScene;
+        
+    public SceneView() {
+        super("\ndummy scene");
+        currentScene = TrailOfZombies.getCurrentGame().getMap().getCurrentScene();
+        displayMessage  = "\n---------------------"
+                    + "\n| Welcome to " + currentScene.getName() + "!|"
+                    + "\n---------------------"; 
+            if(currentScene.getCharacter() == null){
+                
+               System.out.println("Would you like to search for resources?"
+            
                     + "\nY - Would you like to gather the resources available at this location? "
                     + "\nX - Return to location menu"
                     + "\nH - Display Help Menu"
                     + "\nQ - Quit"
                     + "\n---------------------");
+            }
     }
    @Override 
     public boolean doAction(String value) {
@@ -32,7 +45,7 @@ public class TractorsBigAndSmallMenuView extends View {
                     this.gatherResources();
                     break;
                 case "X":
-                    this.returnToLocationMenu();
+                    this.returnToMainMenu();
                     break;
                 case "H":
                     this.displayHelpMenu();
@@ -55,11 +68,10 @@ public class TractorsBigAndSmallMenuView extends View {
         System.out.println("*** gatherResources function called ***");
     }
 
-    private void returnToLocationMenu() {
-        LocationMenuView locationMenu = new LocationMenuView();
-        locationMenu.display();
+    private void returnToMainMenu() {
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
     }
 
    
 }
-

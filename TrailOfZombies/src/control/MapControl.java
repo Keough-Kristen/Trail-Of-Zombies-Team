@@ -6,8 +6,11 @@
 package control;
 
 import model.Map;
+import model.Player;
+import model.Point;
 import model.Scene;
 import model.SceneType;
+import trailofzombies.TrailOfZombies;
 
 /**
  *
@@ -27,7 +30,5 @@ public class MapControl {
         
         return map;
     }
-
-   
     
 }

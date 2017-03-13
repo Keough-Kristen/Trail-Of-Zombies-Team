@@ -5,8 +5,6 @@
 */
 package view;
 
-import control.GameControl;
-import java.util.Scanner;
 import model.Game;
 import model.InventoryItem;
 import model.Location;
@@ -26,7 +24,8 @@ public class GameMenuView extends View {
                     + "\n---------------------"
                     + "\nL - Location Menu"
                     + "\nM - Display Map"
-                    + "\nR - Eastimating the amount of resources?"
+                    + "\nT - Travel to new location"
+                    + "\nR - Etimating the amount of resources?"
                     + "\nK - Welcome to the Haven"
                     + "\nH - Harvest Menu"
                     + "\nV - Get Crate Volume"
@@ -50,6 +49,9 @@ public class GameMenuView extends View {
                     break;
                 case "M":
                     this.displayMap();
+                    break;
+                case "T":
+                    this.displayTravelToNewLocation();
                     break;
                 case "R":
                     this.displayResources();
@@ -185,7 +187,17 @@ public class GameMenuView extends View {
       }
      System.out.println("|");
     }
+    System.out.println(map.getCurrentLocation().getScene().getName());
+    System.out.println(map.getCurrentLocation().getScene().getDescription());
  }
+
+    private void displayTravelToNewLocation() {
+         TravelToNewLocationView newLocation = new TravelToNewLocationView();
+         newLocation.display();
+          // SceneView sceneView = new SceneView();       
+           //sceneView.display();
+           this.displayMap();
+    }
 
   
 }

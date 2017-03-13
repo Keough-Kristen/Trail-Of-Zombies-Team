@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class Scene implements Serializable{
     //class instance variables
     private String description;
+    private String name;
     private String symbol;
     private ArrayList<Item> items;
     private Character character;
@@ -34,6 +35,15 @@ public class Scene implements Serializable{
         this.description = description;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
 
     public String getSymbol() {
         return symbol;

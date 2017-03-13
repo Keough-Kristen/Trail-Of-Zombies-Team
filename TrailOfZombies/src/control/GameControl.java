@@ -63,7 +63,7 @@ public class GameControl {
         
     public static void movePlayerToStartingLocation(Map map) {
      // If starting location is not supposed to be 0,0 then use the correct values here.
-     movePlayer(map, 0, 0);
+     movePlayer(map, 2, 2);
     }
 
         public static void movePlayer(Map map, int row, int column) {
@@ -238,6 +238,7 @@ public class GameControl {
         
         Scene scene = new Scene();
         scene.setDescription("Arco Regional Airport");
+        scene.setName("Arco Regional Airport");
         scene.setSymbol("RA");
         scene.getItems().add(Item.fuel);
         scene.getItems().add(Item.pallet);
@@ -248,6 +249,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Jerry's Junkyard and Salvage");
+        scene.setName("Jerry's Junkyard and Salvage");
         scene.setSymbol("JJ");
         scene.getItems().add(Item.bumpers);
         scene.getItems().add(Item.pallet);
@@ -258,6 +260,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Build It Home Improvement");
+        scene.setName("Build It Home Improvement");
         scene.setSymbol("HI");
         scene.getItems().add(Item.knife);
         scene.getItems().add(Item.pallet);
@@ -268,6 +271,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Tractors Big and Small");
+        scene.setName("Tractors Big and Small");
         scene.setSymbol("TS");
         scene.getItems().add(Item.winch);
         scene.getItems().add(Item.pallet);
@@ -277,6 +281,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Joe's Tire");
+        scene.setName("Joe's Tire");
         scene.setSymbol("JT");
         scene.getItems().add(Item.pallet);
         scene.getItems().add(Item.fuel);
@@ -286,6 +291,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Bob the Butcher");
+        scene.setName("Bob the Butcher");
         scene.setSymbol("BB");
         scene.getItems().add(Item.bacon);
         scene.getItems().add(Item.pallet);
@@ -295,6 +301,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Hal's Hardware");
+        scene.setName("Hal's Hardware");
         scene.setSymbol("HH");
         scene.getItems().add(Item.knife);
         scene.getItems().add(Item.pistol);
@@ -304,6 +311,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("District 5 FireStation");
+        scene.setName("District 5 FireStation");
         scene.setSymbol("FS");
         scene.getItems().add(Item.vegetables);
         scene.getItems().add(Item.fruits);
@@ -315,6 +323,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Big Mountain Motor Sports");
+        scene.setName("Big Mountain Motor Sports");
         scene.setSymbol("MS");
         scene.getItems().add(Item.pallet);
         scene.getItems().add(Item.fuel);
@@ -324,6 +333,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Gary's Gun Store");
+        scene.setName("Gary's Gun Store");
         scene.setSymbol("GG");
         scene.getItems().add(Item.ar15);
         scene.getItems().add(Item.pistol);
@@ -334,6 +344,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Rick's Auto Repair");
+        scene.setName("Rick's Auto Repair");
         scene.setSymbol("RA");
         scene.getItems().add(Item.water);
         scene.getItems().add(Item.pallet);
@@ -344,6 +355,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Arco City Police Station");
+        scene.setName("Arco City Police Station");
         scene.setSymbol("PS");
         scene.getItems().add(Item.pistol);
         scene.getItems().add(Item.ar15);
@@ -354,6 +366,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Water Tower");
+        scene.setName("Water Tower");
         scene.setSymbol("WT");
         scene.getItems().add(Item.water);
         //scene.setCharacter(model.Character.MidgetZombie);
@@ -361,6 +374,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Fidelity Fiduciary Bank");
+        scene.setName("Fidelity Fiduciary Bank");
         scene.setSymbol("FD");
         scene.getItems().add(Item.water);
         scene.setCharacter(model.Character.Zeek);
@@ -368,6 +382,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("New Hope Church");
+        scene.setName("New Hope Church");
         scene.setSymbol("NH");
         scene.getItems().add(Item.pistol);
         scene.getItems().add(Item.vegetables);
@@ -378,6 +393,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Virginia Movie Theater");
+        scene.setName("Virginia Movie Theater");
         scene.setSymbol("MT");
         scene.getItems().add(Item.knife);
         scene.getItems().add(Item.water);
@@ -387,6 +403,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Donna's Diner");
+        scene.setName("Donna's Diner");
         scene.setSymbol("DD");
         scene.getItems().add(Item.chicken);
         scene.getItems().add(Item.meats);
@@ -401,6 +418,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Downtown Drug");
+        scene.setName("Downtown Drug");
         scene.setSymbol("DT");
         scene.getItems().add(Item.medicine);
         scene.getItems().add(Item.water);
@@ -410,6 +428,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Museum of Arco");
+        scene.setName("Museum of Arco");
         scene.setSymbol("MA");
         scene.getItems().add(Item.crossbow);
         scene.getItems().add(Item.staff);
@@ -419,6 +438,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Big Jim's Pig Farm");
+        scene.setName("Big Jim's Pig Farm");
         scene.setSymbol("PF");
         scene.getItems().add(Item.bacon);
         scene.getItems().add(Item.water);
@@ -428,6 +448,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("OXXO Gas Station");
+        scene.setName("OXXO Gas Station");
         scene.setSymbol("GS");
         scene.getItems().add(Item.fuel);
         scene.getItems().add(Item.pistol);
@@ -438,6 +459,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Shop n Save");
+        scene.setName("Shop n Save");
         scene.setSymbol("SS");
         scene.getItems().add(Item.water);
         scene.getItems().add(Item.meats);
@@ -454,6 +476,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Pet Town");
+        scene.setName("Pet Town");
         scene.setSymbol("PT");
         scene.getItems().add(Item.medicine);
         scene.getItems().add(Item.pallet);
@@ -462,6 +485,7 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Community Library");
+        scene.setName("Community Library");
         scene.setSymbol("CL");
         scene.getItems().add(Item.pallet);
         scene.setCharacter(model.Character.DocHoliday);
@@ -469,12 +493,12 @@ public class GameControl {
         
         scene = new Scene();
         scene.setDescription("Arco High School");
+        scene.setName("Arco High School");
         scene.setSymbol("HS");
         scene.getItems().add(Item.staff);
         scene.getItems().add(Item.vegetables);
         scene.getItems().add(Item.fruits);
         scene.getItems().add(Item.meats);
-        
         scene.setCharacter(model.Character.OldLadyZombie);
         scenes[SceneType.ArcoHighSchool.ordinal()] = scene;
  

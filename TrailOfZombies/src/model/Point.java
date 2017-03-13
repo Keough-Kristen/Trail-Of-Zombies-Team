@@ -11,8 +11,9 @@ package model;
  */
 public class Point {
 
-    Point(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    Point(int row, int column) {
+        
+        
     }
     
 }

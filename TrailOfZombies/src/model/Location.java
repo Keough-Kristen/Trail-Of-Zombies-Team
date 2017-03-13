@@ -21,7 +21,7 @@ public class Location implements Serializable {
     private int column;
     private boolean visited;
     private int remaining;
-    
+ 
     private Scene scene;
     private Character[] character;
     
