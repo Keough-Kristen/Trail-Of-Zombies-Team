@@ -21,13 +21,13 @@ public class SceneView extends View {
         private Scene currentScene;
         
     public SceneView() {
-        super("\ndummy scene");
+        super("\ndummyscene");
         currentScene = TrailOfZombies.getCurrentGame().getMap().getCurrentLocation().getScene();
         
         displayMessage  = "\n---------------------"
-                    + "\n| Welcome to " + currentScene + "!|"
+                    + "\n| Welcome to " + currentScene.getName() + "!|"
                     + "\n---------------------"
-                    + "\n Do you want to collect resources. Yes or No"
+                    + "\n Do you want to collect resources? Yes or No"
                     + "\nY - Yes"
                     + "\nQ - No";
     }
