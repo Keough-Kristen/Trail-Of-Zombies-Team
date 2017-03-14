@@ -39,6 +39,20 @@ Item (String description,  int points) {
             this.points = points;
            
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" + "description=" + description + ", points=" + points + '}';
+    }
+
 }
 
 

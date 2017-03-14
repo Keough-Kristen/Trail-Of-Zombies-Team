@@ -26,6 +26,7 @@ public class Game implements Serializable {
     
     private InventoryItem[] inventory;
     private Character[] character;
+    private Item item;
      
     public Game() {
     }
@@ -60,11 +61,11 @@ public class Game implements Serializable {
         this.zombiecrusher = zombiecrusher;
     }
 
-    public BackPack getBackpack() {
+    public BackPack getBackPack() {
         return backpack;
     }
 
-    public void setBackpack(BackPack backpack) {
+    public void setBackPack(BackPack backpack) {
         this.backpack = backpack;
     }
 
@@ -100,6 +101,14 @@ public class Game implements Serializable {
 
     public void setCharacter(Character[] character) {
         this.character = character;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     
@@ -138,11 +147,6 @@ public class Game implements Serializable {
     public void setZombieCrusher(ZombieCrusher zombieCrusher) {
       System.out.println("*** setZombieCrusher function called *** ");
     }
-
-    public void setBackPack(BackPack backPack) {
-      System.out.println("*** setBackPack function called *** ");
-    }
-    
-     
+         
     
 }

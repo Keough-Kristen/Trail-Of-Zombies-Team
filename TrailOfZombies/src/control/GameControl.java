@@ -54,10 +54,10 @@ public class GameControl {
         Map map = MapControl.createMap();
         game.setMap(map);
 
-        /*
+        
         BackPack backPack = new BackPack();
         game.setBackPack(backPack);
-         */
+         
     }
 
     public static void movePlayerToStartingLocation(Map map) {
@@ -523,5 +523,22 @@ public class GameControl {
                 }
             }
         }
+    }   
+        public static void sortItemsByDescending(ArrayList<Item> items) {
+
+        int i, j;
+        Item temp;
+
+        for (i = 0; i < items.size() - 1; i++) {
+            for (j = i + 1; j < items.size(); j++) {
+                if (items.get(i).name().compareToIgnoreCase(items.get(j).name()) < 0) {
+                    temp = items.get(i);
+                    items.set(i, items.get(j));
+                    items.set(j, temp);
+
+                }
+            }
+        }
     }
+          
 }

@@ -17,7 +17,7 @@ public class BackPack {
     private ArrayList<Item> items;
 
     public BackPack() {
-         items = new ArrayList<>();
+         items = new ArrayList<Item>();
     }
 
     public ArrayList<Item> getItems() {
