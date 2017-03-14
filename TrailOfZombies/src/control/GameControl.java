@@ -81,13 +81,13 @@ public class GameControl {
         locations[0][3].setScene(scenes[SceneType.TractorsBigandSmall.ordinal()]);
         locations[0][4].setScene(scenes[SceneType.JoesTire.ordinal()]);
         locations[1][0].setScene(scenes[SceneType.BobtheButcher.ordinal()]);
-        locations[1][1].setScene(scenes[SceneType.HalsHardware.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.WaterTower.ordinal()]);
         locations[1][2].setScene(scenes[SceneType.District5FireStation.ordinal()]);
         locations[1][3].setScene(scenes[SceneType.BigMountainMotorSports.ordinal()]);
         locations[1][4].setScene(scenes[SceneType.GarysGunStore.ordinal()]);
         locations[2][0].setScene(scenes[SceneType.RicksAutoRepair.ordinal()]);
         locations[2][1].setScene(scenes[SceneType.ArcoCityPoliceStation.ordinal()]);
-        locations[2][2].setScene(scenes[SceneType.WaterTower.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.Warehouse.ordinal()]);
         locations[2][3].setScene(scenes[SceneType.FidelityFiduciaryBank.ordinal()]);
         locations[2][4].setScene(scenes[SceneType.NewHopeChurch.ordinal()]);
         locations[3][0].setScene(scenes[SceneType.VirginiaMovieTheater.ordinal()]);
@@ -230,7 +230,7 @@ public class GameControl {
         Scene[] scenes = new Scene[SceneType.values().length];
 
         Scene scene = new Scene();
-        scene.setDescription("Arco Regional Airport");
+        scene.setDescription("No flights coming or going!");
         scene.setName("Arco Regional Airport");
         scene.setSymbol("RA");
         scene.getItems().add(Item.fuel);
@@ -241,7 +241,7 @@ public class GameControl {
         scenes[SceneType.ArcoRegionalAirport.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Jerry's Junkyard and Salvage");
+        scene.setDescription("We have parts for your Zombie crusher");
         scene.setName("Jerry's Junkyard and Salvage");
         scene.setSymbol("JJ");
         scene.getItems().add(Item.bumpers);
@@ -252,7 +252,7 @@ public class GameControl {
         scenes[SceneType.JerrysJunkyardandSalvage.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Build It Home Improvement");
+        scene.setDescription("Zombie home defense DIY");
         scene.setName("Build It Home Improvement");
         scene.setSymbol("HI");
         scene.getItems().add(Item.knife);
@@ -263,7 +263,7 @@ public class GameControl {
         scenes[SceneType.BuildItHomeImprovement.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Tractors Big and Small");
+        scene.setDescription("Tractors to move your zombies.");
         scene.setName("Tractors Big and Small");
         scene.setSymbol("TS");
         scene.getItems().add(Item.winch);
@@ -273,7 +273,7 @@ public class GameControl {
         scenes[SceneType.TractorsBigandSmall.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Joe's Tire");
+        scene.setDescription("Beware of dog!");
         scene.setName("Joe's Tire");
         scene.setSymbol("JT");
         scene.getItems().add(Item.pallet);
@@ -283,7 +283,7 @@ public class GameControl {
         scenes[SceneType.JoesTire.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Bob the Butcher");
+        scene.setDescription("Zombie arms and legs!");
         scene.setName("Bob the Butcher");
         scene.setSymbol("BB");
         scene.getItems().add(Item.bacon);
@@ -293,17 +293,15 @@ public class GameControl {
         scenes[SceneType.BobtheButcher.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Hal's Hardware");
-        scene.setName("Hal's Hardware");
-        scene.setSymbol("HH");
-        scene.getItems().add(Item.knife);
-        scene.getItems().add(Item.pistol);
+        scene.setDescription("Drown your zombie here!");
+        scene.setName("Water Tower");
+        scene.setSymbol("WT");
         scene.getItems().add(Item.water);
         //scene.setCharacter(null);
-        scenes[SceneType.HalsHardware.ordinal()] = scene;
+        scenes[SceneType.WaterTower.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("District 5 FireStation");
+        scene.setDescription("No one on duty!");
         scene.setName("District 5 FireStation");
         scene.setSymbol("FS");
         scene.getItems().add(Item.vegetables);
@@ -315,7 +313,7 @@ public class GameControl {
         scenes[SceneType.District5FireStation.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Big Mountain Motor Sports");
+        scene.setDescription("We have cleats to run from your zombie!");
         scene.setName("Big Mountain Motor Sports");
         scene.setSymbol("MS");
         scene.getItems().add(Item.pallet);
@@ -325,7 +323,7 @@ public class GameControl {
         scenes[SceneType.BigMountainMotorSports.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Gary's Gun Store");
+        scene.setDescription("Sold out");
         scene.setName("Gary's Gun Store");
         scene.setSymbol("GG");
         scene.getItems().add(Item.ar15);
@@ -336,9 +334,9 @@ public class GameControl {
         scenes[SceneType.GarysGunStore.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Rick's Auto Repair");
+        scene.setDescription("Fix up your Zombie crusher here!");
         scene.setName("Rick's Auto Repair");
-        scene.setSymbol("RA");
+        scene.setSymbol("RR");
         scene.getItems().add(Item.water);
         scene.getItems().add(Item.pallet);
         scene.getItems().add(Item.fuel);
@@ -347,7 +345,7 @@ public class GameControl {
         scenes[SceneType.RicksAutoRepair.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Arco City Police Station");
+        scene.setDescription("911 not working!");
         scene.setName("Arco City Police Station");
         scene.setSymbol("PS");
         scene.getItems().add(Item.pistol);
@@ -358,15 +356,15 @@ public class GameControl {
         scenes[SceneType.ArcoCityPoliceStation.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Water Tower");
-        scene.setName("Water Tower");
-        scene.setSymbol("WT");
+        scene.setDescription("Main base to store resources");
+        scene.setName("Warehouse");
+        scene.setSymbol("WH");
         scene.getItems().add(Item.water);
         //scene.setCharacter(null);
-        scenes[SceneType.WaterTower.ordinal()] = scene;
+        scenes[SceneType.Warehouse.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Fidelity Fiduciary Bank");
+        scene.setDescription("Closed");
         scene.setName("Fidelity Fiduciary Bank");
         scene.setSymbol("FD");
         scene.getItems().add(Item.water);
@@ -374,7 +372,7 @@ public class GameControl {
         scenes[SceneType.FidelityFiduciaryBank.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("New Hope Church");
+        scene.setDescription("The apacolypse is here!");
         scene.setName("New Hope Church");
         scene.setSymbol("NH");
         scene.getItems().add(Item.pistol);
@@ -385,7 +383,7 @@ public class GameControl {
         scenes[SceneType.NewHopeChurch.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Virginia Movie Theater");
+        scene.setDescription("Now Showing: Night of the Living Dead");
         scene.setName("Virginia Movie Theater");
         scene.setSymbol("MT");
         scene.getItems().add(Item.knife);
@@ -395,7 +393,7 @@ public class GameControl {
         scenes[SceneType.VirginiaMovieTheater.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Donna's Diner");
+        scene.setDescription("Fresh meat!");
         scene.setName("Donna's Diner");
         scene.setSymbol("DD");
         scene.getItems().add(Item.chicken);
@@ -410,7 +408,7 @@ public class GameControl {
         scenes[SceneType.DonnasDiner.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Downtown Drug");
+        scene.setDescription("Beat your Zombie depression, get your Zoloft here!");
         scene.setName("Downtown Drug");
         scene.setSymbol("DT");
         scene.getItems().add(Item.medicine);
@@ -420,7 +418,7 @@ public class GameControl {
         scenes[SceneType.DowntownDrug.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Museum of Arco");
+        scene.setDescription("Zombie art on display");
         scene.setName("Museum of Arco");
         scene.setSymbol("MA");
         scene.getItems().add(Item.crossbow);
@@ -430,7 +428,7 @@ public class GameControl {
         scenes[SceneType.MuseumofArco.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Big Jim's Pig Farm");
+        scene.setDescription("Dispose of your spare zombie parts here ");
         scene.setName("Big Jim's Pig Farm");
         scene.setSymbol("PF");
         scene.getItems().add(Item.bacon);
@@ -440,7 +438,7 @@ public class GameControl {
         scenes[SceneType.BigJimsPigFarm.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("OXXO Gas Station");
+        scene.setDescription("Hugs and Kisses");
         scene.setName("OXXO Gas Station");
         scene.setSymbol("GS");
         scene.getItems().add(Item.fuel);
@@ -451,7 +449,7 @@ public class GameControl {
         scenes[SceneType.OXXOGasStation.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Shop n Save");
+        scene.setDescription("Buy your toilet paper before it's gone!");
         scene.setName("Shop n Save");
         scene.setSymbol("SS");
         scene.getItems().add(Item.water);
@@ -468,7 +466,7 @@ public class GameControl {
         scenes[SceneType.ShopnSave.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Pet Town");
+        scene.setDescription("Zombie leashes for sale!");
         scene.setName("Pet Town");
         scene.setSymbol("PT");
         scene.getItems().add(Item.medicine);
@@ -477,7 +475,7 @@ public class GameControl {
         scenes[SceneType.PetTown.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Community Library");
+        scene.setDescription("Read all about Zombies");
         scene.setName("Community Library");
         scene.setSymbol("CL");
         scene.getItems().add(Item.pallet);
@@ -485,7 +483,7 @@ public class GameControl {
         scenes[SceneType.CommunityLibrary.ordinal()] = scene;
 
         scene = new Scene();
-        scene.setDescription("Arco High School");
+        scene.setDescription("Home of the Zombies");
         scene.setName("Arco High School");
         scene.setSymbol("HS");
         scene.getItems().add(Item.staff);

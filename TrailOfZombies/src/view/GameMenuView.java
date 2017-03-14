@@ -5,8 +5,11 @@
 */
 package view;
 
+import control.GameControl;
+import java.util.ArrayList;
 import model.Game;
 import model.InventoryItem;
+import model.Item;
 import model.Location;
 import model.Map;
 import trailofzombies.TrailOfZombies;
@@ -189,8 +192,21 @@ public class GameMenuView extends View {
     }
     System.out.println(map.getCurrentLocation().getScene().getName());
     System.out.println(map.getCurrentLocation().getScene().getDescription());
- }
-
+    printListOfItems();
+    
+     } 
+   public void printListOfItems() {
+        
+        ArrayList<Item> sceneItems = TrailOfZombies.getCurrentGame().getMap().getCurrentLocation().getScene().getItems(); 
+         
+        GameControl.sortItemsByName(sceneItems);
+        
+            for (Item item:sceneItems) {
+               System.out.println("Resource Item at scene:" + item.name()); 
+            }
+                         
+       
+}
     private void displayTravelToNewLocation() {
          TravelToNewLocationView newLocation = new TravelToNewLocationView();
          newLocation.display();
