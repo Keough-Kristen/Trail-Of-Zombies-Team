@@ -5,6 +5,7 @@
  */
 package control;
 
+import Exceptions.GameControlException;
 import java.util.ArrayList;
 import model.Item;
 import control.GameControl;
@@ -23,10 +24,10 @@ public class BackPackControl {
         inventory.clear(); //remove all items from the ArrayList
     }
 
-    public boolean moveItemFromSceneToBackPack(ArrayList<Item> sceneItem, ArrayList<Item> backPackItem, Item item) {
+    public boolean moveItemFromSceneToBackPack(ArrayList<Item> sceneItem, ArrayList<Item> backPackItem, Item item) throws GameControlException {
        return GameControl.moveItem(sceneItem, backPackItem, item);
     }
-    public boolean moveItemFromBackPackToWarehouse(ArrayList<Item> backPackItem, ArrayList<Item> warehouseItem, Item item) {
+    public boolean moveItemFromBackPackToWarehouse(ArrayList<Item> backPackItem, ArrayList<Item> warehouseItem, Item item) throws GameControlException {
        return GameControl.moveItem(backPackItem, warehouseItem, item);
     }
 }

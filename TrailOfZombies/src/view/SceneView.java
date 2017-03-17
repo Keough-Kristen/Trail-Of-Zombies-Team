@@ -5,6 +5,7 @@
 */
 package view;
 
+import Exceptions.GameControlException;
 import control.GameControl;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -120,13 +121,15 @@ public class SceneView extends View {
     private boolean gatherResources() {
         sceneItems = TrailOfZombies.getCurrentGame().getMap().getCurrentLocation().getScene().getItems();
         backPackItems = TrailOfZombies.getCurrentGame().getBackPack().getItems();
-        
+              
         locationResources();
         String savePrompt = this.displayMessage;
         this.displayMessage = "Choose an Item to add to your backpack. (Enter -1 to cancel.)";
+        
         String input = getInput();
         int choice = Integer.parseInt(input);
-        
+        Item item = sceneItems.get(choice);
+          
         if (choice == -1){
             return false;
         }
@@ -136,20 +139,17 @@ public class SceneView extends View {
             return false;
         }
         
-        Item item = sceneItems.get(choice);
         
         this.displayMessage = savePrompt;
+        
 
-        if (item != null)
-            if (GameControl.moveItem(sceneItems, backPackItems, item)){
+            if (item != null);
+            if (GameControl.moveItem(sceneItems,backPackItems,item)){
                 System.out.println("You've taken the " + item.getDescription() + ".");
             }
-      /*  if (sceneItems != null){
-            return GameControl.moveItem(sceneItems, backPackItems, item); //To change body of generated methods, choose Tools | Templates.
-
-        }*/
             return false;
     }
+
     
 }
                 

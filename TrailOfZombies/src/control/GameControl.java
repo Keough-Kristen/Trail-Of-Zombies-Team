@@ -5,6 +5,7 @@
  */
 package control;
 
+import Exceptions.GameControlException;
 import java.util.ArrayList;
 import model.BackPack;
 import model.Game;
@@ -64,7 +65,7 @@ public class GameControl {
      // If starting location is not supposed to be 0,0 then use the correct values here.
      movePlayer(map, 2, 2);
     }
-
+    
     public static void movePlayer(Map map, int row, int column) {
         map.setCurrentLocation(map.getLocations()[row][column]);
         map.getCurrentLocation().setVisited(true);
@@ -72,6 +73,8 @@ public class GameControl {
         map.setCurrentColumn(column);
 
     }
+
+   
 
     static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
@@ -496,12 +499,16 @@ public class GameControl {
         return scenes;
     }
 
-    public static boolean moveItem(ArrayList<Item> sourceItems, ArrayList<Item> destinationItems, Item item) {
+    public static boolean moveItem(ArrayList<Item> sourceItems, ArrayList<Item> destinationItems, Item item){
+        
+    
         if (sourceItems.contains(item)) {
             destinationItems.add(item);
             sourceItems.remove(item);
-
+            
             return true;
+                
+                    
         }
         return false;
     }
@@ -538,5 +545,5 @@ public class GameControl {
             }
         }
     }
-          
 }
+

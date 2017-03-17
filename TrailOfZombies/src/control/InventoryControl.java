@@ -5,6 +5,7 @@
  */
 package control;
 
+import Exceptions.InventoryControlException;
 import model.Item;
 
 /**
@@ -12,16 +13,17 @@ import model.Item;
  * @author kristenkeough
  */
 public class InventoryControl {
-    public double calcVolumeOfCrate(double height, double width, double depth) {
+    public double calcVolumeOfCrate(double height, double width, double depth) 
+    throws InventoryControlException {
 
         if (height<0) { //height is negative?
-		return -1;
+		throw new InventoryControlException("The height must be greater than 0.");
     }
 	if (width<0) {//widht is negative?
-		return -2;
+		throw new InventoryControlException("The weight must be greater than 0.");
     }
 	if (depth<0 || depth>48) { //depth is out of range
-		return -3;
+		throw new InventoryControlException("The depth is out of range.");
     }
 	double volume = (height * width * depth)/1728;
 

@@ -23,13 +23,15 @@ public class TravelToNewLocationView extends View {
     
    @Override 
     public boolean doAction(String value) {
-        int rowNumber = Integer.parseInt(value);
+       try{
+       int rowNumber = Integer.parseInt(value);
         
         if (rowNumber < 0 || rowNumber > 4){
        System.out.println("\nInvalid row number: "
                    + "The row must be 0-4.");
+       
        return false;
-    }
+        }
         displayMessage = "\nEnter a column number from the map.";
         value = getInput();
         int columnNumber = Integer.parseInt(value);
@@ -39,10 +41,24 @@ public class TravelToNewLocationView extends View {
                    + "The column must be 0-4.");
             value = getInput();
             columnNumber = Integer.parseInt(value);
-        }
+             }        
+        
         Game game = TrailOfZombies.getCurrentGame();
         GameControl.movePlayer(game.getMap(),rowNumber,columnNumber);
         
-        return true;
-    }
+       }catch(NumberFormatException nf){
+                System.out.println("\n You must enter a valid number."
+                                +"\n try again or enter Q to Quit");
+            }
+        
+       
+       return true;
+    
+    }    
+        
+
+      
 }
+          /*       
+
+               */

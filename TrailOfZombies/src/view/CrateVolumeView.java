@@ -5,8 +5,11 @@
  */
 package view;
 
+import Exceptions.InventoryControlException;
 import control.InventoryControl;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -43,29 +46,32 @@ public class CrateVolumeView {
                   done = true;
             }
             if (!done){
-                InventoryControl inventoryControl = new InventoryControl();
-                        
-                double volume = inventoryControl.calcVolumeOfCrate(height, width, depth);
-                if (volume < 0){
-                    //to do output error message(s)
+                try {
+                    InventoryControl inventoryControl = new InventoryControl();
                     
-                   if (height < 0){ 
-                      System.out.println("Height cannot be negative.");}
-                   
-                   
-                   else if (width < 0){
-                       System.out.println("Width cannot be negative.");}
-                      
-                   
-                    else if (depth < 0 || depth > 48){
-                       System.out.println("Depth is out of range.");}
-                   
-            }
-               
-                else {
-                    System.out.println("The volume of the crate is " + volume + " cubic feet.");
-                done = true;
-                }
+                    double volume = inventoryControl.calcVolumeOfCrate(height, width, depth);
+                    if (volume < 0){
+                        //to do output error message(s)
+                        
+                   /*     if (height < 0){
+                            System.out.println("Height cannot be negative.");}
+                        
+                        
+                        else if (width < 0){
+                            System.out.println("Width cannot be negative.");}
+                        
+                        
+                        else if (depth < 0 || depth > 48){
+                            System.out.println("Depth is out of range.");}
+                     */   
+                    }
+                    
+                    else {
+                        System.out.println("The volume of the crate is " + volume + " cubic feet.");
+                         done = true;
+                    }
+                } catch (InventoryControlException ice) {
+                    System.out.println(ice.getMessage());                }
             }
         } while (!done);
         

@@ -5,7 +5,9 @@
  */
 package view;
 
+import control.GameControl;
 import java.util.Scanner;
+import trailofzombies.TrailOfZombies;
 
 /**
  *
@@ -58,7 +60,49 @@ public abstract class View implements ViewInterface {
        }
        return value; //return the name
    }
-   }
+    //TO DO GetINT
+     @Override
+    public String getInt() {
+       
+        Scanner keyboard = new Scanner(System.in);
+       boolean valid = false;
+       String value = null;
 
+       //while a valid selection has not been retrieved
+       while (!valid) {
+           
+           //prompt the player to make a selection
+           System.out.println ("Choose an Item to add to your backpack. (Enter -1 to cancel.)");
+           
+           //get the valye entered from the keyboard
+           value = keyboard.nextLine();
+           value = value.trim();
+           int choice = Integer.parseInt(value);
+           
+           if (value.length ()<1) { //blank value entered
+               System.out.println ("\n*** Yout must enter a value. *** ");
+               continue;
+           }
+        /*    if (choice == -1){
+            return true;
+        }
+        
+        if (choice < 0 || choice >=sceneItems.size()){
+            System.out.println("Your choice is invalid.");
+            return false;
+        }
+            
+
+            if (item != null);
+            if (GameControl.moveItem(sceneItems,backPackItems,item)){
+                System.out.println("You've taken the " + item.getDescription() + ".");
+            }
+           }*/
+           break;
+       }
+       return value; //return the name
+
+    }
+}
    
-
+        

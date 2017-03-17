@@ -5,6 +5,7 @@
  */
 package control;
 
+import Exceptions.GameControlException;
 import java.util.ArrayList;
 import model.Item;
 
@@ -22,7 +23,7 @@ public class VehicleControl {
         inventory.clear(); //remove all items from the ArrayList
     }
 
- public boolean moveItemFromWarehouseToZombieCrusher(ArrayList<Item> warehouseItem, ArrayList<Item> zombieCrusherItem, Item item) {
+ public boolean moveItemFromWarehouseToZombieCrusher(ArrayList<Item> warehouseItem, ArrayList<Item> zombieCrusherItem, Item item) throws GameControlException {
   
        return GameControl.moveItem(warehouseItem, zombieCrusherItem, item);
     }
