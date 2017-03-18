@@ -30,11 +30,16 @@ public class TrailOfZombies {
     private static Player player = null;
     
     public static void main(String[] args) {
-        
+      
         //create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
+        try {
         startProgramView.display();
-        
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.display();
+        }  
 
      
     }

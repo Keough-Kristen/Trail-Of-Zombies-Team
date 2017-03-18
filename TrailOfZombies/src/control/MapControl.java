@@ -5,6 +5,7 @@
  */
 package control;
 
+
 import model.Map;
 import model.Player;
 import model.Point;
@@ -18,7 +19,7 @@ import trailofzombies.TrailOfZombies;
  */
 public class MapControl {
 
-    public static Map createMap() {
+    public static Map createMap()  {
         
         Map map = new Map (5, 5);
         

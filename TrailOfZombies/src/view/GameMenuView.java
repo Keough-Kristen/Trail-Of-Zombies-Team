@@ -105,7 +105,7 @@ public class GameMenuView extends View {
 
     private void displayVolume() {
         CrateVolumeView crateVolume = new CrateVolumeView();
-        crateVolume.displayVolumeView();
+        crateVolume.displayView();
         }
 
 

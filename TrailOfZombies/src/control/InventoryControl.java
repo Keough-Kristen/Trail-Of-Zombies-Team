@@ -16,15 +16,17 @@ public class InventoryControl {
     public double calcVolumeOfCrate(double height, double width, double depth) 
     throws InventoryControlException {
 
-        if (height<0) { //height is negative?
+        if (height<=0) { //height is negative?
 		throw new InventoryControlException("The height must be greater than 0.");
     }
-	if (width<0) {//widht is negative?
+	if (width<=0) {//widht is negative?
 		throw new InventoryControlException("The weight must be greater than 0.");
     }
-	if (depth<0 || depth>48) { //depth is out of range
-		throw new InventoryControlException("The depth is out of range.");
+	if (depth<=0 || depth>48) { //depth is out of range
+		throw new InventoryControlException("The depth is out of range."
+                         + "It must be greater than 0 and less than 49.");
     }
+       
 	double volume = (height * width * depth)/1728;
 
 	return volume;
