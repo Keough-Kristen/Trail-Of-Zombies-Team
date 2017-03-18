@@ -44,9 +44,7 @@ public class GameMenuView extends View {
         value = value.toUpperCase();
     
             switch (value){
-                case "L":
-                    this.displayLocationMenu();
-                    break;
+                
                 case "I":
                     this.viewInventory();
                     break;
@@ -82,10 +80,6 @@ public class GameMenuView extends View {
             return false;
     }
 
-    private void displayLocationMenu() {
-        LocationMenuView locationMenu = new LocationMenuView();
-        locationMenu.display();
-    }
 
     private void displayResources() {
         System.out.println("*** displayResources function called ***");
