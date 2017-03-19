@@ -212,17 +212,21 @@ public class InventoryControlTest {
         //input values for test case 1
         double height = 30.0;
         double width = 8.0;
-        
+        double result = 0;
         double expResult = 5.24; // expected output returned value
         
         //create instance of InventoryControl class
         InventoryControl instance = new InventoryControl();
         
         //call function to run test
-        double result = instance.calcTireFootprint(height, width);
+        try{
+        result = instance.calcTireFootprint(height, width);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
         // TODO review the generated test code and remove the default call to fail.
         // fail("The test case is a prototype.");
         
@@ -241,10 +245,14 @@ public class InventoryControlTest {
         instance = new InventoryControl();
         
         //call function to run test
+        try{
         result = instance.calcTireFootprint(height, width);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
         // TODO review the generated test code and remove the default call to fail.
         // fail("The test case is a prototype.");
         
@@ -263,10 +271,14 @@ public class InventoryControlTest {
         instance = new InventoryControl();
         
         //call function to run test
+        try{
         result = instance.calcTireFootprint(height, width);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
         // TODO review the generated test code and remove the default call to fail.
         // fail("The test case is a prototype.");
         
@@ -284,10 +296,14 @@ public class InventoryControlTest {
         instance = new InventoryControl();
         
         //call function to run test
+        try{
         result = instance.calcTireFootprint(height, width);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
         // TODO review the generated test code and remove the default call to fail.
         // fail("The test case is a prototype.");
         
@@ -305,10 +321,14 @@ public class InventoryControlTest {
         instance = new InventoryControl();
         
         //call function to run test
+        try{
         result = instance.calcTireFootprint(height, width);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
         // TODO review the generated test code and remove the default call to fail.
         // fail("The test case is a prototype.");
         
@@ -326,10 +346,14 @@ public class InventoryControlTest {
         instance = new InventoryControl();
         
         //call function to run test
+        try{
         result = instance.calcTireFootprint(height, width);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
         // TODO review the generated test code and remove the default call to fail.
         // fail("The test case is a prototype.");
     }
