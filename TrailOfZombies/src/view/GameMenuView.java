@@ -114,7 +114,7 @@ public class GameMenuView extends View {
 
     private void displayFootprint() {
         TireFootprintView tireFootprint = new TireFootprintView();
-        tireFootprint.displayFootprintView();
+        tireFootprint.displayView();
     }
     
      private void displayWood() {

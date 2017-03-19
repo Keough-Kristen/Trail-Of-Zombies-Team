@@ -3,22 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Exceptions;
+package exceptions;
 
 /**
  *
- * @author brycelaptop
+ * @author kristenkeough
  */
-public class GameControlException extends Exception{
+public class GameControlException extends Exception {
 
     public GameControlException() {
     }
 
     public GameControlException(String message) {
         super(message);
-        this.getMessage();
-        message = "\n You  brain-dead zombie"
-                + " you typed a letter not a number.";
+         System.out.println("n/Please enter a player name.");
     }
 
     public GameControlException(String message, Throwable cause) {
@@ -33,5 +31,6 @@ public class GameControlException extends Exception{
         super(message, cause, enableSuppression, writableStackTrace);
     }
 
+   
     
 }

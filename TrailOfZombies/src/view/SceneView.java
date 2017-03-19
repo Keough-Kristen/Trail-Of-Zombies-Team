@@ -5,7 +5,7 @@
 */
 package view;
 
-import Exceptions.GameControlException;
+import exceptions.GameControlException;
 import control.GameControl;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -127,9 +127,11 @@ public class SceneView extends View {
         this.displayMessage = "Choose an Item to add to your backpack. (Enter -1 to cancel.)";
         
         String input = getInput();
+        
+        
         int choice = Integer.parseInt(input);
+        
         Item item = sceneItems.get(choice);
-          
         if (choice == -1){
             return false;
         }

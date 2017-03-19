@@ -5,7 +5,7 @@
  */
 package control;
 
-import Exceptions.InventoryControlException;
+import exceptions.InventoryControlException;
 import model.Item;
 
 /**
@@ -33,13 +33,15 @@ public class InventoryControl {
     }  
     
     //Kristen Keough Individual Assignment
-    public double calcTireFootprint (double height, double width){
+    public double calcTireFootprint (double height, double width)
+            throws InventoryControlException {
+        
     
-        if (width<0) { //width is negative?
-                return -1;
-    }
-        if (height<0 || height>30) { //width is out of range
-                return -2;
+        if (width<=0) { //width is negative?
+                throw new InventoryControlException("Width of the tire cannot be negative.");
+            }
+        if (height<=0 || height>30) { //height is out of range
+                throw new InventoryControlException("Height of the tire cannot be negative.");
     }
         double radius = height / 2;
         double volume = (2 * Math.PI * radius);

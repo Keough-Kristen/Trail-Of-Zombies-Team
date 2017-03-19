@@ -5,7 +5,7 @@
  */
 package control;
 
-import Exceptions.GameControlException;
+import exceptions.GameControlException;
 import java.util.ArrayList;
 import model.Item;
 

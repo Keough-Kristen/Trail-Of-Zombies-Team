@@ -5,7 +5,7 @@
  */
 package view;
 
-import Exceptions.InventoryControlException;
+import exceptions.InventoryControlException;
 import control.InventoryControl;
 import java.util.Scanner;
 

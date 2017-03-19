@@ -5,7 +5,7 @@
  */
 package control;
 
-import Exceptions.InventoryControlException;
+import exceptions.InventoryControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
