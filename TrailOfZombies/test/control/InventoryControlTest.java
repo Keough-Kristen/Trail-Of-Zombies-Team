@@ -5,6 +5,7 @@
  */
 package control;
 
+import Exceptions.InventoryControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -23,7 +24,7 @@ public class InventoryControlTest {
     @Test
     public void testCalcVolumeOfCrate() {
         System.out.println("calcVolumeOfCrate");
-               
+        
         /********
          * Test Case 1
          ********/
@@ -31,10 +32,16 @@ public class InventoryControlTest {
         double height = 24.0;
         double width = 36.0;
         double depth = 24.0;
+        double result = 0;
         InventoryControl instance = new InventoryControl();
         double expResult = 12.0;
-        double result = instance.calcVolumeOfCrate(height, width, depth);
+        try{
+        result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
       //  fail("The test case is a prototype.");
         
@@ -47,8 +54,13 @@ public class InventoryControlTest {
         depth = 24.0;
         instance = new InventoryControl();
         expResult = -1.0;
+        try{
         result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
@@ -61,8 +73,13 @@ public class InventoryControlTest {
         depth = 24.0;
         instance = new InventoryControl();
         expResult = -2.0;
+        try{
         result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
@@ -75,8 +92,13 @@ public class InventoryControlTest {
         depth = -3.0;
          instance = new InventoryControl();
         expResult = -3.0;
+        try{
         result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
@@ -89,8 +111,13 @@ public class InventoryControlTest {
         depth = 49.0;
         instance = new InventoryControl();
         expResult = -3.0;
+        try{
         result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
@@ -103,8 +130,13 @@ public class InventoryControlTest {
         depth = 24.0;
         instance = new InventoryControl();
         expResult = 0;
+        try{
         result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
@@ -117,8 +149,13 @@ public class InventoryControlTest {
         depth = 24.0;
         instance = new InventoryControl();
         expResult = 0;
+        try{
         result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
@@ -131,8 +168,13 @@ public class InventoryControlTest {
         depth = 0;
         instance = new InventoryControl();
         expResult = 0;
+        try{
         result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
@@ -145,8 +187,13 @@ public class InventoryControlTest {
         depth = 47.0;
         instance = new InventoryControl();
         expResult = 23.5;
+        try{
         result = instance.calcVolumeOfCrate(height, width, depth);
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -301,14 +348,19 @@ public class InventoryControlTest {
         System.out.println("\tTest Case #1");
         double crates = 7.0;
         double pallets = 14.0;
-        
+        double result;
         double expResult = 0.0;
         
         InventoryControl instance = new InventoryControl();
         
-        double result = instance.calcWoodForCrates(crates, pallets);
-        
+        try{
+        result = instance.calcWoodForCrates(crates, pallets);
+              
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
       //  fail("The test case is a prototype.");
         
@@ -322,10 +374,14 @@ public class InventoryControlTest {
         expResult = -1.0;
         
         instance = new InventoryControl();
-        
+        try{
         result = instance.calcWoodForCrates(crates, pallets);
         
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
@@ -339,10 +395,14 @@ public class InventoryControlTest {
         expResult = -1.0;
         
         instance = new InventoryControl();
-
+        try{
         result = instance.calcWoodForCrates(crates, pallets);
 
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
@@ -357,10 +417,14 @@ public class InventoryControlTest {
         expResult = -1.0;
         
         instance = new InventoryControl();
-
+        try{
         result = instance.calcWoodForCrates(crates, pallets);
 
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
@@ -374,10 +438,14 @@ public class InventoryControlTest {
         expResult = -182.0;
         
         instance = new InventoryControl();
-
+        try{
         result = instance.calcWoodForCrates(crates, pallets);
 
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
@@ -391,10 +459,14 @@ public class InventoryControlTest {
         expResult = -1.0;
         
         instance = new InventoryControl();
-
+        try{
         result = instance.calcWoodForCrates(crates, pallets);
 
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
         
@@ -408,10 +480,14 @@ public class InventoryControlTest {
         expResult = 0.0;
         
         instance = new InventoryControl();
-
+        try{
         result = instance.calcWoodForCrates(crates, pallets);
 
         assertEquals(expResult, result, 0.01);
+        }catch (InventoryControlException ice ) 
+                {
+                    System.out.println(ice.getMessage());  }
+            
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
 //>>>>>>> 69c6f1e Bryce individual assignment 6

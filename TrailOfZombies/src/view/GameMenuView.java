@@ -34,6 +34,7 @@ public class GameMenuView extends View {
                     + "\nV - Get Crate Volume"
                     + "\nG - How many gallons do you need?"
                     + "\nF - Get Tire Footprint"
+                    + "\nW - Calculate Wood for Crates"
                     + "\nE - Exit"
                     + "\n---------------------");
     }
@@ -72,6 +73,8 @@ public class GameMenuView extends View {
                 case "F":
                     this.displayFootprint();
                     break;
+                case "W":
+                    this.displayWood();
                 default:
                     System.out.println("\n***Invalid selection *** Try again.");
                     break;
@@ -112,6 +115,11 @@ public class GameMenuView extends View {
     private void displayFootprint() {
         TireFootprintView tireFootprint = new TireFootprintView();
         tireFootprint.displayFootprintView();
+    }
+    
+     private void displayWood() {
+        WoodForCratesView woodForCrates = new WoodForCratesView();
+        woodForCrates.displayWoodView();
     }
     
     private void viewInventory() {

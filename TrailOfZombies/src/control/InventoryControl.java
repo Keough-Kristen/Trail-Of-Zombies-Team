@@ -57,11 +57,9 @@ public class InventoryControl {
         public double calcWoodForCrates(double crates, double pallets)
         throws InventoryControlException {
     
-            if (crates <= 0 || crates > (pallets / 2)){  //crates out of range
+            if (crates <= 0){  //crates out of range
            
-                throw new InventoryControlException("Crates cannot be 0 or negative"
-                                            + "and cannot be great than half the "
-                                            + "amount of pallets.");
+                throw new InventoryControlException("Crates cannot be 0 or negative.");
             }
             
             if (pallets <= 0){  //pallets is negative
@@ -73,7 +71,7 @@ public class InventoryControl {
             
             double woodPerCrate = 26;
             
-            double palletsNeeded = (crates * woodPerCrate) - (pallets * woodPerPallet);
+            double palletsNeeded = ((crates * woodPerCrate) - (pallets * woodPerPallet))/13;
                     
             return palletsNeeded;
                     
