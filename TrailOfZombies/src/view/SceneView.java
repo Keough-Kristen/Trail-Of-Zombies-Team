@@ -126,16 +126,17 @@ public class SceneView extends View {
         String savePrompt = this.displayMessage;
         this.displayMessage = "Choose an Item to add to your backpack. (Enter -1 to cancel.)";
         boolean done = false;
+     
+        int choice = -1;
         String input = getInput();
-        
-        
-        int choice = Integer.parseInt(input);
-        
+
         Item item = sceneItems.get(choice);
         do{
-        
+         
+        choice = View.getMenuInt(savePrompt);
+       
         if (choice == -1){
-            return true;
+            done = true;
         }
         
         if (choice < 0 || choice >=sceneItems.size()){
@@ -143,7 +144,9 @@ public class SceneView extends View {
             return true;
         }
         
-        
+        else {
+            ;
+        }
         this.displayMessage = savePrompt;
         
             if (!done)
