@@ -61,7 +61,7 @@ public class InventoryControl {
     
             if (crates <= 0){  //crates out of range
            
-                throw new InventoryControlException("Crates cannot be 0 or negative.");
+                throw new InventoryControlException("Crates must be greater than 0.");
             }
             
             if (pallets <= 0){  //pallets is negative
@@ -87,31 +87,19 @@ public class InventoryControl {
 * @author MarcoMorley
 */
 //public class InventoryControl {
-   public double calcGalNeeded(double miles, double mpg, double gallons){
+   public double calcGalNeeded(double tmiles, double gallons)
+   throws InventoryControlException{
    
-   if (miles<0) {    //miles can't be less than zero
-           return -1;
-    }
+   if (tmiles <= 0) {    //miles can't be less than zero
+        throw new InventoryControlException("Miles must be greater than 0.");    }
    
-   double tmiles = 1000;
-   mpg = miles / gallons;
+   double miles = 0;
+   double mpg = 15;
    miles = gallons * mpg;
    double NeededGal = (tmiles - miles) / mpg;
    
    return NeededGal;
    }
-   
-   
-   
-   /*public void stockpiledItems(ArrayList<Item> inventoryItems) {
-    for (int i = 0; i < inventoryItems.size()); i++ {                                            
-        Item item = inventoryItems.get(i);                                                    
-        System.out.println("\n\tItem: " + item.getName()          
-                         + "\n\tquantity: " + item.getQuantityInStock()); 
-    }
-}
-
-*/
   
 }
 

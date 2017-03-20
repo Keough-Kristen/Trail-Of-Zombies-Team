@@ -125,36 +125,40 @@ public class SceneView extends View {
         locationResources();
         String savePrompt = this.displayMessage;
         this.displayMessage = "Choose an Item to add to your backpack. (Enter -1 to cancel.)";
-        
+        boolean done = false;
         String input = getInput();
         
         
         int choice = Integer.parseInt(input);
         
         Item item = sceneItems.get(choice);
+        do{
+        
         if (choice == -1){
-            return false;
+            return true;
         }
         
         if (choice < 0 || choice >=sceneItems.size()){
             System.out.println("Your choice is invalid.");
-            return false;
+            return true;
         }
         
         
         this.displayMessage = savePrompt;
         
-
+            if (!done)
+              
             if (item != null);
             if (GameControl.moveItem(sceneItems,backPackItems,item)){
                 System.out.println("You've taken the " + item.getDescription() + ".");
             }
+               
             return false;
     }
 
-    
+    while (!done);
 }
-                
+}        
          
     
     

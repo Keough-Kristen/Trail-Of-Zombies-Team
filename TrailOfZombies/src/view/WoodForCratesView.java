@@ -40,8 +40,8 @@ public class WoodForCratesView {
                 try{
                 InventoryControl inventoryControl = new InventoryControl();
                         
-                double wood = inventoryControl.calcWoodForCrates(crates, pallets);
-                if (wood < 0){
+                double palletsNeeded = inventoryControl.calcWoodForCrates(crates, pallets);
+                if (palletsNeeded < 0){
                     //to do output error message(s)
                     
                    if (crates <= 0){ 
@@ -53,7 +53,7 @@ public class WoodForCratesView {
             }
                 
                 else {
-                    System.out.println("You need " + wood + " more pallets.");
+                    System.out.println("You need " + palletsNeeded + " more pallets.");
                 done = true;
                 }
                 }catch (InventoryControlException ice ) 
