@@ -25,17 +25,16 @@ public class GameMenuView extends View {
                     + "\n---------------------"
                     + "\n| Game Menu         |"
                     + "\n---------------------"
-                    + "\nL - Location Menu"
                     + "\nM - Display Map"
                     + "\nT - Travel to new location"
                     + "\nR - Etimating the amount of resources?"
                     + "\nK - Welcome to the Haven"
-                    + "\nH - Harvest Menu"
+                    + "\nH - Help Menu"
                     + "\nV - Get Crate Volume"
                     + "\nG - How many gallons do you need?"
                     + "\nF - Get Tire Footprint"
                     + "\nW - Calculate Wood for Crates"
-                    + "\nE - Exit"
+                    + "\nQ - Quit"
                     + "\n---------------------");
     }
  
@@ -62,7 +61,7 @@ public class GameMenuView extends View {
                     this.displayGoToHaven();
                     break;
                 case "H":
-                    this.displayHarvest();
+                    this.displayHelp();
                     break;
                 case "V":
                     this.displayVolume();
@@ -92,9 +91,9 @@ public class GameMenuView extends View {
         System.out.println("*** displayGoToHaven function called ***");
     }
 
-    private void displayHarvest() {
-        System.out.println("*** displayHarvest function called ***");
-    }
+    private void displayHelp() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();    }
 
     void displayMenu() {
         System.out.println("*** display function called ***");
