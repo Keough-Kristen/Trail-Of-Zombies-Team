@@ -6,7 +6,12 @@
 package view;
 
 import control.GameControl;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import trailofzombies.TrailOfZombies;
 
 /**
@@ -17,6 +22,10 @@ public abstract class View implements ViewInterface {
 
     protected String displayMessage;
 
+    protected final BufferedReader keyboard = TrailOfZombies.getInFile();
+    protected final PrintWriter console = TrailOfZombies.getOutFile();
+
+    
     public View() {
     }
 
@@ -43,7 +52,7 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
 
-        Scanner keyboard = new Scanner(System.in);
+        
         boolean valid = false;
         String value = null;
 
@@ -51,14 +60,20 @@ public abstract class View implements ViewInterface {
         while (!valid) {
 
             //prompt for the player's name
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
 
-            //get the valye entered from the keyboard
-            value = keyboard.nextLine();
+            try {
+                //get the valye entered from the keyboard
+                value = this.keyboard.readLine();
+            } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(),
+                        "*** You must enter a value. ***");
+            }
             value = value.trim();
 
             if (value.length() < 1) { //blank value entered
-                System.out.println("\n*** Yout must enter a value. *** ");
+                ErrorView.display(this.getClass().getName(),
+                        "*** You must enter a value. *** ");
                 continue;
             }
             break;
@@ -68,18 +83,27 @@ public abstract class View implements ViewInterface {
 
     public static int getMenuInt(String prompt) {
 
-        Scanner keyboard = new Scanner(System.in);
+        final BufferedReader keyboard = TrailOfZombies.getInFile();
+        final PrintWriter console = TrailOfZombies.getOutFile();
+        
         String value = "";
         int retval = -999;
         boolean valid = false; //initialize to not valid
         do {
-            System.out.println("\n" + prompt + "(enter Q to cancel):");
+            console.println("\n" + prompt + "enter Q to cancel:");
 
-            value = keyboard.nextLine();
+            try {
+                value = keyboard.readLine();
+            } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+                return retval;
+                
+            }
             value = value.trim().toUpperCase();
 
             if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
+                ErrorView.display("View Class",
+                        "Invalid value: value can not be blank");
 
             } else {
                 if (value == "Q")
@@ -89,8 +113,9 @@ public abstract class View implements ViewInterface {
                     retval = Integer.parseInt(value);
 
                 } catch (NumberFormatException nf) {
-                    System.out.println("\n You must enter a valid number."
-                            + "\n Try again.");
+                    ErrorView.display("View Class",
+                            "You must enter a valid number."
+                            + "Try again.");
                 }
             }
         } while (retval == -999);

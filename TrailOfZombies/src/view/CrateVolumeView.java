@@ -7,7 +7,10 @@ package view;
 
 import exceptions.InventoryControlException;
 import control.InventoryControl;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import trailofzombies.TrailOfZombies;
 
 
 /**
@@ -18,6 +21,9 @@ public class CrateVolumeView {
      private String promptGetHeightMessage;
      private String promptGetWidthMessage;
      private String promptGetDepthMessage;
+     
+     protected final BufferedReader keyboard = TrailOfZombies.getInFile();
+     protected final PrintWriter console = TrailOfZombies.getOutFile();
 
     public CrateVolumeView() {
         this.promptGetHeightMessage = "Enter the height in inches";
@@ -52,12 +58,12 @@ public class CrateVolumeView {
                  
                     double volume = inventoryControl.calcVolumeOfCrate(height, width, depth);
                     
-                        System.out.println("The volume of the crate is " + volume + " cubic feet.");
+                        this.console.println("The volume of the crate is " + volume + " cubic feet.");
                          done = true;
                     
                 } catch (InventoryControlException ice ) 
                 {
-                    System.out.println(ice.getMessage());  }
+                    this.console.println(ice.getMessage());  }
             }
         } while (!done);
         

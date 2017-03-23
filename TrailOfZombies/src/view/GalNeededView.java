@@ -7,7 +7,13 @@ package view;
 
 import control.InventoryControl;
 import exceptions.InventoryControlException;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import trailofzombies.TrailOfZombies;
 
 /**
  *
@@ -17,6 +23,8 @@ public class GalNeededView {
      private String promptGetMilesMessage;
      private String promptGetGallonsMessage;
      
+    protected final BufferedReader keyboard = TrailOfZombies.getInFile();
+    protected final PrintWriter console = TrailOfZombies.getOutFile();
 
     public GalNeededView() {
         this.promptGetMilesMessage = "How many miles do you want to travel?(Enter -1 to cancel)";
@@ -47,20 +55,20 @@ public class GalNeededView {
                     //to do output error message(s)
                     
                    if (tmiles <= 0){ 
-                      System.out.println("Miles cannot be 0 or less.");}
+                      this.console.println("Miles cannot be 0 or less.");}
                    
                    
                    else if (gallons <= 0){
-                       System.out.println("Gallons cannot be 0 or less.");}
+                       this.console.println("Gallons cannot be 0 or less.");}
                    
             }
                
                 else {
-                    System.out.println("Based on your inputs you will need " + NeededGal + " gallons to travel this distance .");
+                    this.console.println("Based on your inputs you will need " + NeededGal + " gallons to travel this distance .");
                 done = true;
                 }
                 }catch(InventoryControlException ice){
-                    System.out.println(ice.getMessage());  
+                    this.console.println(ice.getMessage());  
                 }
             }
         } while (!done);
@@ -70,18 +78,22 @@ public class GalNeededView {
 
     private int getMenuInt(String prompt) {
         
-       Scanner keyboard = new Scanner(System.in);
+       
        String value ="";
        int retval = -1;
        boolean valid = false; //initialize to not valid
        
-            System.out.println("\n" + prompt);
+            this.console.println("\n" + prompt);
             
-            value = keyboard.nextLine();
+         try {
+             value = this.keyboard.readLine();
+         } catch (IOException ex) {
+             this.console.println("\n*** You must enter a value. ***");
+         }
             value = value.trim();
            
             if (value.length() < 1){
-                System.out.println("\nInvalid value: value can not be blank");
+                this.console.println("\nInvalid value: value can not be blank");
                 return retval;
             }
              retval = Integer.parseInt(value);

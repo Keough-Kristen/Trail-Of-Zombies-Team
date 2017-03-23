@@ -76,7 +76,7 @@ public class GameMenuView extends View {
                 case "W":
                     this.displayWood();
                 default:
-                    System.out.println("\n***Invalid selection *** Try again.");
+                    this.console.println("\n***Invalid selection *** Try again.");
                     break;
             }
             
@@ -85,19 +85,19 @@ public class GameMenuView extends View {
 
 
     private void displayResources() {
-        System.out.println("*** displayResources function called ***");
+        this.console.println("*** displayResources function called ***");
     }
 
     private void displayGoToHaven() {
-        System.out.println("*** displayGoToHaven function called ***");
+        this.console.println("*** displayGoToHaven function called ***");
     }
 
     private void displayHarvest() {
-        System.out.println("*** displayHarvest function called ***");
+        this.console.println("*** displayHarvest function called ***");
     }
 
     void displayMenu() {
-        System.out.println("*** display function called ***");
+        this.console.println("*** display function called ***");
     }
 
     private void displayVolume() {
@@ -128,12 +128,12 @@ public class GameMenuView extends View {
          Game game = TrailOfZombies.getCurrentGame();
          InventoryItem[] inventory = game.getInventory();
          
-         System.out.println("\n     LIST OF INVENTORY ITEMS");
+         this.console.println("\n     LIST OF INVENTORY ITEMS");
          line = new StringBuilder("                        ");
          line.insert(0, "DESCRIPTION");
          line.insert(20, "REQUIRED");
          line.insert(30, "IN STOCK");
-         System.out.println(line.toString());
+         this.console.println(line.toString());
          
          //for each inventory item
          for (InventoryItem item : inventory) {
@@ -143,7 +143,7 @@ public class GameMenuView extends View {
              line.insert(23, item.getQuantityInStock());
              
              //Display the line
-             System.out.println(line.toString());
+             this.console.println(line.toString());
          }
          
     }
@@ -156,15 +156,15 @@ public class GameMenuView extends View {
   Map map = game.getMap(); // retreive the map from game
   Location[][] locations = map.getLocations(); // retreive the locations from map
     // Build the heading of the map
-    System.out.print("  |");
+    this.console.print("  |");
     for( int column = 0; column < locations[0].length; column++){
       // print col numbers to side of map
-      System.out.print("  " + column + " |"); 
+      this.console.print("  " + column + " |"); 
     }
     // Now build the map.  For each row, show the column information
-    System.out.println();
+    this.console.println();
     for( int row = 0; row < locations.length; row++){
-     System.out.print(row + " "); // print row numbers to side of map
+     this.console.print(row + " "); // print row numbers to side of map
       for( int column = 0; column < locations[row].length; column++){
         // set default indicators as blanks
         leftIndicator = " ";
@@ -179,21 +179,21 @@ public class GameMenuView extends View {
            leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
            rightIndicator = "<"; // same as above
         }
-       System.out.print("|"); // start map with a |
+       this.console.print("|"); // start map with a |
         if(locations[row][column].getScene() == null)
         {
              // No scene assigned here so use ?? for the symbol
-             System.out.print(leftIndicator + "??" + rightIndicator);
+             this.console.print(leftIndicator + "??" + rightIndicator);
         }
         else
-          System.out.print(leftIndicator
+          this.console.print(leftIndicator
              + locations[row][column].getScene().getSymbol()
              + rightIndicator);
       }
-     System.out.println("|");
+     this.console.println("|");
     }
-    System.out.println(map.getCurrentLocation().getScene().getName());
-    System.out.println(map.getCurrentLocation().getScene().getDescription());
+    this.console.println(map.getCurrentLocation().getScene().getName());
+    this.console.println(map.getCurrentLocation().getScene().getDescription());
     printListOfItems();
     
      } 
@@ -204,7 +204,7 @@ public class GameMenuView extends View {
         GameControl.sortItemsByName(sceneItems);
         
             for (Item item:sceneItems) {
-               System.out.println("Resource Item at scene:" + item.name()); 
+               this.console.println("Resource Item at scene:" + item.name()); 
             }
                          
        

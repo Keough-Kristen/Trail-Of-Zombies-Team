@@ -143,9 +143,9 @@ public class Game implements Serializable {
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
     }
-
+    //TODO- create Zombie crusher function
     public void setZombieCrusher(ZombieCrusher zombieCrusher) {
-      System.out.println("*** setZombieCrusher function called *** ");
+      this.zombiecrusher = zombieCrusher;
     }
          
     

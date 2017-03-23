@@ -7,6 +7,9 @@ package view;
 
 import exceptions.InventoryControlException;
 import control.InventoryControl;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import trailofzombies.TrailOfZombies;
 
 /**
  *
@@ -16,6 +19,11 @@ public class WoodForCratesView {
 
     private String promptGetNumOfCrates;
     private String promptGetNumOfPallets;
+    
+    protected final BufferedReader keyboard = TrailOfZombies.getInFile();
+    protected final PrintWriter console = TrailOfZombies.getOutFile();
+    
+    
 
     public WoodForCratesView() {
         this.promptGetNumOfCrates = "Enter Desired amount of crates.";
@@ -45,20 +53,20 @@ public class WoodForCratesView {
                     //to do output error message(s)
                     
                    if (crates <= 0){ 
-                      System.out.println("Crates cannot be negative.");}
+                      this.console.println("Crates cannot be negative.");}
                    
                    
                    else if (pallets<=0){
-                       System.out.println("Pallets cannot be negative."); }        
+                       this.console.println("Pallets cannot be negative."); }        
             }
                 
                 else {
-                    System.out.println("You need " + palletsNeeded + " more pallets.");
+                    this.console.println("You need " + palletsNeeded + " more pallets.");
                 done = true;
                 }
                 }catch (InventoryControlException ice ) 
                 {
-                    System.out.println(ice.getMessage());  }
+                    this.console.println(ice.getMessage());  }
             }
             
             

@@ -51,7 +51,7 @@ public class HelpMenuView extends View{
                     this.displayDelivery();
                     break;
                 default:
-                    System.out.println("\n***Invalid selection *** Try again.");
+                    this.console.println("\n***Invalid selection *** Try again.");
                     break;
             }
             
@@ -60,28 +60,26 @@ public class HelpMenuView extends View{
 
 
     private void displayGoal() {
-        System.out.println("*** displayGoal function called ***");
+        this.console.println("*** displayGoal function called ***");
     }
 
     private void displayHowToMove() {
-        System.out.println("*** displayHowToMove function called ***");
+        this.console.println("*** displayHowToMove function called ***");
     }
 
     private void displayEstimateResources() {
-        System.out.println("*** displayEstimateResources function called ***");
+        this.console.println("*** displayEstimateResources function called ***");
     }
 
     private void displayHarvesting() {
-        System.out.println("*** displayHarvesting function called ***");
+        this.console.println("*** displayHarvesting function called ***");
     }
 
     private void displayDelivery() {
-        System.out.println("*** displayDelivery function called ***");
+        this.console.println("*** displayDelivery function called ***");
     }
 
-    void displayHelpMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
 
    

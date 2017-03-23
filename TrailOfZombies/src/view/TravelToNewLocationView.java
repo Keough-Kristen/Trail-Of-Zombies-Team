@@ -27,7 +27,8 @@ public class TravelToNewLocationView extends View {
        int rowNumber = Integer.parseInt(value);
         
         if (rowNumber < 0 || rowNumber > 4){
-       System.out.println("\nInvalid row number: "
+       ErrorView.display(this.getClass().getName(),
+                     "Invalid row number: "
                    + "The row must be 0-4.");
        
        return false;
@@ -37,7 +38,8 @@ public class TravelToNewLocationView extends View {
         int columnNumber = Integer.parseInt(value);
         
         while (columnNumber < 0 || columnNumber > 4){
-            System.out.println("\nInvalid column number: "
+            ErrorView.display(this.getClass().getName(),
+                     "Invalid column number: "
                    + "The column must be 0-4.");
             value = getInput();
             columnNumber = Integer.parseInt(value);
@@ -47,8 +49,9 @@ public class TravelToNewLocationView extends View {
         GameControl.movePlayer(game.getMap(),rowNumber,columnNumber);
         
        }catch(NumberFormatException nf){
-                System.out.println("\n You must enter a valid number."
-                                +"\n try again or enter Q to Quit");
+                ErrorView.display(this.getClass().getName(),
+                                 "You must enter a valid number."
+                                + "try again or enter Q to Quit");
             }
         
        
@@ -59,6 +62,4 @@ public class TravelToNewLocationView extends View {
 
       
 }
-          /*       
-
-               */
+     

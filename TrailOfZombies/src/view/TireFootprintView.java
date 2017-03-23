@@ -7,7 +7,13 @@ package view;
 
 import exceptions.InventoryControlException;
 import control.InventoryControl;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import trailofzombies.TrailOfZombies;
 
 /**
  *
@@ -17,6 +23,9 @@ public class TireFootprintView {
 
     private String promptGetHeightMessage;
     private String promptGetWidthMessage;
+    
+    protected final BufferedReader keyboard = TrailOfZombies.getInFile();
+    protected final PrintWriter console = TrailOfZombies.getOutFile();
 
     public TireFootprintView() {
         this.promptGetHeightMessage = "Enter the height in inches (enter -1 to cancel):";
@@ -47,10 +56,10 @@ public class TireFootprintView {
                     double footprint = inventoryControl.calcTireFootprint(height, width);
                     
                
-                        System.out.println("The footprint of the vehicle is " + footprint + ".");
+                       this.console.println("The footprint of the vehicle is " + footprint + ".");
                         done = true;
                     }catch (InventoryControlException ice ) {
-                    System.out.println(ice.getMessage());  }
+                    this.console.println(ice.getMessage());  }
 
                 }
 
@@ -62,18 +71,23 @@ public class TireFootprintView {
 
     private int getMenuInt(String prompt) {
 
-        Scanner keyboard = new Scanner(System.in);
+       
         String value = "";
         int retval = -1;
         boolean valid = false; //initialize to not valid
 
-        System.out.println("\n" + prompt);
+        this.console.println("\n" + prompt);
 
-        value = keyboard.nextLine();
+        try {
+            value = this.keyboard.readLine();
+        } catch (IOException ex) {
+           this.console.println("\n*** You must enter a value. ***");
+        }
         value = value.trim();
 
         if (value.length() < 1) {
-            System.out.println("\nInvalid value: value can not be blank");
+            ErrorView.display(this.getClass().getName(),
+                    "\nInvalid value: value can not be blank");
             return retval;
         }
         retval = Integer.parseInt(value);

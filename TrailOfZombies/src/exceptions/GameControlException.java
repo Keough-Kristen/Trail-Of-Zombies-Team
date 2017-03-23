@@ -16,7 +16,7 @@ public class GameControlException extends Exception {
 
     public GameControlException(String message) {
         super(message);
-         System.out.println("n/Please enter a player name.");
+         
     }
 
     public GameControlException(String message, Throwable cause) {

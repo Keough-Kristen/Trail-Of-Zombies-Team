@@ -62,7 +62,7 @@ public class SceneView extends View {
                     this.gatherResources();
                     break;                   
                 default:
-                    System.out.println("\n***Invalid selection *** Try again.");
+                    this.console.println("\n***Invalid selection *** Try again.");
                     break;
             }
        
@@ -73,10 +73,10 @@ public class SceneView extends View {
         sceneItems = TrailOfZombies.getCurrentGame().getMap().getCurrentLocation().getScene().getItems();
         int count = 0;
         if (sceneItems != null){
-           // System.out.println(sceneItems);
+           
             GameControl.sortItemsByDescending(sceneItems);
             for(Item item : sceneItems){
-                System.out.println(count + " - " + item.getDescription());
+                this.console.println(count + " - " + item.getDescription());
                 
                 count++;
             }
@@ -88,10 +88,10 @@ public class SceneView extends View {
         sceneCharacter = TrailOfZombies.getCurrentGame().getMap().getCurrentLocation().getScene().getCharacter();
         
         if (sceneCharacter != null){
-            System.out.println(sceneCharacter + " is here.");
+            this.console.println(sceneCharacter + " is here.");
         }
         else if(sceneCharacter == null){
-            System.out.println("There isn't a character at this location.");
+            this.console.println("There isn't a character at this location.");
         }
     }
 
@@ -100,20 +100,20 @@ public class SceneView extends View {
         BackPack backpack = game.getBackPack();
         backPackItems = backpack.getItems();
         
-        //backPackItems = TrailOfZombies.getCurrentGame().getBackpack().getItems();
+ 
         
         int count = 0;
         if (backPackItems != null){
-           // System.out.println(sceneItems);
+           
             GameControl.sortItemsByName(backPackItems);
             for(Item item : backPackItems){
-                System.out.println(count + " - " + item.getDescription());
+                this.console.println(count + " - " + item.getDescription());
                 
                 count++;
             }
         }
         else
-            System.out.println("Your backpack is empty.");
+            this.console.println("Your backpack is empty.");
         
     
     }
@@ -121,39 +121,40 @@ public class SceneView extends View {
     private boolean gatherResources() {
         sceneItems = TrailOfZombies.getCurrentGame().getMap().getCurrentLocation().getScene().getItems();
         backPackItems = TrailOfZombies.getCurrentGame().getBackPack().getItems();
-              
+        Item item;
+        
         locationResources();
-        String savePrompt = this.displayMessage;
-        this.displayMessage = "Choose an Item to add to your backpack. (Enter -1 to cancel.)";
+        //String savePrompt = this.displayMessage;
+        //this.displayMessage = "Choose an Item to add to your backpack. (Enter -1 to cancel.)";
         boolean done = false;
      
         int choice = -1;
-        String input = getInput();
+        //String input = getMenuInt();
 
-        Item item = sceneItems.get(choice);
         do{
          
-        choice = View.getMenuInt(savePrompt);
+        choice = View.getMenuInt("Choose an Item to add to your backpack. (Enter -1 to cancel.)");
        
         if (choice == -1){
             done = true;
         }
         
         if (choice < 0 || choice >=sceneItems.size()){
-            System.out.println("Your choice is invalid.");
+            ErrorView.display(this.getClass().getName(), 
+                    "Your choice is invalid.");
             return true;
         }
         
         else {
-            ;
+           item = sceneItems.get(choice);
         }
-        this.displayMessage = savePrompt;
+        //this.displayMessage = savePrompt;
         
             if (!done)
               
             if (item != null);
             if (GameControl.moveItem(sceneItems,backPackItems,item)){
-                System.out.println("You've taken the " + item.getDescription() + ".");
+                this.console.println("You've taken the " + item.getDescription() + ".");
             }
                
             return false;
@@ -170,7 +171,8 @@ public class SceneView extends View {
         int rowNumber = Integer.parseInt(value);
         
         if (rowNumber < 0 || rowNumber > 4){
-       System.out.println("\nInvalid row number: "
+       ErrorView.display(this.getClass().getName(),
+                        "Invalid row number: "
                    + "The row must be 0-4.");
        return false;
     }
@@ -179,7 +181,8 @@ public class SceneView extends View {
         int columnNumber = Integer.parseInt(value);
         
         while (columnNumber < 0 || columnNumber > 4){
-            System.out.println("\nInvalid column number: "
+            ErrorView.display(this.getClass().getName(),"
+                        Invalid column number: "
                    + "The column must be 0-4.");
             value = getInput();
             columnNumber = Integer.parseInt(value);
@@ -198,7 +201,7 @@ public class SceneView extends View {
        for (int i = 0; i < inventoryItems.size(); i++) {
            
            Item item = inventoryItems.get(i);
-           System.out.println("\nItem: " + item.getDescription());
+           this.console.println("\nItem: " + item.getDescription());
        }
     }*/
    /*public void gatherResources(){

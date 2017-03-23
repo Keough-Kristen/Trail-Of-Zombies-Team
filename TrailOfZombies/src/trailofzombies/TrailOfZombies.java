@@ -5,6 +5,12 @@
  */
 package trailofzombies;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.BackPack;
 import model.InventoryItem;
 import model.Game;
@@ -29,18 +35,52 @@ public class TrailOfZombies {
     private static Game currentGame = null;
     private static Player player = null;
     
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
+    
+  
     public static void main(String[] args) {
-      
-        //create StartProgramViewOrig and display the start program view
-        StartProgramView startProgramView = new StartProgramView();
+        
         try {
+            
+        TrailOfZombies.inFile = 
+                new BufferedReader(new InputStreamReader(System.in));
+        
+        TrailOfZombies.outFile = new PrintWriter(System.out, true);
+        
+        String filePath = "log.txt";
+        TrailOfZombies.logFile = new PrintWriter(filePath);
+        
+        StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
-        } catch (Throwable te) {
-            System.out.println(te.getMessage());
-            te.printStackTrace();
-            startProgramView.display();
-        }  
-
+        return;
+        
+        } catch (Throwable e) {
+            
+            System.out.println("Exception: " + e.toString() +
+                                "\nCause: " + e.getCause() +
+                                "\nMessage: " + e.getMessage());
+            
+            e.printStackTrace();;
+        }
+        finally {
+            try {
+               if (TrailOfZombies.inFile != null) 
+                   TrailOfZombies.inFile.close();
+               
+               if (TrailOfZombies.outFile !=null)
+                   TrailOfZombies.outFile.close();
+               
+               if (TrailOfZombies.logFile !=null)
+                   TrailOfZombies.logFile.close();
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
+            
+        }
      
     }
 
@@ -59,14 +99,40 @@ public class TrailOfZombies {
     public static void setPlayer(Player player) {
         TrailOfZombies.player = player;
     }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        TrailOfZombies.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        TrailOfZombies.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        TrailOfZombies.logFile = logFile;
+    }
+    
     
     
     
     public static void kristenTest(){
-        
+
         
         Location locationOne = new Location();
         
+   
         locationOne.setName("Library");
         locationOne.setRow(1);
         locationOne.setColumn(1);

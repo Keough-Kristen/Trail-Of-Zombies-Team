@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author brycelaptop
  */
-public class BackPack {
+public class BackPack implements Serializable {
 
     private ArrayList<Item> items;
 
