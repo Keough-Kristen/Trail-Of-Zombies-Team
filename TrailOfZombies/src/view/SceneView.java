@@ -87,13 +87,51 @@ public class SceneView extends View {
     private void viewCharacters() {
         sceneCharacter = TrailOfZombies.getCurrentGame().getMap().getCurrentLocation().getScene().getCharacter();
         
-        if (sceneCharacter != null){
+        if (sceneCharacter == model.Character.John || 
+                sceneCharacter == model.Character.Eric ||
+                sceneCharacter == model.Character.Zeek ||
+                sceneCharacter == model.Character.Marilyn ||
+                sceneCharacter == model.Character.Dan || 
+                sceneCharacter == model.Character.AnneOakley ||
+                sceneCharacter == model.Character.Mike ||
+                sceneCharacter == model.Character.Vicki ||
+                sceneCharacter == model.Character.DocHoliday){
             this.console.println(sceneCharacter + " is here.");
         }
+        else if(sceneCharacter == model.Character.OldLadyZombie || 
+                sceneCharacter == model.Character.BikerZombie ||
+                sceneCharacter == model.Character.CopZombie ||
+                sceneCharacter == model.Character.MidgetZombie){
+            this.console.println( sceneCharacter + " is here." +
+                      
+                                "\n			       __                                   "
+                              + "\n			         |                 |                "
+                              + "\n			     |   /     zoombieeee\\__/,----_        "
+                              + "\n			     |  | ah*           `    °/°/,          "
+                              + "\n	                     oo'                __          \\  ,   "
+                              + "\n	                “””i/          ,;  ,‘ °`            ,\\/    "
+                              + "\n	                ;-//   __  ---°  _/                   \\    "
+                              + "\n	                 //       °°°°°°         p mmmq       _\\_  "
+                              + "\n	                //                      //      \\      }}  "
+                              + "\n	                \\ _-----_             /          \\  _  }}  "
+                              + "\n	                 /        \\          |       0   }}  l }   "
+                              + "\n	                {   0      }} _   _   \\          }}  | |_  "
+                              + "\n	                \\,       //  O   O    \\         /°   °/°°°"
+                              + "\n	                 /~~~~~~~°°/           |_°~~~~~~~°  /  /    "
+                              + "\n	                 \\   ,---brraaaaaainns,,          /__/     "
+                              + "\n	                   °°°°°--/  |°°|  \\~\\_^\\      / / |     "
+                              + "\n	                          ----  °°°°  _-- ,|\\    /\\ /     "
+                              + "\n	                        / \\~|__/__/|__|l   /    /--        "
+                              + "\n	                       |___________________/    /           "
+                              + "\n	                          |___________°°,,°|___/            "
+                              + "\n	                              °)°)°°°                       ");
+                    }
         else if(sceneCharacter == null){
             this.console.println("There isn't a character at this location.");
         }
     }
+    
+    
 
     private void viewBackPack() {
         Game game = TrailOfZombies.getCurrentGame();
