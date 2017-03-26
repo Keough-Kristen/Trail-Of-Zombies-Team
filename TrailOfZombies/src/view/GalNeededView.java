@@ -46,6 +46,12 @@ public class GalNeededView {
               if (gallons == -1)
                   done = true;
             }
+            
+             if (!done){
+              gallons = this.getMenuInt(promptGetGallonsMessage);
+              if (gallons <= 0)
+                  done = true;
+            }
             if (!done){
                 try{
                 InventoryControl inventoryControl = new InventoryControl();

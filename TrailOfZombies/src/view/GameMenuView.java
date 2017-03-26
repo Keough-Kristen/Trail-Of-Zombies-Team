@@ -36,7 +36,8 @@ public class GameMenuView extends View {
                     + "\nG - How many gallons do you need?"
                     + "\nF - Get Tire Footprint"
                     + "\nW - Calculate Wood for Crates"
-                    + "\nC - Get character list"
+                    + "\nC - Print Complete character list"
+                    + "\nZ - Print Complete Inventory List"
                     + "\nQ - Quit"
                     + "\n---------------------");
     }
@@ -80,6 +81,9 @@ public class GameMenuView extends View {
                     break;
                 case "C":
                     this.displayCharacter();
+                    break;
+                case "Z":
+                    this.displayInventoryList();
                     break;
                 default:
                     this.console.println("\n***Invalid selection *** Try again.");
@@ -248,4 +252,29 @@ public class GameMenuView extends View {
 
     }
   
+
+ private void displayInventoryList() {
+        String savePrompt = this.displayMessage;
+        displayMessage = "\n\nEnter the file name (.txt) for the report. ";
+        String filePath = this.getInput();
+
+        try(PrintWriter out = new PrintWriter(filePath)){
+            out.println("\n\n          Complete Inventory Report              ");
+            out.printf("%n%-20s%10s", "Description", "Points");
+            out.printf("%n%-20s%10s", "-----------", "-------");
+            
+            for (model.Item item : model.Item.values()){
+                out.printf("%n%-20s%7d" , item.getDescription()
+                                          , item.getPoints());
+            }
+                    
+        } catch (IOException ex){
+            ErrorView.display("View Class",
+                        "Program Unrunnable");
+        }
+        this.console.println("Success! Your file has been saved to your hard drive.");
+        this.displayMessage = savePrompt;
+}
+
+    
 }
