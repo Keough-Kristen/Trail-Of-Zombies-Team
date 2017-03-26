@@ -36,13 +36,13 @@ public enum Character implements Serializable{
     MidgetZombie("Can't see him coming", "", 0, -100, 0, "", "Midget Zombie");
    
    
-    private final String description;
+    public final String description;
     private final String food;
     private final int foodpoints;
     private final int healthpoints;
     private final int fuelpoints;
     private final String weapon;
-    private final String name;
+    public final String name;
 
    
     
@@ -56,5 +56,35 @@ public enum Character implements Serializable{
             this.weapon = weapon;
             this.name = name;
         }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getFood() {
+        return food;
+    }
+
+    public int getFoodpoints() {
+        return foodpoints;
+    }
+
+    public int getHealthpoints() {
+        return healthpoints;
+    }
+
+    public int getFuelpoints() {
+        return fuelpoints;
+    }
+
+    public String getWeapon() {
+        return weapon;
+    }
+
+   
+    public String getName() {
+        return name;
+    }
+    
 
     }

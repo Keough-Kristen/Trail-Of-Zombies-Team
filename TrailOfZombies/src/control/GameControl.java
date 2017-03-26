@@ -580,5 +580,35 @@ public class GameControl {
         TrailOfZombies.setCurrentGame(game); //save in TrailOfZombies
     }
     
+        public static void saveReport(Game game, String filepath) 
+            throws GameControlException {
+        
+        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game); //write the game object out to file
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+        
+            public static void getReport(String filePath) 
+                        throws GameControlException {
+        Game game = null;
+        
+        try( FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject(); //read the game object from file
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+        //close the output file
+        TrailOfZombies.setCurrentGame(game); //save in TrailOfZombies
+    }
+    
 }
 

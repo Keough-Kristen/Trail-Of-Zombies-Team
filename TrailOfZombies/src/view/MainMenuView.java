@@ -24,6 +24,7 @@ public class MainMenuView extends View {
                     + "\nG - Get and start saved game"
                     + "\nH - Get help on how to play the game"
                     + "\nS - Save game"
+                    + ""
                     + "\nQ - Quit"
                     + "\n---------------------");
     }
@@ -62,8 +63,8 @@ public class MainMenuView extends View {
 
     private void startExistingGame() {
         //prompt for and get the name of the file to save the game in
-        this.console.println("\n\nEnter the file path for file where the game"
-                            + "is to be saved.");
+        this.console.println("\n\nEnter the file name where the game"
+                            + "is saved.");
         
         String filePath = this.getInput();
         

@@ -6,6 +6,8 @@
 package view;
 
 import control.GameControl;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import model.Game;
 import model.InventoryItem;
@@ -34,6 +36,7 @@ public class GameMenuView extends View {
                     + "\nG - How many gallons do you need?"
                     + "\nF - Get Tire Footprint"
                     + "\nW - Calculate Wood for Crates"
+                    + "\nC - Get character list"
                     + "\nQ - Quit"
                     + "\n---------------------");
     }
@@ -74,6 +77,10 @@ public class GameMenuView extends View {
                     break;
                 case "W":
                     this.displayWood();
+                    break;
+                case "C":
+                    this.displayCharacter();
+                    break;
                 default:
                     this.console.println("\n***Invalid selection *** Try again.");
                     break;
@@ -217,5 +224,28 @@ public class GameMenuView extends View {
          
     }
 
+    private void displayCharacter() {
+        String savePrompt = this.displayMessage;
+        displayMessage = "\n\nEnter the file name (.txt) for the report. ";
+        String filePath = this.getInput();
+
+        try(PrintWriter out = new PrintWriter(filePath)){
+            out.println("\n\n                           Character Report              ");
+            out.printf("%n%-20s%20s", "Name", "Description");
+            out.printf("%n%-20s%20s", "----", "-----------");
+            
+            for (model.Character character : model.Character.values()){
+                out.printf("%n%-20s%20s" , character.getName()
+                                          , character.getDescription());
+            }
+                    
+        } catch (IOException ex){
+            ErrorView.display("View Class",
+                        "Program Unrunnable");
+        }
+        this.console.println("Success! Your file has been saved to your hard drive.");
+        this.displayMessage = savePrompt;
+
+    }
   
 }

@@ -126,7 +126,8 @@ public class SceneView extends View {
                               + "\n	                          |___________°°,,°|___/            "
                               + "\n	                              °)°)°°°                       ");
                     }
-        else if(sceneCharacter == null){
+        else if (sceneCharacter != null){
+            
             this.console.println("There isn't a character at this location.");
         }
     }
