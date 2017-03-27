@@ -287,11 +287,11 @@ public class GameMenuView extends View {
 
         try(PrintWriter out = new PrintWriter(filePath)){
             out.println("\n\n          Complete Location Report              ");
-            out.printf("%n%-30s%30s", "Name", "Description");
-            out.printf("%n%-30s%30s", "-----------", "-------");
+            out.printf("%n%-30s%20s", "Name", "Description");
+            out.printf("%n%-30s%20s", "----", "-----------");
             
             for (model.SceneInfo sceneInfo : model.SceneInfo.values()){
-                out.printf("%n%-30s%30s" , sceneInfo.getName()
+                out.printf("%n%-30s%20s" , sceneInfo.getName()
                                           ,sceneInfo.getDescription());
             }
                     
