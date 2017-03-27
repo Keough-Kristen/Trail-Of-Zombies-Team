@@ -61,8 +61,6 @@ public class Scene implements Serializable{
         this.character = character;
     }
     
-  //TODO ToString.....
-
     
 
     public ArrayList<Item> getItems() {

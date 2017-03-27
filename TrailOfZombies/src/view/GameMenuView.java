@@ -38,6 +38,7 @@ public class GameMenuView extends View {
                     + "\nW - Calculate Wood for Crates"
                     + "\nC - Print Complete character list"
                     + "\nZ - Print Complete Inventory List"
+                    + "\nL - Print Complete Location List"
                     + "\nQ - Quit"
                     + "\n---------------------");
     }
@@ -84,6 +85,9 @@ public class GameMenuView extends View {
                     break;
                 case "Z":
                     this.displayInventoryList();
+                    break;
+                case "L":
+                    this.displayLocationList();
                     break;
                 default:
                     this.console.println("\n***Invalid selection *** Try again.");
@@ -275,6 +279,29 @@ public class GameMenuView extends View {
         this.console.println("Success! Your file has been saved to your hard drive.");
         this.displayMessage = savePrompt;
 }
+
+    private void displayLocationList() {
+        String savePrompt = this.displayMessage;
+        displayMessage = "\n\nEnter the file name (.txt) for the report. ";
+        String filePath = this.getInput();
+
+        try(PrintWriter out = new PrintWriter(filePath)){
+            out.println("\n\n          Complete Location Report              ");
+            out.printf("%n%-30s%30s", "Name", "Description");
+            out.printf("%n%-30s%30s", "-----------", "-------");
+            
+            for (model.SceneInfo sceneInfo : model.SceneInfo.values()){
+                out.printf("%n%-30s%30s" , sceneInfo.getName()
+                                          ,sceneInfo.getDescription());
+            }
+                    
+        } catch (IOException ex){
+            ErrorView.display("View Class",
+                        "Program Unrunnable");
+        }
+        this.console.println("Success! Your file has been saved to your hard drive.");
+        this.displayMessage = savePrompt;
+    }
 
     
 }
