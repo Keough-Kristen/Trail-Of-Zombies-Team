@@ -19,6 +19,7 @@ public class Game implements Serializable {
     
     private ZombieCrusher zombiecrusher;
     private BackPack backpack;
+    private WarehouseItem warehouseItem;
     private Player player;
     private Map map;
     
@@ -69,6 +70,15 @@ public class Game implements Serializable {
         this.backpack = backpack;
     }
 
+    public WarehouseItem getWarehouseItem() {
+        return warehouseItem;
+    }
+
+    public void setWarehouseItem(WarehouseItem warehouseitem) {
+        this.warehouseItem = warehouseitem;
+    }
+        
+
     public Player getPlayer() {
         return player;
     }
@@ -84,7 +94,6 @@ public class Game implements Serializable {
     public void setMap(Map map) {
         this.map = map;
     }
-    
     
 
     public InventoryItem[] getItems() {

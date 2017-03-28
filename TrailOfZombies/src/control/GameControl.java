@@ -12,6 +12,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import model.BackPack;
+import model.WarehouseItem;
 import model.Game;
 import model.Item;
 import model.InventoryItem;
@@ -23,6 +24,8 @@ import model.SceneType;
 import model.ZombieCrusher;
 import trailofzombies.TrailOfZombies;
 import view.GameMenuView;
+import view.HelpMenuView;
+import view.WareHouseView;
 
 /**
  *
@@ -62,6 +65,9 @@ public class GameControl {
         
         BackPack backPack = new BackPack();
         game.setBackPack(backPack);
+        
+        WarehouseItem warehouseItem = new WarehouseItem();
+        game.setWarehouseItem(warehouseItem);
          
     }
 
@@ -366,7 +372,7 @@ public class GameControl {
         scene.setDescription("Main base to store resources");
         scene.setName("Warehouse");
         scene.setSymbol("WH");
-        scene.getItems().add(Item.water);
+        //scene.getItems().add(Item.water);
         //scene.setCharacter(null);
         scenes[SceneType.Warehouse.ordinal()] = scene;
 

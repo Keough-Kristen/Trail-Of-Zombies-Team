@@ -33,6 +33,12 @@ public class SceneView extends View {
         currentScene = TrailOfZombies.getCurrentGame().getMap().getCurrentLocation().getScene();
         sceneItems = TrailOfZombies.getCurrentGame().getMap().getCurrentLocation().getScene().getItems();
         int count = sceneItems.size();
+
+        
+            if(currentScene.getName() == "Warehouse"){
+            WareHouseView wareHouse = new WareHouseView();
+            wareHouse.display(); 
+        } else{
         
         displayMessage  = "\n---------------------"
                     + "\n| Welcome to " + currentScene.getName() + "!|"
@@ -43,7 +49,7 @@ public class SceneView extends View {
                     + "\nA - Add Items to your backpack"
                     + "\nQ - Exit to previous menu.";
     }
-    
+    }
     @Override 
         public boolean doAction(String value) {
             value = value.toUpperCase();
@@ -72,16 +78,16 @@ public class SceneView extends View {
     private void locationResources() {
         sceneItems = TrailOfZombies.getCurrentGame().getMap().getCurrentLocation().getScene().getItems();
         int count = 0;
-        if (sceneItems != null){
-           
+        if (sceneItems != null) {
+
             GameControl.sortItemsByDescending(sceneItems);
-            for(Item item : sceneItems){
+            for (Item item : sceneItems) {
                 this.console.println(count + " - " + item.getDescription());
-                
+
                 count++;
             }
         }
-       
+
     }
 
     private void viewCharacters() {
