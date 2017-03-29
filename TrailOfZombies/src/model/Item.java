@@ -4,40 +4,40 @@
  * and open the template in the editor.
  */
 package model;
-
 /**
  *
  * @author brycelaptop
  */
 public enum Item {
-        water("Water", 100),
-        bacon("Bacon", 50),
-        chicken("Chicken", 10),
-        fruits("Fruits", 25),
-        vegetables("Vegetables", 20),
-        meats("Meats", 50),
-        swords("Swords", 1),
-        pistol("Pistol",1),
-        staff("Staff", 1),
-        ar15("AR15", 1),
-        knife("Knife", 1),
-        crossbow("Crossbow", 1),
-        pallet("Pallet", 4),
-        winch("Winch", 1),
-        fuel("Fuel", 5),
-        bumpers("Bumpers", 1),
-        snowplow("Snowplow", 1),
-        tires("Tires", 4),
-        medicine("Medicine", 5);
+        water("Water", 100, ItemType.water),
+        bacon("Bacon", 50, ItemType.food),
+        chicken("Chicken", 10, ItemType.food),
+        fruits("Fruits", 25, ItemType.food),
+        vegetables("Vegetables", 20, ItemType.water),
+        meats("Meats", 50, ItemType.food),
+        swords("Swords", 1, ItemType.weapon),
+        pistol("Pistol",1, ItemType.weapon),
+        staff("Staff", 1, ItemType.weapon),
+        ar15("AR15", 1, ItemType.weapon),
+        knife("Knife", 1, ItemType.weapon),
+        crossbow("Crossbow", 1, ItemType.weapon),
+        pallet("Pallet", 2, ItemType.pallet),
+        winch("Winch", 1, ItemType.weapon),
+        fuel("Fuel", 5, ItemType.fuel),
+        bumpers("Bumpers", 1, ItemType.carparts),
+        snowplow("Snowplow", 1, ItemType.carparts),
+        tires("Tires", 4, ItemType.carparts),
+        medicine("Medicine", 5, ItemType.medicine);
 
 
 private final String description;
 private final int points;
+private final ItemType type;
 
-Item (String description,  int points) {
+Item (String description,  int points, ItemType type) {
             this.description = description;
             this.points = points;
-           
+            this.type = type;
     }
 
     public String getDescription() {
@@ -47,11 +47,17 @@ Item (String description,  int points) {
     public int getPoints() {
         return points;
     }
+    
+    public ItemType getType() {
+        return type;
+    }
 
     @Override
     public String toString() {
-        return "Item{" + "description=" + description + ", points=" + points + '}';
+        return "Item{" + "description=" + description + ", points=" + points + ", type=" + type + '}';
     }
+
+  
 
 }
 

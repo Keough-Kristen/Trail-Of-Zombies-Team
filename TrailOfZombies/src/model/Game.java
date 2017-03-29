@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,7 +20,7 @@ public class Game implements Serializable {
     
     private ZombieCrusher zombiecrusher;
     private BackPack backpack;
-    private WarehouseItem warehouseItem;
+    private Warehouse  warehouse;
     private Player player;
     private Map map;
     
@@ -70,12 +71,12 @@ public class Game implements Serializable {
         this.backpack = backpack;
     }
 
-    public WarehouseItem getWarehouseItem() {
-        return warehouseItem;
+    public Warehouse getWarehouse() {
+        return warehouse;
     }
 
-    public void setWarehouseItem(WarehouseItem warehouseitem) {
-        this.warehouseItem = warehouseitem;
+    public void setWarehouse(Warehouse warehouse) {
+        this.warehouse = warehouse;
     }
         
 

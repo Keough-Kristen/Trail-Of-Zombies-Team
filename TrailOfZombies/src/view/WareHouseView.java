@@ -9,7 +9,7 @@ import model.Item;
 import trailofzombies.TrailOfZombies;
 import model.BackPack;
 import model.Item;
-import model.WarehouseItem;
+import model.Warehouse;
 import control.BackPackControl;
 import control.GameControl;
 import java.util.ArrayList;
@@ -34,6 +34,7 @@ public class WareHouseView extends View{
                     + "\nB - View BackPack"
                     + "\nK - Welcome to the Haven."
                     + "\nB - View Zombie Crusher."
+                    + "\nC - Build a crate."
                     + "\nL - Load Items into Crates."
                     + "\nQ - Exit to previous menu.");
 
@@ -57,6 +58,9 @@ public class WareHouseView extends View{
                 case "Z":
                     this.displayZombieCrusher();
                     break;
+                case "C":
+                    this.displayBuildCrate();
+                    break;
                 case "L":
                     this.displayLoadCrates();
                     break;
@@ -71,16 +75,16 @@ public class WareHouseView extends View{
 
     private void displayInventory() {
         Game game = TrailOfZombies.getCurrentGame();
-        WarehouseItem warehouseitem = game.getWarehouseItem();
-        warehouseItem = warehouseitem.getItems();
+        Warehouse warehouse = game.getWarehouse();
+        ArrayList<Item> warehouseItems = warehouse.getItems();
         
  
         
         int count = 0;
-        if (warehouseItem != null){
+        if (warehouseItems != null){
            
-            GameControl.sortItemsByName(warehouseItem);
-            for(Item item : warehouseItem){
+            GameControl.sortItemsByName(warehouseItems);
+            for(Item item : warehouseItems){
                 this.console.println(count + " - " + item.getDescription());
                 
                 count++;
@@ -100,7 +104,7 @@ public class WareHouseView extends View{
     }
 
     private boolean displayLoadCrates() {
-        warehouseItem = TrailOfZombies.getCurrentGame().getWarehouseItem().getItems();
+        ArrayList <Item> warehouseItems = TrailOfZombies.getCurrentGame().getWarehouse().getItems();
         backPackItems = TrailOfZombies.getCurrentGame().getBackPack().getItems();
         Item item;    
     
@@ -133,7 +137,7 @@ public class WareHouseView extends View{
             if (!done)
               
             if (item != null);
-            if (GameControl.moveItem(backPackItems,warehouseItem,item)){
+            if (GameControl.moveItem(backPackItems,warehouseItems,item)){
                 this.console.println("You've unloaded the " + item.getDescription() + ".");
             }
                
@@ -166,6 +170,12 @@ public class WareHouseView extends View{
             this.console.println("Your backpack is empty.");
         
         }
+
+    private void displayBuildCrate() {
+        BuildCrateView buildCrateView = new BuildCrateView();
+
+        buildCrateView.display();
+    }
     
 
 }

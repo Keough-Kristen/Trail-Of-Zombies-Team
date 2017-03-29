@@ -12,7 +12,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import model.BackPack;
-import model.WarehouseItem;
+import model.Warehouse;
 import model.Game;
 import model.Item;
 import model.InventoryItem;
@@ -66,8 +66,8 @@ public class GameControl {
         BackPack backPack = new BackPack();
         game.setBackPack(backPack);
         
-        WarehouseItem warehouseItem = new WarehouseItem();
-        game.setWarehouseItem(warehouseItem);
+        Warehouse warehouseItem = new Warehouse();
+        game.setWarehouse(warehouseItem);
          
     }
 
@@ -195,7 +195,7 @@ public class GameControl {
         InventoryItem pallet = new InventoryItem();
         pallet.setDescription("Pallet");
         pallet.setQuantityInStock(0);
-        pallet.setRequiredAmount(0);
+        pallet.setRequiredAmount(8);
         inventory[Item.pallet.ordinal()] = pallet;
 
         InventoryItem winch = new InventoryItem();
@@ -523,6 +523,19 @@ public class GameControl {
         return false;
     }
 
+    public static boolean moveAllItems(ArrayList<Item> sourceItems, ArrayList<Item> destinationItems){
+        
+        boolean found = false;
+        //if (sourceItems.contains(item)) {\
+        
+        for (Item item: sourceItems) {
+            destinationItems.add(item);
+            sourceItems.remove(item);
+            found = true;    
+        }
+        return found;
+    }
+    
     public static void sortItemsByName(ArrayList<Item> items) {
 
         int i, j;

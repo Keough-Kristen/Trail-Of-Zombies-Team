@@ -12,10 +12,10 @@ import java.util.ArrayList;
  *
  * @author brycelaptop
  */
-public class WarehouseItem implements Serializable {
+public class Warehouse implements Serializable {
      private ArrayList<Item> items;
 
-    public WarehouseItem() {
+    public Warehouse() {
          items = new ArrayList<Item>();
     }
 
