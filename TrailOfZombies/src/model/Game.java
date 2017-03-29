@@ -21,6 +21,7 @@ public class Game implements Serializable {
     private ZombieCrusher zombiecrusher;
     private BackPack backpack;
     private Warehouse  warehouse;
+    private FoodCrate foodcrate;
     private Player player;
     private Map map;
     
@@ -119,6 +120,22 @@ public class Game implements Serializable {
 
     public void setItem(Item item) {
         this.item = item;
+    }
+
+    public BackPack getBackpack() {
+        return backpack;
+    }
+
+    public void setBackpack(BackPack backpack) {
+        this.backpack = backpack;
+    }
+
+    public FoodCrate getFoodcrate() {
+        return foodcrate;
+    }
+
+    public void setFoodcrate(FoodCrate foodcrate) {
+        this.foodcrate = foodcrate;
     }
 
     

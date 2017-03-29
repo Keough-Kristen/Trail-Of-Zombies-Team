@@ -14,6 +14,8 @@ import model.Item;
  * @author kristenkeough
  */
 public class VehicleControl {
+ 
+ 
     
  public void removeArrayListItems(ArrayList<Item> inventory, Item item) {
 //inventory.remove(); // remove a specific index

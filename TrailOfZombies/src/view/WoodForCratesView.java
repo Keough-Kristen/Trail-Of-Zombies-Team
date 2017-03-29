@@ -29,17 +29,18 @@ public class WoodForCratesView {
     protected final PrintWriter console = TrailOfZombies.getOutFile();
 
     public WoodForCratesView() {
-        this.promptGetNumOfCrates = "Enter Desired amount of crates.";
-        this.promptGetNumOfPallets = "Enter Number of Pallets in inventory.";
+   
     }
 
     public void displayWoodView() {
         int crates = 1;
         ArrayList<Item> warehouseItems = TrailOfZombies.getCurrentGame().getWarehouse().getItems();
+        ArrayList<Item> foodCrateItems = TrailOfZombies.getCurrentGame().getFoodcrate().getItems();
         boolean done = false;
 
         int palletcount = 0;
         int palletPoints = 0;
+        int palletsNeeded = 0;
 
         for (Item item : warehouseItems) {
             if (item.getType() == ItemType.pallet) {
@@ -65,7 +66,11 @@ public class WoodForCratesView {
                     InventoryControl inventoryControl = new InventoryControl();
 
                     double palletPointsNeeded = inventoryControl.calcWoodForCrates(crates, palletPoints);
-
+                    
+                    if (palletsNeeded == 0){
+                        this.console.println("You have successfully create a crate.");
+                    }
+              
                     if (palletPoints == 0) {
                         this.console.println("You don't have any pallets.");
                     }
