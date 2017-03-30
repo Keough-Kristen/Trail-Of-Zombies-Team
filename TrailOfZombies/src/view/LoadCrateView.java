@@ -5,28 +5,32 @@
  */
 package view;
 
+import control.GameControl;
 import control.InventoryControl;
 import exceptions.InventoryControlException;
 import java.util.ArrayList;
+import model.Crate;
+import model.Game;
 import model.Item;
 import model.ItemType;
+import model.Warehouse;
 import trailofzombies.TrailOfZombies;
 
 /**
  *
  * @author kristenkeough
  */
-public class BuildCrateView extends View {
+public class LoadCrateView extends View {
+     private ArrayList<Item> warehouseItem;
+     private ArrayList<Item> crateItem;
     
-     public BuildCrateView(){
+     public LoadCrateView(){
             super("\n"
                     + "\n---------------------"
-                    + "\n| Let's Build a Crate! |"
+                    + "\n| Let's Load the Crate! |"
                     + "\n---------------------"
-                    + "\nF - Food Crate"
-                    + "\nW - Weapon Crate"
-                    + "\nA - Water Crate"
-                    + "\nM - Medicine Crate"
+                    + "\nP - Pack the crate"
+                    + "\nV - View the crate"
                     + "\nQ - Quit"
                     + "\n---------------------");
     }
@@ -36,17 +40,11 @@ public class BuildCrateView extends View {
         value = value.toUpperCase();
     
             switch (value){
-                case "F":
-                    this.displayFoodCrate();
+                case "P":
+                    this.displayPackCrate();
                     break;
-                case "W":
-                    this.displayWeaponCrate();
-                    break;
-                case "A":
-                    this.displayWaterCrate();
-                    break;
-                case "M":
-                    this.displayMedicineCrate();
+                case "V":
+                    this.viewCrate();
                     break;
                 default:
                     this.console.println("\n***Invalid selection *** Try again.");
@@ -56,7 +54,54 @@ public class BuildCrateView extends View {
             return false;
     }
 
-    private void displayFoodCrate() {
+    
+    private void displayPackCrate() {
+        Game game = TrailOfZombies.getCurrentGame();
+        Warehouse warehouse = game.getWarehouse();
+        warehouseItem = warehouse.getItems();
+        
+        for (Item item : warehouseItem) {
+            if (item.getType() != ItemType.crate) {
+            GameControl.moveAllItems(warehouseItem, crateItem);
+            
+        }
+        else {
+            
+            this.console.println("You don't have the crate yet. Keep looking. ");
+    }
+        }
+    }
+    
+    private void viewCrate() {
+        Game game = TrailOfZombies.getCurrentGame();
+        Crate crate = game.getCrate();
+        crateItem = crate.getItems();
+        
+ 
+        
+        int count = 0;
+        if (crateItem != null){
+           
+            GameControl.sortItemsByName(crateItem);
+            for(Item item : crateItem){
+                this.console.println(count + " - " + item.getDescription());
+                
+                count++;
+            }
+        }
+        else
+            this.console.println("Your crate is empty.");
+        
+    
+    }
+    }
+
+
+    
+    
+    
+    
+    /*private void displayFoodCrate() {
       
         int crates = 1;
         ArrayList<Item> warehouseItems = TrailOfZombies.getCurrentGame().getWarehouse().getItems();
@@ -66,7 +111,7 @@ public class BuildCrateView extends View {
         int palletPoints = 0;
 
         for (Item item : warehouseItems) {
-            if (item.getType() == ItemType.pallet) {
+            if (item.getType() == ItemType.crate) {
                 palletcount++;
                 palletPoints += item.getPoints();
             }
@@ -74,7 +119,7 @@ public class BuildCrateView extends View {
         
          if (palletPoints == 2);
          
-           /*
+           
             if (!done) {
                 try {
                     InventoryControl inventoryControl = new InventoryControl();
@@ -101,18 +146,7 @@ public class BuildCrateView extends View {
    
         } while (!done);*/
 
-    }
+    
 
-    private void displayWeaponCrate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void displayWaterCrate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void displayMedicineCrate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
    
-}
+

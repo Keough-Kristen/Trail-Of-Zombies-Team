@@ -13,7 +13,7 @@ public enum ItemType {
         food,
         weapon,
         water,
-        pallet,
+        crate,
         fuel,
         carparts,
         medicine;

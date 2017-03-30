@@ -12,11 +12,11 @@ import java.util.ArrayList;
  *
  * @author brycelaptop
  */
-public class FoodCrate implements Serializable {
+public class Crate implements Serializable {
 
     private ArrayList<Item> items;
 
-    public FoodCrate() {
+    public Crate() {
          items = new ArrayList<Item>();
     }
 

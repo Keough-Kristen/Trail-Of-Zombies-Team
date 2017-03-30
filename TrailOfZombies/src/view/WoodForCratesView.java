@@ -12,7 +12,7 @@ import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import model.Item;
-import static model.Item.pallet;
+import static model.Item.crate;
 import model.ItemType;
 import trailofzombies.TrailOfZombies;
 
@@ -35,7 +35,7 @@ public class WoodForCratesView {
     public void displayWoodView() {
         int crates = 1;
         ArrayList<Item> warehouseItems = TrailOfZombies.getCurrentGame().getWarehouse().getItems();
-        ArrayList<Item> foodCrateItems = TrailOfZombies.getCurrentGame().getFoodcrate().getItems();
+        ArrayList<Item> CrateItems = TrailOfZombies.getCurrentGame().getCrate().getItems();
         boolean done = false;
 
         int palletcount = 0;
@@ -43,7 +43,7 @@ public class WoodForCratesView {
         int palletsNeeded = 0;
 
         for (Item item : warehouseItems) {
-            if (item.getType() == ItemType.pallet) {
+            if (item.getType() == ItemType.crate) {
                 palletcount++;
                 palletPoints += item.getPoints();
             }

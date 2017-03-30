@@ -21,7 +21,7 @@ public enum Item {
         ar15("AR15", 1, ItemType.weapon),
         knife("Knife", 1, ItemType.weapon),
         crossbow("Crossbow", 1, ItemType.weapon),
-        pallet("Pallet", 2, ItemType.pallet),
+        crate("Crate", 2, ItemType.crate),
         winch("Winch", 1, ItemType.weapon),
         fuel("Fuel", 5, ItemType.fuel),
         bumpers("Bumpers", 1, ItemType.carparts),

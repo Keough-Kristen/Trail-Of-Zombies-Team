@@ -14,6 +14,7 @@ import control.BackPackControl;
 import control.GameControl;
 import java.util.ArrayList;
 import model.Game;
+import model.ItemType;
 
 /**
  *
@@ -34,8 +35,8 @@ public class WareHouseView extends View{
                     + "\nB - View BackPack"
                     + "\nK - Welcome to the Haven."
                     + "\nB - View Zombie Crusher."
-                    + "\nC - Build a crate."
-                    + "\nL - Load Items into Crates."
+                    + "\nC - Load Crate."
+                    + "\nL - Unload Items from Backpack."
                     + "\nQ - Exit to previous menu.");
 
         }
@@ -59,10 +60,10 @@ public class WareHouseView extends View{
                     this.displayZombieCrusher();
                     break;
                 case "C":
-                    this.displayBuildCrate();
+                    this.displayLoadCrate();
                     break;
                 case "L":
-                    this.displayLoadCrates();
+                    this.displayUnloadBackpack();
                     break;
                 default:
                     this.console.println("\n***Invalid selection *** Try again.");
@@ -103,7 +104,7 @@ public class WareHouseView extends View{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private boolean displayLoadCrates() {
+    private boolean displayUnloadBackpack() {
         ArrayList <Item> warehouseItems = TrailOfZombies.getCurrentGame().getWarehouse().getItems();
         backPackItems = TrailOfZombies.getCurrentGame().getBackPack().getItems();
         Item item;    
@@ -171,11 +172,21 @@ public class WareHouseView extends View{
         
         }
 
-    private void displayBuildCrate() {
-        BuildCrateView buildCrateView = new BuildCrateView();
-
-        buildCrateView.display();
+    private void displayLoadCrate() {
+        Game game = TrailOfZombies.getCurrentGame();
+        Warehouse warehouse = game.getWarehouse();
+        warehouseItem = warehouse.getItems();
+        
+        for (Item item : warehouseItem) {
+            if (item.getType() == ItemType.crate) {
+            LoadCrateView loadCrateView = new LoadCrateView();
+            loadCrateView.display();
+            
+        }
+        else {
+            
+            this.console.println("You don't have the crate yet. Keep looking. ");
     }
-    
-
+        }
+    }
 }
