@@ -69,7 +69,7 @@ public class LoadCrateView extends View {
             }
             else{
                
-                game.getZombiecrusher().setCrate(true);
+                game.getZombieCrusher().setCrate(true);
                 warehouseItems.remove(item);
             }
    

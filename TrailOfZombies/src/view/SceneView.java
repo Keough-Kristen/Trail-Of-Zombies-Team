@@ -137,9 +137,9 @@ public class SceneView extends View {
                               + "\n	                              °)°)°°°                       "
                               + "\n ----------------------------------------------------------------"
                               + "\n------------------- YOU HAVE BEEN EATEN--------------------------"
-                              + "\n Game is over!  Prss enter to return to main menu");
+                              + "\n Game is over!  You will be redirected to the main menu.");
             try{ 
-            TimeUnit.SECONDS.sleep(3);
+            TimeUnit.SECONDS.sleep(5);
             }catch(InterruptedException e){
             }
             

@@ -15,6 +15,7 @@ import control.GameControl;
 import java.util.ArrayList;
 import model.Game;
 import model.ItemType;
+import view.ZombieCrusherView;
 
 /**
  *
@@ -95,8 +96,8 @@ public class WareHouseView extends View {
     }
 
     private void displayZombieCrusher() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        ZombieCrusherView zombieCrusher = new ZombieCrusherView();
+        zombieCrusher.display();    }
 
     private boolean displayUnloadBackpack() {
 

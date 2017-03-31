@@ -64,11 +64,11 @@ public class Game implements Serializable {
         this.noPeople = noPeople;
     }
 
-    public ZombieCrusher getZombiecrusher() {
+    public ZombieCrusher getZombieCrusher() {
         return zombiecrusher;
     }
 
-    public void setZombiecrusher(ZombieCrusher zombiecrusher) {
+    public void setZombieCrusher(ZombieCrusher zombiecrusher) {
         this.zombiecrusher = zombiecrusher;
     }
 
@@ -178,10 +178,7 @@ public class Game implements Serializable {
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
     }
-    //TODO- create Zombie crusher function
-    public void setZombieCrusher(ZombieCrusher zombieCrusher) {
-      this.zombiecrusher = zombieCrusher;
-    }
+
       
     
 }
