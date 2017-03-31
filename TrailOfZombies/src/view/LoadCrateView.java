@@ -21,8 +21,7 @@ import trailofzombies.TrailOfZombies;
  * @author kristenkeough
  */
 public class LoadCrateView extends View {
-     private ArrayList<Item> warehouseItem;
-     private ArrayList<Item> crateItem;
+     
     
      public LoadCrateView(){
             super("\n"
@@ -56,34 +55,39 @@ public class LoadCrateView extends View {
 
     
     private void displayPackCrate() {
+         ArrayList<Item> warehouseItems;
+         ArrayList<Item> crateItems;
+         
         Game game = TrailOfZombies.getCurrentGame();
+        crateItems = game.getCrate().getItems();
         Warehouse warehouse = game.getWarehouse();
-        warehouseItem = warehouse.getItems();
+        warehouseItems = warehouse.getItems();
         
-        for (Item item : warehouseItem) {
+        for (Item item : warehouseItems) {
             if (item.getType() != ItemType.crate) {
-            GameControl.moveAllItems(warehouseItem, crateItem);
-            
-        }
-        else {
-            
-            this.console.println("You don't have the crate yet. Keep looking. ");
-    }
+                GameControl.moveItem(warehouseItems, crateItems, item);
+            }
+            else{
+               
+                game.getZombiecrusher().setCrate(true);
+                warehouseItems.remove(item);
+            }
+   
         }
     }
     
     private void viewCrate() {
         Game game = TrailOfZombies.getCurrentGame();
         Crate crate = game.getCrate();
-        crateItem = crate.getItems();
+        ArrayList <Item> crateItems = crate.getItems();
         
  
         
         int count = 0;
-        if (crateItem != null){
+        if (crateItems != null){
            
-            GameControl.sortItemsByName(crateItem);
-            for(Item item : crateItem){
+            GameControl.sortItemsByName(crateItems);
+            for(Item item : crateItems){
                 this.console.println(count + " - " + item.getDescription());
                 
                 count++;

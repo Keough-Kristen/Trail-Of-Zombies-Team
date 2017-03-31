@@ -24,7 +24,7 @@ public class Game implements Serializable {
     private Crate crate;
     private Player player;
     private Map map;
-    
+    private boolean gameOver = false;
     
     
     private InventoryItem[] inventory;
@@ -38,6 +38,14 @@ public class Game implements Serializable {
          InventoryItem[] inventory = new InventoryItem[Item.values().length];
         
         return inventory;
+    }
+
+    public boolean isGameOver() {
+        return gameOver;
+    }
+
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
     }
 
     public double getTotalTime() {

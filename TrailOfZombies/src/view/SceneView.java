@@ -9,6 +9,7 @@ import exceptions.GameControlException;
 import control.GameControl;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 import model.Scene;
 import model.Item;
 import model.Character;
@@ -60,7 +61,10 @@ public class SceneView extends View {
                     break;
                 case "C":
                     this.viewCharacters();
+                    if (TrailOfZombies.getCurrentGame().isGameOver())
+                        return true;
                     break;
+                    
                 case "B":
                     this.viewBackPack();
                     break;
@@ -130,11 +134,22 @@ public class SceneView extends View {
                               + "\n	                        / \\~|__/__/|__|l   /    /--        "
                               + "\n	                       |___________________/    /           "
                               + "\n	                          |___________°°,,°|___/            "
-                              + "\n	                              °)°)°°°                       ");
+                              + "\n	                              °)°)°°°                       "
+                              + "\n ----------------------------------------------------------------"
+                              + "\n------------------- YOU HAVE BEEN EATEN--------------------------"
+                              + "\n Game is over!  Prss enter to return to main menu");
+            try{ 
+            TimeUnit.SECONDS.sleep(3);
+            }catch(InterruptedException e){
+            }
+            
+            TrailOfZombies.getCurrentGame().setGameOver(true);
                     }
         else if (sceneCharacter == null){
             
             this.console.println("There isn't a character at this location.");
+            
+            
         }
     }
     

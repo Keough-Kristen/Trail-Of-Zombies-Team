@@ -20,6 +20,7 @@ public class ZombieCrusher implements Serializable {
     private double armor;
     private double weapons;
     private double fuel;
+    private boolean crate;
 
     public ZombieCrusher() {
         this.description = "\nThis is our melee vehicle. If you have faith"
@@ -29,6 +30,15 @@ public class ZombieCrusher implements Serializable {
         this.armor = 0;
         this.weapons = 0;
         this.fuel = 0;   
+        this.crate = false;
+    }
+
+    public boolean isCrate() {
+        return crate;
+    }
+
+    public void setCrate(boolean crate) {
+        this.crate = crate;
     }
     
     

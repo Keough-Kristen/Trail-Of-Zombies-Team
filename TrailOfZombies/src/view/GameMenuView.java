@@ -93,7 +93,8 @@ public class GameMenuView extends View {
                     this.console.println("\n***Invalid selection *** Try again.");
                     break;
             }
-            
+            if (TrailOfZombies.getCurrentGame().isGameOver())
+                return true;
             return false;
     }
 
