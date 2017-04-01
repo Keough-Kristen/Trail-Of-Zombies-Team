@@ -209,12 +209,12 @@ public class TrailOfZombies {
         
         ZombieCrusher zombieCrusherOne = new ZombieCrusher();
         
-        zombieCrusherOne.setDescription("Van");
-        zombieCrusherOne.setWheels(4);
-        zombieCrusherOne.setTires(4);
-        zombieCrusherOne.setArmor(6);
-        zombieCrusherOne.setWeapons(1);
-        zombieCrusherOne.setFuel(70);
+        //zombieCrusherOne.setDescription("Van");
+       // zombieCrusherOne.setWheels(4);
+       // zombieCrusherOne.setTires(4);
+        //zombieCrusherOne.setArmor(6);
+        //zombieCrusherOne.setWeapons(1);
+        //zombieCrusherOne.setFuel(70);
         
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);

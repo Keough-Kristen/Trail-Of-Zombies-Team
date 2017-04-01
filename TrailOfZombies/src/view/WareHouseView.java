@@ -97,14 +97,23 @@ public class WareHouseView extends View {
 
     private void displayZombieCrusher() {
         ZombieCrusherView zombieCrusher = new ZombieCrusherView();
-        zombieCrusher.display();    }
+        zombieCrusher.display();
+    }
 
     private boolean displayUnloadBackpack() {
 
-        ArrayList<Item> warehouseItems = TrailOfZombies.getCurrentGame().getWarehouse().getItems();
+        ArrayList<Item> zombieCrusherItems = TrailOfZombies.getCurrentGame().getZombieCrusher().getItems();
         ArrayList<Item> backPackItems = TrailOfZombies.getCurrentGame().getBackPack().getItems();
         Item item;
-
+        if (!TrailOfZombies.getCurrentGame().getZombieCrusher().hasCrate()) {
+            if (!GameControl.containsItem(backPackItems, ItemType.crate)) {
+                this.console.println("Crate is not in backpack or Zombie Crusher. Keep looking!");
+                return false;
+            }
+            GameControl.removeItem(backPackItems, ItemType.crate);
+            TrailOfZombies.getCurrentGame().getZombieCrusher().setCrate(true);
+            this.console.println("You've found the crate and it has been loaded into the Zombie Crusher.");
+        }
         viewBackPack();
 
         boolean done = false;
@@ -130,32 +139,18 @@ public class WareHouseView extends View {
             //this.displayMessage = savePrompt;
 
             if ((!done) && (item != null)) {
-                if (item.getType() != ItemType.crate) {
-                    if (GameControl.moveItem(backPackItems, warehouseItems, item)) {
-                        this.console.println("You've unloaded the " + item.getDescription() + ".");
 
-                    }
+                if (GameControl.moveItem(backPackItems, zombieCrusherItems, item)) {
+                    this.console.println("You've unloaded the " + item.getDescription() + ".");
+
                 }
-            
-        
-        
-
-
-    
-        
-
-
-                /*else {
-                    TrailOfZombies.getCurrentGame().getZombiecrusher().setCrate(true);
-                    warehouseItems.remove(item);
-                }*/
             }
-
             return false;
         } while (!done);
 
     }
 
+    
     private void viewBackPack() {
         Game game = TrailOfZombies.getCurrentGame();
         BackPack backpack = game.getBackPack();
@@ -193,5 +188,3 @@ public class WareHouseView extends View {
         }
     }
 }
-    
-

@@ -67,11 +67,11 @@ public class LoadCrateView extends View {
             if (item.getType() != ItemType.crate) {
                 GameControl.moveItem(warehouseItems, crateItems, item);
             }
-            else{
+            /*else{
                
                 game.getZombieCrusher().setCrate(true);
                 warehouseItems.remove(item);
-            }
+            }*/
    
         }
     }

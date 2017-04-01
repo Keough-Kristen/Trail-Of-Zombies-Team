@@ -16,6 +16,7 @@ import model.Warehouse;
 import model.Game;
 import model.Item;
 import model.InventoryItem;
+import model.ItemType;
 import model.Location;
 import model.Map;
 import model.Player;
@@ -56,9 +57,9 @@ public class GameControl {
         InventoryItem[] itemsList = GameControl.createInventoryList();
         game.setItems(itemsList);
 
-        /* ZombieCrusher zombieCrusher = new ZombieCrusher();
+        ZombieCrusher zombieCrusher = new ZombieCrusher();
         game.setZombieCrusher(zombieCrusher);
-         */
+         
         Map map = MapControl.createMap();
         game.setMap(map);
 
@@ -83,6 +84,9 @@ public class GameControl {
         map.setCurrentColumn(column);
 
     }
+    
+    
+
 
    
 
@@ -470,6 +474,8 @@ public class GameControl {
 
         return scenes;
     }
+    
+  
 
     public static boolean moveItem(ArrayList<Item> sourceItems, ArrayList<Item> destinationItems, Item item){
         
@@ -484,7 +490,30 @@ public class GameControl {
         }
         return false;
     }
-
+    
+    public static boolean containsItem(ArrayList<Item> items, ItemType findType){
+        
+        
+        for (Item item: items) {
+            if (item.getType()==findType)
+                return true;
+        }
+        return false;
+    }
+    public static boolean removeItem(ArrayList<Item> items, ItemType findType){
+        
+        
+        for (Item item: items) {
+            if (item.getType()==findType) {
+                items.remove(item);
+                return true;    
+            }
+                
+        }
+        return false;
+    }
+    
+    
     public static boolean moveAllItems(ArrayList<Item> sourceItems, ArrayList<Item> destinationItems){
         
         boolean found = false;

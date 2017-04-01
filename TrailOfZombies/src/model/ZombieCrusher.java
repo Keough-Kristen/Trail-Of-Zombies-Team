@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
@@ -13,7 +14,41 @@ import java.util.Objects;
  */
 public class ZombieCrusher implements Serializable {
     
-    //class instance variables
+    private ArrayList<Item> items;
+    private boolean crate;
+    public ZombieCrusher() {
+         items = new ArrayList<Item>();
+         this.crate = false;
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
+    
+    public boolean hasCrate() {
+        return crate;
+    }
+
+    public void setCrate(boolean crate) {
+        this.crate = crate;
+    }
+   
+
+}
+   
+
+
+
+
+
+
+
+/*
+//class instance variables
     private String description;
     private double wheels;
     private double tires;
@@ -140,3 +175,4 @@ public class ZombieCrusher implements Serializable {
     
     
 }
+*/
