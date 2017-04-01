@@ -41,6 +41,8 @@ public class ZombieCrusherView extends View {
         switch (value) {
             case "C":
                 this.displayCrusherStatus();
+                if (TrailOfZombies.getCurrentGame().isGameOver())
+                        return true;
                 break;
             case "H":
                 this.viewHaven();

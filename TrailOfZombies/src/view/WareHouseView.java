@@ -56,6 +56,8 @@ public class WareHouseView extends View {
                 break;
             case "Z":
                 this.displayZombieCrusher();
+                if (TrailOfZombies.getCurrentGame().isGameOver())
+                        return true;
                 break;
             case "C":
                 this.displayLoadCrate();

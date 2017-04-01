@@ -14,6 +14,7 @@ import model.InventoryItem;
 import model.Item;
 import model.Location;
 import model.Map;
+import model.Scene;
 import trailofzombies.TrailOfZombies;
 
 /**
@@ -228,9 +229,14 @@ public class GameMenuView extends View {
          TravelToNewLocationView newLocation = new TravelToNewLocationView();
          newLocation.display();
          this.displayMap();
+         Scene currentScene = TrailOfZombies.getCurrentGame().getMap().getCurrentLocation().getScene();
+          if (currentScene.getName() == "Warehouse") {
+            WareHouseView wareHouse = new WareHouseView();
+            wareHouse.display();
+        } else {
          SceneView sceneView = new SceneView();       
          sceneView.display();
-         
+          }    
     }
 
     private void displayCharacter() {
