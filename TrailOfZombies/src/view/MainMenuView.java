@@ -86,8 +86,8 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-         this.console.println("\n\nEnter the file name for file where the game "
-                            + "is to be saved.");
+         this.console.println("\n\nvEnter the file name(.txt) to save your game");
+                           
          String filePath = this.getInput();
          
          try {

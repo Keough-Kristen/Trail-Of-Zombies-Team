@@ -169,7 +169,7 @@ public class ZombieCrusherView extends View {
 +"\n ................................... . . . . =ZNN8?.. ..."
 +"\n------------------------------(ZOMBIES NOT ALLOWED!)-----------------------------"
                   
-+ "\n Game is over!  You will be redirected to the main menu.");
++ "\n Game is over!  Press Q and enter to return to main menu.");
         
         try {
             TimeUnit.SECONDS.sleep(5);
